@@ -1,11 +1,13 @@
-html{cursor:url(../img/feather.ico),auto;}
 
-#background{width:inherit;
-			height:200px;
-			background:url(../img/background_1.jpg) no-repeat;
+#background{
+			padding:0;
+			margin:0;
+			width:inherit;
+			height:400px;
+			background:url(../img/background_c.jpg) no-repeat;
 			background-size:cover;
 			}
-h1{color:#000;}
-.content{width:1000px;
-        margin:0 auto;}
-ul{list-style-image:url(../img/list.png);}
+.subpage_title{text-align:center;color:#fff;font-size:48px;font-family:'Microsoft YaHei';padding-top:280px;margin:0;}
+ul{list-style-image:url(../img/list_c.png);}
+.card-back{position:relative;transform:rotateY(-180deg);-webkit-transform:rotateY(-180deg);background:url(../img/card_b_c.jpg);}
+.card-back img{margin:100px 40px;}

@@ -1,10 +1,10 @@
 <!DOCTYPE HTML>
 <html lang="zh-CN">
 <head>
-	<meta charset="utf-8">													  <!-- unicode8±àÂë-->
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">                     <!-- ie¼æÈİ -->
-	<meta name="viewport" content="width=device-width, inital-scale:1.0">     <!-- ÏìÓ¦Ê½²¼¾Ö -->
-	<title>CÓïÑÔ</title>
+	<meta charset="utf-8">													  <!-- unicode8ç¼–ç -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">                     <!-- ieå…¼å®¹ -->
+	<meta name="viewport" content="width=device-width, inital-scale:1.0">     <!-- å“åº”å¼å¸ƒå±€ -->
+	<title>Cè¯­è¨€</title>
 	<link rel="shortcut icon" href="../img/logo.ico"  type="image/x-icon" />
 	<link rel="stylesheet" href="../css/prism.css">
 	<link rel="stylesheet" href="../css/c.css">
@@ -13,35 +13,36 @@
     <script src="../js/prism.js"></script>
 	<script src="../js/clickstyle.js"></script>
 </head>
-<body leftmargin= "0 " topmargin= "0 " rightmargin= "0 " marginwidth= "00 " marginheight= "0 ">
-
-<nav>
-	<div class="logo"><img src="../img/logo2.png"></div>
-	<ul>
-		<li>
-		<a>ÍøÕ¾Ê×Ò³</a>
-			<span>Home</span>
+<body>
+<header class="header header_fixed">
+<div class="inner"> 
+	<nav class="nav">
+	<img class="white" src="../img/logo_white.png" alt="é¢„è§" title="é¢„è§"><img class="black" alt="é¢„è§" src="../img/logo_black.png">
+		<li class="nav__item cur"><a class="link" href="" title="ç½‘ç«™é¦–é¡µ">ç½‘ç«™é¦–é¡µ</a></li> 
+		<li class="nav__item"> <a class="link" href="" title="ç¼–ç¨‹è¯­è¨€">ç¼–ç¨‹è¯­è¨€</a>
+			<ul class="subnav">
+				<li class="subnav__item cur"> <a class="sublink" title="Cè¯­è¨€">Cè¯­è¨€</a> </li>              <!-- curç”¨åœ¨å½“å‰ä½ç½® -->
+				<li class="subnav__item"> <a class="sublink" href="" target="_blank" title="C++è¯­è¨€">C++è¯­è¨€</a></li>
+				<li class="subnav__item"> <a class="sublink" href="" target="_blank" title="Javaè¯­è¨€">Javaè¯­è¨€</a> </li> 
+			</ul>
 		</li>
-		<li>
-			<a>×¦ÍİÓïÑÔ</a>
-			<span>JAVA</span>
+		<li class="nav__item"><a class="link" href="" target="_blank" rel="nofollow" title="è®¡ç®—æœº">è®¡ç®—æœº</a>
+			<ul class="subnav">
+				<li class="subnav__item cur"> <a class="sublink" title="è®¡ç®—æœºç»„æˆåŸç†">ç»„æˆåŸç†</a>
+			</ul>
 		</li>
-		<li class="current">
-			<a>CÓïÑÔ</a>
-			<span>C LANGUAGE</span>
-		</li>
-		<li>
-			<a>ºóĞø²¹³ä</a>
-			<span>CONTINUE</span>
-		</li>
-</nav>
+		<li class="nav__item"><a class="link" href="" title="æ­£åœ¨æ›´æ–°">å°šæœªæ›´æ–°</a></li>
+	</nav> 
+</div> 
+</header>
 <div id="background">
-	<h1>CÓïÑÔ</h1>
+	<h4 class="subpage_title">Cè¯­è¨€</h4>
 </div>
+<h6 class="nav_map"><img alt="" src="../img/position.png"><a href="">ç½‘ç«™é¦–é¡µ</a>>><a href="">ç¼–ç¨‹è¯­è¨€</a>>><a href="">Cè¯­è¨€</a></h6>
 <div class="content">
-<h2>µÚ°ËÕÂ Ö¸Õë(1)</h2>
-<ul><li>64.Ö¸ÕëÊı×éºÍ¶àÖØÖ¸Õë</li></ul>
-<pre class="line-numbers"><code class="lang-c">//¶ÔÒ»¸ö×Ö·ûĞÍÊı×éÖ¸ÕëÊı×éÅÅĞò
+<h1>ç¬¬å…«ç«  æŒ‡é’ˆ(1)</h1>
+<ul><li>64.æŒ‡é’ˆæ•°ç»„å’Œå¤šé‡æŒ‡é’ˆ</li></ul>
+<pre class="line-numbers"><code class="lang-c">//å¯¹ä¸€ä¸ªå­—ç¬¦å‹æ•°ç»„æŒ‡é’ˆæ•°ç»„æ’åº
 #include &lt;stdio.h&gt;
 #include &lt;string.h&gt;
 void show(char *a[4],int len)
@@ -69,13 +70,13 @@ int main(void)
 	show(a,4);
 	return 0;
 }</code></pre>
-<ul><li>65.Ö¸ÕëÊı×é×ömainº¯ÊıĞÎ²Î</li></ul>
-<p>1.mainº¯ÊıÎŞ²ÎÊ±£¬µ÷ÓÃmainº¯ÊıÊ±²»±Ø¸ø³öÊµ²Î</p>
-<p>2.mainº¯Êı¿ÉÒÔ´ø²Î£¬ÀıÈçint main(<span style="color:red">int argc,char*argv[]</span>)</p>
-<p>argcºÍargvÊÇmainº¯ÊıµÄĞÎ²Î£¬ËüÃÇÊÇ³ÌĞòµÄ"ÃüÁîĞĞ²ÎÊı"</p>
-<p>argc±íÊ¾²ÎÊı¸öÊı£¬argv±íÊ¾²ÎÊıÏòÁ¿£¬ËüÊÇÒ»¸öÖ¸Ïò×Ö·ûÖ¸ÕëµÄÖ¸Õë±äÁ¿£¬ÆäÃ¿Ò»¸öÔªËØÖ¸ÏòÒ»¸ö×Ö·û´®</p>
-<p>3.Ò»¸ö´ø²Îmainº¯Êı³ÌĞòµÄÔËĞĞ</p>
-<pre class="line-numbers"><code class="lang-c">//¸Ã³ÌĞò¹¦ÄÜ Êä³öargvÖĞÔªËØµÄÄÚÈİ
+<ul><li>65.æŒ‡é’ˆæ•°ç»„åšmainå‡½æ•°å½¢å‚</li></ul>
+<p>1.mainå‡½æ•°æ— å‚æ—¶ï¼Œè°ƒç”¨mainå‡½æ•°æ—¶ä¸å¿…ç»™å‡ºå®å‚</p>
+<p>2.mainå‡½æ•°å¯ä»¥å¸¦å‚ï¼Œä¾‹å¦‚int main(<span style="color:red">int argc,char*argv[]</span>)</p>
+<p>argcå’Œargvæ˜¯mainå‡½æ•°çš„å½¢å‚ï¼Œå®ƒä»¬æ˜¯ç¨‹åºçš„"å‘½ä»¤è¡Œå‚æ•°"</p>
+<p>argcè¡¨ç¤ºå‚æ•°ä¸ªæ•°ï¼Œargvè¡¨ç¤ºå‚æ•°å‘é‡ï¼Œå®ƒæ˜¯ä¸€ä¸ªæŒ‡å‘å­—ç¬¦æŒ‡é’ˆçš„æŒ‡é’ˆå˜é‡ï¼Œå…¶æ¯ä¸€ä¸ªå…ƒç´ æŒ‡å‘ä¸€ä¸ªå­—ç¬¦ä¸²</p>
+<p>3.ä¸€ä¸ªå¸¦å‚mainå‡½æ•°ç¨‹åºçš„è¿è¡Œ</p>
+<pre class="line-numbers"><code class="lang-c">//è¯¥ç¨‹åºåŠŸèƒ½ è¾“å‡ºargvä¸­å…ƒç´ çš„å†…å®¹
 #include &lt;stdio.h&gt;
 int main(int argc,char *argv[])
 {
@@ -85,7 +86,7 @@ int main(int argc,char *argv[])
 	}
 	return 0;
 }</code></pre>
-<ul><li>66.voidÖ¸Õë</li></ul>
+<ul><li>66.voidæŒ‡é’ˆ</li></ul>
 <pre class="line-numbers"><code class="lang-c">#include &lt;stdio.h&gt;
 int main(void)
 {
@@ -95,13 +96,21 @@ int main(void)
 	char ch = '0',*p2;
 	p2 = &ch;
 
-	void *p3 = (void *)p1; //Ò²¿ÉÒÔĞ´³Évoid *p3 =p1;ÒòÎªÆäËûÖ¸ÕëºÍvoid*ÀàĞÍµÄÖ¸Õë·¢ÉúÏà»¥¸³ÖµÊ±¡£»á½øĞĞÒşÊ½Êı¾İÀàĞÍ×ª»»
+	void *p3 = (void *)p1; //ä¹Ÿå¯ä»¥å†™æˆvoid *p3 =p1;å› ä¸ºå…¶ä»–æŒ‡é’ˆå’Œvoid*ç±»å‹çš„æŒ‡é’ˆå‘ç”Ÿç›¸äº’èµ‹å€¼æ—¶ã€‚ä¼šè¿›è¡Œéšå¼æ•°æ®ç±»å‹è½¬æ¢
 //	p2 = p1;
-// printf("%d\n",*p3);  errorÒòÎªp3²»ÊÇvoid *ÀàĞÍ£¬²»Ö¸ÏòÈ·¶¨ÀàĞÍµÄÖ¸Õë£¬ËùÒÔÎŞ·¨Í¨¹ı*p3À´·ÃÎÊ±äÁ¿a
+// printf("%d\n",*p3);  errorå› ä¸ºp3ä¸æ˜¯void *ç±»å‹ï¼Œä¸æŒ‡å‘ç¡®å®šç±»å‹çš„æŒ‡é’ˆï¼Œæ‰€ä»¥æ— æ³•é€šè¿‡*p3æ¥è®¿é—®å˜é‡a
 
 p3=p2;
 printf("%d\n",*(char*)p3);
 return 0;
 }</code></pre>
 </div>
+<footer>
+<a href="" title="ç½‘ç«™é¦–é¡µ">ç½‘ç«™é¦–é¡µ</a>|
+<a href="" title="ç¼–ç¨‹è¯­è¨€">ç¼–ç¨‹è¯­è¨€</a>|
+<a href="" title="è®¡ç®—æœº">è®¡ç®—æœº</a>|
+<a href="" title="å°šæœªæ›´æ–°">å°šæœªæ›´æ–°</a>
+<h5>Copyright &copy; 2021   Passwordgloo    All rights reserved.</h5>
+</footer>
 </body>
+</html>

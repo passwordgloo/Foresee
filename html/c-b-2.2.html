@@ -13,33 +13,34 @@
     <script src="../js/prism.js"></script>
 	<script src="../js/clickstyle.js"></script>
 </head>
-<body leftmargin= "0 " topmargin= "0 " rightmargin= "0 " marginwidth= "00 " marginheight= "0 ">
-
-<nav>
-	<div class="logo"><img src="../img/logo2.png"></div>
-	<ul>
-		<li>
-		<a>网站首页</a>
-			<span>Home</span>
+<body>
+<header class="header header_fixed">
+<div class="inner"> 
+	<nav class="nav">
+	<img class="white" src="../img/logo_white.png" alt="预见" title="预见"><img class="black" alt="预见" src="../img/logo_black.png">
+		<li class="nav__item cur"><a class="link" href="" title="网站首页">网站首页</a></li> 
+		<li class="nav__item"> <a class="link" href="" title="编程语言">编程语言</a>
+			<ul class="subnav">
+				<li class="subnav__item cur"> <a class="sublink" title="C语言">C语言</a> </li>              <!-- cur用在当前位置 -->
+				<li class="subnav__item"> <a class="sublink" href="" target="_blank" title="C++语言">C++语言</a></li>
+				<li class="subnav__item"> <a class="sublink" href="" target="_blank" title="Java语言">Java语言</a> </li> 
+			</ul>
 		</li>
-		<li>
-			<a>爪洼语言</a>
-			<span>JAVA</span>
+		<li class="nav__item"><a class="link" href="" target="_blank" rel="nofollow" title="计算机">计算机</a>
+			<ul class="subnav">
+				<li class="subnav__item cur"> <a class="sublink" title="计算机组成原理">组成原理</a>
+			</ul>
 		</li>
-		<li class="current">
-			<a>C语言</a>
-			<span>C LANGUAGE</span>
-		</li>
-		<li>
-			<a>后续补充</a>
-			<span>CONTINUE</span>
-		</li>
-</nav>
+		<li class="nav__item"><a class="link" href="" title="正在更新">尚未更新</a></li>
+	</nav> 
+</div> 
+</header>
 <div id="background">
-	<h1>C语言</h1>
+	<h4 class="subpage_title">C语言</h4>
 </div>
+<h6 class="nav_map"><img alt="" src="../img/position.png"><a href="">网站首页</a>>><a href="">编程语言</a>>><a href="">C语言</a></h6>
 <div class="content">
-<h2>第二章 算法——程序的灵魂(2)</h2>
+<h1>第二章 算法——程序的灵魂(2)</h1>
 <ul><li>17.1求素数</li></ul>
 <pre class="line-numbers"><code class="lang-c">#include &lt;stdio.h&gt;
 #include <math.h>
@@ -96,5 +97,12 @@ int main()
 	return 0;
 }</code></pre>
 </div>
+<footer>
+<a href="" title="网站首页">网站首页</a>|
+<a href="" title="编程语言">编程语言</a>|
+<a href="" title="计算机">计算机</a>|
+<a href="" title="尚未更新">尚未更新</a>
+<h5>Copyright &copy; 2021   Passwordgloo    All rights reserved.</h5>
+</footer>
 </body>
 </html>

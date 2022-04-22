@@ -1,0 +1,11 @@
+
+#background{
+			padding:0;
+			margin:0;
+			width:inherit;
+			height:400px;
+			background:url(../img/background_c.jpg) no-repeat;
+			background-size:cover;
+			}
+.subpage_title{text-align:center;color:#fff;font-size:48px;font-family:'Microsoft YaHei';padding-top:280px;}
+ul{list-style-image:url(../img/list_c.png);}

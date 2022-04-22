@@ -1,22 +1,143 @@
-﻿<!-- 全局样式-->
-body,h1,h2,h3,h4,h5,h6,p,ul,li,ol,dl,dt,div,input,textarea,img,select,a,html{margin:0;padding:0;}
-a{text-decoration:none;}
+﻿/* 全局样式 */
+body,h1,h2,h3,h4,h5,h6,p,ul,li,ol,dl,dt,,dd,div,input,textarea,img,select,html,img{margin:0;padding:0;}
 
-nav{width:1000px;height:80px;margin:0 auto;padding:0;}
-nav .logo{width:302px;float:left;}
-nav .logo img{margin-top:10px;}
-nav ul{float:right;}                                                                                  /*让ul整体到右侧*/
-nav ul li{float:left;text-align:center;height:80px;padding:0 10px;cursor:pointer;list-style:none;}   /*横过来*/
-nav ul li a{margin-top:24px;color:#666;display:inline-block;font-weight:bold;}
-nav ul li span{display:block;overflow:hidden;margin-top:10px;font-family:"Aria";font-size:12px;color:#999;}
-nav ul li:hover,
-nav ul li.current{background:#ff003c;}
-nav ul li.current a,
-nav ul li.current span{color:#fff;}
-nav ul li:hover a,
-nav ul li:hover span{color:#fff;}
+body{background:#f6f6f6;margin:0;}
+html{cursor:url(../img/feather.ico),auto;}
 
-table{border-collapse:collapse;margin:0 auto;}
+/*滚动条*/
+::-webkit-scrollbar {width: 10px;height: 4px;} /* 滚动条宽 */
+::-webkit-scrollbar-thumb {border-radius:10px;background-color:skyblue;    /* 滚动条 拖动条 */
+	background-image:-webkit-linear-gradient(
+	  45deg,
+      rgba(255, 255, 255, 0.2) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.2) 50%,
+      rgba(255, 255, 255, 0.2) 75%,
+      transparent 75%,
+      transparent
+  );
+}
+::-webkit-scrollbar-track { /* 滚动条背景槽 */
+  /*滚动条里面轨道*/
+  box-shadow   : inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background   : #ededed;
+  border-radius: 10px;
+}
+
+.header{                                                /*cur表示当前所选项*/
+	position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: .3s ease
+}
+/* 滚动效果 */
+.header:hover,.header_fixed{
+        background-color: rgba(255,255,255,1);
+		box-sizing:border-box;
+		border-bottom:1px solid #ddd;
+		box-shadow:#ddd 0 -8px 20px;
+    }
+.header:hover .nav .nav__item .link,
+.header_fixed .nav .nav__item .link{color:#000;}
+
+.header a{
+		text-decoration:none;
+		display: inline-block;
+		font-size: 14px;
+		color:#fff;
+        padding: 0 10px;
+        line-height: 64px;
+    }
+.header .nav__item{
+        position: relative;
+        margin-left: 2.5%;
+    }
+.header .nav__item:after{
+            background-color:#ff003c;
+        }
+.header .nav__item:hover .subnav{
+                display: block;
+                -webkit-animation: subNav .3s ease both;
+                        animation: subNav .3s ease both;
+            }
+.inner{
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+.header .nav{
+        width:100%;
+        text-align: right;
+        white-space: nowrap;
+    }
+.nav__item{
+    position: relative;
+    display: inline-block
+}
+.nav__item:after{
+        opacity: 0;
+        position: absolute;
+        content: "";
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 3px;
+        transform: scaleX(0);
+        transition: all .4s ease;
+    }
+.nav__item.cur:after,.nav__item:hover:after{
+        opacity: 1;
+        transform: scaleX(1);
+    }
+.nav{
+    font-size: 0;
+}
+.white,.black{float: left;margin:14px 0;
+}
+.header .black{display:none;}
+.header:hover .white,.header_fixed .white{display:none;}
+.header:hover .black,.header_fixed .black{display:block;}
+.subnav{
+    position: absolute;
+	display:none;
+    z-index: 2;
+    top: 64px;
+    left: 50%;
+    margin-left:-50px;
+	padding-left:0;
+    width: 100px;
+    overflow: hidden;
+    border-radius: 0 0 8px 8px;
+    text-align: center;
+    background-color: rgba(255,255,255,1);
+}
+.subnav .subnav_item{
+        cursor:pointer;
+        width: 100%
+		list-style:none;
+    }
+.subnav .subnav__item+.subnav__item{
+            border-top:1px solid rgba(221,221,221,1);
+        }
+.subnav .sublink{
+        color: #666666;
+        line-height: 40px
+    }
+.subnav .sublink:hover{
+          color: #ff003c;
+        }
+
+.void{width:inherit;height:600px;}
+
+.nav_map{padding:20px 0 20px 63px;margin:0 0 24px;font-weight:normal;font-size:16px;background-color:#fff;border-bottom:1px solid #ddd;box-shadow:rgba(222,222,222,0.4) 0 8px 40px;}
+.nav_map img{vertical-align:middle;}
+.nav_map a{text-decoration:none;color:#333;margin:0 6px;vertical-align:middle;}
+.nav_map a:hover{text-decoration:underline;}
+
+table{border-collapse:collapse;margin:0 auto;margin-bottom:30px;}
 caption{color:rgb(55,55,55);font-weight:bold;font-family:"黑体";font-size:16px;margin:20px 0 10px 0;}
 #table-1 thead,#table-1 th,#table-1 td{border:4px solid rgb(255,255,255);}        /*表格样式-1*/
 #table-1 td,#table-1 th{padding:10px 15px;}
@@ -61,10 +182,49 @@ caption{color:rgb(55,55,55);font-weight:bold;font-family:"黑体";font-size:16px
 #table-7 tr:nth-child(even){background:#e2efda;}
 #table-7 tr:nth-child(odd){background:#c6e0b4;}
 
-h1{font-family:"微软雅黑";font-size:50px;padding:90px 0px 20px 40px;}                                             /*网页标题*/
-h2{font-size:30px;font-family:"微软雅黑";color:black;text-align:center;font-weight:bold;margin:70px 0 10px 0;}    /*正文标题*/
-p,dd{font-family:"黑体";line-height:1em;letter-spacing:0em;text-indent:2em;margin-top:1em;}                       /*段落格式*/
+.content{width:1000px;margin:0 auto;}
+ol{ list-style: none;counter-reset: nested-counter;}                           /*初始化css计数器*/
+ol li { counter-increment: nested-counter;line-height:1.6;}                    /*定义css计数器每次递增的值*/
+ol li:before{content: counters(nested-counter, ".") ;font-weight: bold;margin-right:.5em;}
+h1,.h1{font-size:28px;color:#333;text-align:center;font-weight:bold;margin:40px 0 30px;}      
+h2,.h2{color:#555;font-size:24px;margin:6px 0;text-align:left;}
+h3,.h3{color:#666;font-size:20px;margin-left:1em;text-align:left;}
+li p,p,dd{font-size:16px;color:#6c6c6c;line-height:1.5em;letter-spacing:0em;font-weight:normal;margin:5px 0;padding:0 1em;}                   /*段落格式*/
 .imgcenter{text-align:center;margin:0 auto;}
-.content ul li{font-size:20px;font-family:"微软雅黑"color:#999999;padding-top:20px;}                              /*列表样式*/  
-dt(color:red;)
+.content ul li{font-size:20px;color:#555;padding-top:20px;}                             /*列表样式*/
 
+.define::before{content:"定理";display:block;width:inherit;padding:5px 0;border-radius:15px 15px 0 0;background-image:linear-gradient(to right,#ff003c, #FA007F,#D329BC,#805AE9);color:#fff;font-family:'Microsoft YaHei';text-align:center;font-size:16px;font-weight:normal;}
+.define{width:inherit;background-color:#fff;margin-bottom:10px;padding-bottom:10px;border-radius:20px;}
+.couclude::before{content:"推论";display:block;width:inherit;padding:5px 0;border-radius:15px 15px 0 0;background-image:linear-gradient(to right,#EFD4FF, #FA007F,#B9C0F3,#79ADDE);color:#fff;font-family:'Microsoft YaHei';text-align:center;font-size:16px;font-weight:normal;}
+.conclude{width:inherit;background-color:#fff;margin:0 auto;margin-bottom:30px;padding-bottom:10px;border-radius:20px;}
+
+.card{float:left;margin:0 10px 30px;width:180px;height:260px;cursor:pointer;position:relative;perspective:500;-webkit-perspective:500;}     /*perspective可以使得子元素暂时透明，实现展示一面*/
+.card img{max-width:100%;}
+.card-front,.card-back{position:absolute;top:0;left:0;width:100%;height:100%;background-color:#fff;margin:0px;perspective:1000;-webkit-perspective:1000;backface-visibility:hidden;-webkit-transition:all 1.5s;-moz-transition:all 1.5s;-ms-transition:all 1.5s;-0-transition:all 1.5s;border-radius:6px;overflow:hidden;}    /*backface-visibility:hidden 当元素不面向屏幕时是否可见*/
+.card:hover .card-front{transform:rotateY(-180deg);-webkit-tranform:rotateY(-180deg);box-shadow:rgba(50,50,50,.2) 0 0 15px;}                        /*卡片翻转动画*/
+.card:hover .card-back{transform:rotateY(-360deg);-webkit-transform:rotateY(-360deg);box-shadow:rgba(50,50,50,.2) 0 0 15px;}
+div:nth-last-child(2)::after{content:"";display:block;clear:both;}
+.card dd{text-align:center;font-family:"微软雅黑";}
+.card .card-title{margin:2px 0;font-size:18px;color:#555;line-height:32px;text-indent:0;font-weight:bold;}
+.card .card-describ{padding:0 12px;margin:4px 0;font-size:14px;color:#666;text-indent:0;}
+
+.card-norotate{float:left;margin:0 30px 20px;width:180px;height:240px;cursor:pointer;background-color:#fff;border-radius:12px;text-align:center;}
+.card-norotate img{max-width:100%;border-radius:12px 12px 0 0;}
+.card-norotate span{display:inline-block;margin-top:10px;font-size:18px;color:#666;}
+.card-norotate:hover{box-shadow:0px 0px 15px #666;}
+
+
+
+
+footer{border-top:1px solid #ddd;box-shadow:rgba(222,222,222,0.4) 0 -8px 40px;margin-top:60px;background-color:#fff;text-align:center;color:#666}
+footer a{display:inline-block;margin:40px 30px 30px;font-size:16px;text-decoration:none;color:#666}
+footer a:hover{color:#ff003c;}
+footer h5{font-size:12px;font-weight:normal;color:#999;margin:0px;padding-bottom:30px;}
+
+
+/*--------------------------------------------------------------
+	网易云音乐
+iframe{border:0;marginwidth:0;marginheight:0;width:100%;auto:1;}
+#single{height:10px}
+#list{height:}
+--------------------------------------------------------------*/
