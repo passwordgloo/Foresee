@@ -1,0 +1,268 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, inital-scale:1.0">
+	<meta name="description" content="预见更好的自己">
+	<title>离散数学</title>
+	<link rel="shortcut icon" href="../img/main/logo.ico">
+	<link rel="stylesheet" href="../css/course.css">
+	<link rel="stylesheet" href="../css/main.css">
+	<script src="../js/jquery-3.6.0.js"></script>
+	<script>MathJax = {
+			tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			},
+			svg: {
+				fontCache: 'global'
+			}
+		};
+	</script>
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script type="text/javascript" id="MathJax-script" async
+		src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+	<canvas class="fireworks"></canvas>
+	<script type="text/javascript" src="../js/fireworks.js"></script>
+	<script src="../js/style.js"></script>
+</head>
+
+<body>
+	<header>
+		<nav style="text-align:right">
+			<img id="logo" src="../img/main/logo.svg" alt="预见" title="预见"
+				onclick="window.open('../html/index.html','_self')">
+			<li class="nav__item"><a class="link" id="link_1" href="../html/index.html" title="网站首页">网站首页</a></li>
+			<li class="nav__item"> <a class="link" href="../html/education.html" title="教育学">教育学</a>
+				<ul class="subnav">
+					<li class="subnav__item"> <a class="sublink" href="../html/list-education.html"
+							title="教育学原理">教育学原理</a>
+					</li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-china.html" title="中国教育史">中国教育史</a>
+					</li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-foreign.html"
+							title="外国教育史">外国教育史</a>
+					</li>
+					<li class="subnav__item"> <a class="sublink" title="教育心理学"
+							href="../html/list-edu_psychology.html">教育心理学</a> </li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-psychology.html"
+							title="儿童心理学">儿童心理学</a>
+					</li>
+				</ul>
+			</li>
+			<li class="nav__item"> <a class="link" id="link_2" href="../html/language.html" title="编程语言">编程语言</a>
+				<ul class="subnav" id="subnav_1">
+					<li class="subnav__item"> <a class="sublink" title="C语言" href="../html/list-c.html">C语言</a> </li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-java.html" title="Java语言">Java语言</a>
+					</li>
+				</ul>
+			</li>
+			<li class="nav__item"><a class="link" id="link_3" href="../html/computer.html" rel="nofollow"
+					title="计算机">计算机</a>
+				<ul class="subnav" id="subnav_2">
+					<li class="subnav__item"> <a class="sublink" href="../html/list-composition.html"
+							title="计算机组成原理">组成原理</a>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-network.html"
+							title="计算机网络">计算机网络</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-structure.html" title="数据结构">数据结构</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-system.html" title="操作系统">操作系统</a>
+				</ul>
+			</li>
+			<li class="nav__item cur"><a class="link" id="link_4" href="../html/course.html" title="学科课程">学科课程</a>
+				<ul class="subnav" id="subnav_3">
+					<li class="subnav__item"><a class="sublink" href="../html/list-discrete.html" title="离散数学">离散数学</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-advance.html" title="高等数学">高等数学</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-politics.html" title="考研政治">考研政治</a>
+					<li class="subnav__item"><a class="sublink" href="../html/progress.html" title="学习进程">学习进程</a>
+				</ul>
+			</li>
+			<li class="nav__item"><a class="link" id="link_5" href="../html/software.html" title="软件应用">软件应用</a>
+				<ul class="subnav" id="subnav_4">
+					<li class="subnav__item"><a class="sublink" href="../html/list-excel.html" title="电子表格">电子表格</a>
+				</ul>
+			</li>
+			<input class="textbox" id="searchstr" type="text" size="10" name="searchstr" title="输入关键字查找当前页面">
+		</nav>
+	</header>
+	<div id="DiscreteBackground">
+		<h4 class="SubpageTitleWhite">离散数学</h4>
+	</div>
+	<div class="rocket" id="gotoTop"><img
+			src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/main/rocket-red.svg" alt=""></div>
+	<div id="menu">
+		<div id="MenuLink">
+			<a href=#1.1.1>集合</a>
+			<a href=#1.1.2>基数</a>
+			<a href=#1.2.1>集合的类型</a>
+			<a href=#1.2.2>子集与真子集</a>
+			<a href=#1.2.3>幂集</a>
+			<a href=#1.3.1>并集</a>
+			<a href=#1.3.2>交集</a>
+			<a href=#1.3.3>补集</a>
+			<a href=#1.3.4>差集</a>
+			<a href=#1.3.5>对称差集</a>
+		</div>
+	</div>
+
+	<article>
+		<img alt="" src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/top.png" class="top"
+			id="gotoTop">
+		<ol>
+			<li class="h1">集合论基础（1）
+				<ol>
+					<li class="h2">集合的初见
+						<ol>
+							<li class="h3" id="1.1.1">集合</li>
+							<div class="name">
+								<div class="define">集合</div>
+								<div class="Content">
+									<dd class="none"><span
+											style="color:var(--pink)">集合</span>是由特定范围内的满足给定条件的所有对象聚集在一起构成，每一个对象称为这个集合的
+										<span style="color:var(--pink)">元素</span></dd>
+								</div>
+							</div>
+							<div class="name">
+								<div class="tip">集合的符号表示</div>
+								<div class="Content">
+									<dd class="mark">$用带或不带下标的{\color{#FF00FF} 大写}英文字母表示{\color{Green}
+										集合}：A,B,C\cdots,A_1,B_1,C_1\cdots$</dd>
+									<dd class="mark">$用带或不带下标的{\color{#FF00FF} 小写}英文字母表示{\color{Green}
+										元素}：a,b,c\cdots,a_1,b_1,c_1\cdots$</dd>
+								</div>
+							</div>
+							<div class="name">
+								<div class="define">属于关系</div>
+								<div class="Content">
+									<dd class="mark">$若a是集合A中的元素，则称a属于A，则称a{\color{Green} 属于} A,记为a\in A$</dd>
+									<dd class="mark">$若a不是集合A中的元素，则称a属于A，则称a{\color{Green} 不属于} A,记为a\notin A$</dd>
+								</div>
+							</div>
+							<li class="h3" id="1.1.2">基数</li>
+							<div class="name">
+								<div class="define">基数</div>
+								<div class="Content">
+									<dd class="none">集合A中的元素个数称为集合的 <span style="color:var(--green)">基数</span>，记作|A|
+									</dd>
+									<p><img
+											src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/main/warning.png">若一个集合的基数是有限的。则该集合为
+										<span style="color:var(--green)">有限集</span> </p>
+									<p><img
+											src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/main/warning.png">若一个集合的基数是无限的。则该集合为
+										<span style="color:var(--green)">无限集</span> </p>
+								</div>
+							</div>
+						</ol>
+					</li>
+					<li class="h2"> 特殊集合与集合间关系
+						<ol>
+							<li class="h3" id="1.2.1">集合的类型</li>
+							<div class="name">
+								<div class="tip">集合的类型</div>
+								<div class="Content">
+									<dd class="mark">不含任何元素的集合叫做 <span
+											style="color:var(--green)">空集</span>，记作$\varnothing$或者{ }</dd>
+									<dd class="mark">所有对象的集合叫做<span style="color:var(--green)">全集</span>记作 $U或E.$</dd>
+								</div>
+							</div>
+							<li class="h3" id="1.2.2">子集与真子集</li>
+							<div class="name">
+								<div class="define">子集与真子集</div>
+								<div class="Content">
+									<dd class="none">集合B中元素都是A中的元素，称B是A的 ${\color{#FF00FF}子集}，记作B\subseteq
+										A,否则记作B\not\subseteq A$</dd>
+									<dd class="none">$如果B\subseteq A且A\ne B,称B是A的{\color{#FF00FF}真子集},记作B\subset
+										A,否则记作B\not\subset A$</dd>
+								</div>
+							</div>
+							<div class="name">
+								<div class="conclude">子集推论</div>
+								<div class="Content">
+									<dd class="mark">$\varnothing \subseteq A,A\subseteq A$</dd>
+									<dd class="mark">$C\subseteq D,D\subseteq C\Leftrightarrow C=D$</dd>
+									<p><img
+											src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/main/warning.png">n元集合A的子集个数为
+										$2^n$</p>
+								</div>
+							</div>
+							<li class="h3" id="1.2.3">幂集</li>
+							<div class="name">
+								<div class="define">幂集</div>
+								<div class="Content">
+									<dd class="none">集合A的所有不同子集构成的集合叫做A的<span style="color:var(--green)">幂集</span>,记作
+										$P(A),$即$$P(A) = \{x|x \subseteq A\}\Leftrightarrow x\in P(A)$$</dd>
+								</div>
+							</div>
+						</ol>
+					</li>
+					<li class="h2">集合的运算
+						<ol>
+							<li class="h3" id="1.3.1">并集</li>
+							<div class="name">
+								<div class="define">并集</div>
+								<div class="Content">
+									<dd class="none">$\displaylines{设集合A,B是两个集合,则集合A与B的{\color{#FF00FF} 并集}定义为\quad
+										A\cup B=\{x|x\in A或x\in B\}}$</dd>
+								</div>
+							</div>
+							<li class="h3" id="1.3.2">交集</li>
+							<div class="name">
+								<div class="define">交集</div>
+								<div class="Content">
+									<dd class="none">$\displaylines{设集合A,B是两个集合,则集合A与B的{\color{#FF00FF} 交集}定义为\quad
+										A\cap B=\{x|x\in A并且x\in B\}}$</dd>
+								</div>
+							</div>
+							<li class="h3" id="1.3.3">补集</li>
+							<div class="name">
+								<div class="define">补集</div>
+								<div class="Content">
+									<dd class="none">$\displaylines{设U是全集，则集合A的{\color{#FF00FF} 补集}定义为\quad
+										\overline{A}=\{x|x\notin A\}}$</dd>
+								</div>
+							</div>
+							<li class="h3" id="1.3.4">差集</li>
+							<div class="name">
+								<div class="define">差集</div>
+								<div class="Content">
+									<dd class="none">$\displaylines{设集合A,B是两个集合,则集合A与B的{\color{#FF00FF} 差集}定义为\quad
+										A-B=\{x|x\in A并且x\notin B\}}$</dd>
+								</div>
+							</div>
+							<li class="h3" id="1.3.5">对称差集</li>
+							<div class="name">
+								<div class="define">对称差集</div>
+								<div class="Content">
+									<dd class="none">$\displaylines{设集合A,B是两个集合,则集合A与B的{\color{#FF00FF}
+										对称差集}定义为\\A\oplus B=\{x|(x\in A并且x\notin B)或者(x|x\notin A并且x\in B\}}$</dd>
+								</div>
+							</div>
+						</ol>
+					</li>
+				</ol>
+			</li>
+		</ol>
+		</div>
+		<div id="button_group">
+			<button class="custom-btn btn-13" id="unable">
+				<span>上一页</span>
+			</button>
+			<button class="custom-btn btn-13" onclick="window.open('../html/list-discrete.html','_self')">
+				<span>目录</span>
+			</button>
+			<button class="custom-btn btn-13" onclick="window.open('../html/discrete-2.html','_self')">
+				<span>下一页</span>
+			</button>
+		</div>
+		<footer>
+			<a href="../html/index.html" title="网站首页">网站首页</a>|
+			<a href="../html/education.html" title="教育学">教育学</a>|
+			<a href="../html/language.html" title="编程语言">编程语言</a>|
+			<a href="../html/computer.html" title="计算机">计算机</a>|
+			<a href="../html/course.html" title="学科课程">学科课程</a>|
+			<a href="../html/software.html" title="软件应用">软件应用</a>
+			<h5>Copyright &copy; 2022 Passwordgloo All rights reserved.</h5>
+		</footer>
+</body>
+
+</html>

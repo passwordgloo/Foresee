@@ -1,0 +1,150 @@
+.section{
+    text-align:center;
+    overflow: hidden;
+}
+
+#myVideo{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    background-color: black; /* in case the video doesn't fit the whole page*/
+    /* background-image: ; */
+    background-position: center center;
+    background-size: contain;
+    object-fit: cover; /*cover video background */
+    z-index:3;
+}
+
+/* Layer with position absolute in order to have it over the video
+* --------------------------------------- */
+#section0 .layer{
+    position: absolute;
+    z-index: 4;
+    width: 100%;
+    left: 0;
+    top: 0;
+
+    /*
+    * Preventing flicker on some browsers
+    * See http://stackoverflow.com/a/36671466/1081396  or issue #183
+    */
+    -webkit-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+
+/*solves problem with overflowing video in Mac with Chrome */
+#section0{
+    overflow: hidden;
+}
+
+/* Hiding video controls
+* See: https://css-tricks.com/custom-controls-in-html5-video-full-screen/
+* --------------------------------------- */
+video::-webkit-media-controls {
+    display:none !important;
+}
+
+#typed::before{
+	content: "";
+	display: block;
+	margin-top: 5em;
+}
+
+#typed {
+	text-align: center;
+	color: #fff;
+	font-size: 48px;
+	font-family: 'Microsoft YaHei';
+	font-weight: normal;
+	text-shadow: 2px 2px 16px #ff003c;
+	margin: 280px auto;
+    white-space: nowrap;
+    border-right: 4px solid transparent;
+    animation: typing 3.5s steps(20, end), blink-caret .75s step-end infinite;
+    overflow: hidden;
+}
+
+a {
+	font-weight: normal;
+	text-decoration: none;
+	font-size: medium;
+}
+
+a:hover {
+	color: #FF5b5b
+}
+
+header {
+	width: 100%;
+}
+
+header a {
+	display: inline-block;
+	color: white;
+	padding: 0 10px;
+	line-height: 64px;
+}
+
+header .nav__item {
+	position: relative;
+	margin: 0 1%;
+}
+
+header .nav__item:after {
+	background-color: #ff5b5b;
+}
+
+header .nav__item:hover .subnav {
+	display: block;
+	animation-name: subnav;
+	animation-duration: .3s;
+	animation-timing-function: ease;
+	animation-delay: 3s;
+	animation-fill-mode: both;
+}
+
+nav{
+    margin: 0 auto;
+    width:100%;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.nav__item {
+	position: relative;
+	display: inline-block;
+}
+
+.nav__item:after {
+	opacity: 0;
+	position: absolute;
+	content: "";
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 3px;
+	transform: scaleX(0);
+	transition: all .4s ease;
+}
+
+.nav__item.cur:after,.nav__item:hover:after {
+	opacity: 1;
+	transform: scaleX(1);
+}
+
+#logo {
+	float: left;
+	margin: 14px 40px;
+	-webkit-user-drag: none;
+	user-select: none;
+}
+
+#logo:hover {
+	cursor: url(../img/main/paperplane.ico),auto;
+}

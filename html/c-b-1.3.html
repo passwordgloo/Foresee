@@ -1,60 +1,90 @@
 ﻿<!DOCTYPE HTML>
 <html lang="zh-CN">
+
 <head>
-	<meta charset="utf-8">													  <!-- unicode8编码-->
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">                     <!-- ie兼容 -->
-	<meta name="viewport" content="width=device-width, inital-scale:1.0">     <!-- 响应式布局 -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>C语言</title>
-	<link rel="shortcut icon" href="../img/logo.ico"  type="image/x-icon" />
+	<link rel="shortcut icon" href="../img/main/logo.ico">
 	<link rel="stylesheet" href="../css/prism.css">
-	<link rel="stylesheet" href="../css/c.css">
+	<link rel="stylesheet" href="../css/language.css">
 	<link rel="stylesheet" href="../css/main.css">
-    <script src="../js/jquery-1.7.2.min.js"></script>
-    <script src="../js/prism.js"></script>
-	<script src="../js/style.js"></script>
+	<script src="../js/jquery-3.6.0.js"></script>
+	<script src="../js/prism.js"></script>
+	<script src="../js/toc-helper.js"></script>
 	<canvas class="fireworks"></canvas>
-	<script type="text/javascript" src="../js/fireworks.js"></script> 
+	<script type="text/javascript" src="../js/fireworks.js"></script>
 </head>
-<body id="body">
-<header class="header header_fixed">
-<div class="inner"> 
-	<nav class="nav">
-	<img class="white" src="../img/main/logo_white.png" alt="预见" title="预见"><img class="black" alt="预见" src="../img/main/logo_black.png">
-		<li class="nav__item"><a class="link" href="../html/index.html" title="网站首页">网站首页</a></li> 
-		<li class="nav__item cur"> <a class="link" href="../html/lang.html" title="编程语言">编程语言</a>
-			<ul class="subnav">
-				<li class="subnav__item cur"> <a class="sublink" title="C语言" href="../html/c.html">C语言</a> </li>              <!-- cur用在当前位置 -->
-				<li class="subnav__item"> <a class="sublink" href="" title="C++">C++</a></li>
-				<li class="subnav__item"> <a class="sublink" href="" title="Java语言">Java语言</a> </li> 
-			</ul>
-		</li>
-		<li class="nav__item"><a class="link" href="../html/computer.html" rel="nofollow" title="计算机">计算机</a>
-			<ul class="subnav">
-				<li class="subnav__item cur"> <a class="sublink" href="../html/co.html" title="计算机组成原理">组成原理</a>
-				<li class="subnav__item"> <a class="sublink" href="../html/network.html" title="计算机网络">计算机网络</a>
-				<li class="subnav__item"><a class="sublink" href="../html/structure.html" title="数据结构">数据结构</a>
-			</ul>
-		</li>
-		<li class="nav__item"><a class="link" href="../html/math.html" title="数学">数学</a>
-			<ul class="subnav">
-				<li class="subnav__item"><a class="sublink" href="../html/ls.html" title="离散数学">离散数学</a>
-				<li class="subnav__item"><a class="sublink" href="../html/gs.html" title="高等数学">高等数学</a>
-			</ul>
-		</li>
-		<input class="textbox" id="searchstr" type="text" size="10" name="searchstr" title="输入关键字查找当前页面">
-	</nav> 
-</div> 
-</header>
-<div id="background">
-	<h4 class="subpage_title">C语言</h4>
-</div>
-<h6 class="nav_map"><img alt="" src="../img/main/position.png"><a href="../html/index.html">网站首页</a>>><a href="../html/lang.html">编程语言</a>>><a>C语言</a>
-<div id="switch_module"><span style="color:#555">暗夜模式&nbsp;</span><div class="kaiguan" title="点击开启暗夜模式"><div class="white" id="botton"></div></div></div></h6>
-<div class="rocket" id="gotoTop"><img src="../img/main/rocket.svg" alt=""></div>
-<div id="content">
-<h1>第一章 程序设计和C语言（3）</h1>
-<ul><li>10.2初等运算符及单目运算符</li></ul>
-<pre class="line-numbers"><code class="lang-c">/*学习目标
+
+<body>
+	<header>
+		<nav style="text-align:right">
+			<img id="logo" src="../img/main/logo.svg" alt="预见" title="预见"
+				onclick="window.open('../html/index.html','_self')">
+			<li class="nav__item"><a class="link" id="link_1" href="../html/index.html" title="网站首页">网站首页</a></li>
+			<li class="nav__item"> <a class="link" href="../html/education.html" title="教育学">教育学</a>
+				<ul class="subnav">
+					<li class="subnav__item"> <a class="sublink" href="../html/list-education.html"
+							title="教育学原理">教育学原理</a>
+					</li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-china.html" title="中国教育史">中国教育史</a>
+					</li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-foreign.html"
+							title="外国教育史">外国教育史</a>
+					</li>
+					<li class="subnav__item"> <a class="sublink" title="教育心理学"
+							href="../html/list-edu_psychology.html">教育心理学</a> </li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-psychology.html"
+							title="儿童心理学">儿童心理学</a>
+					</li>
+				</ul>
+			</li>
+			<li class="nav__item cur"> <a class="link" id="link_2" href="../html/language.html" title="编程语言">编程语言</a>
+				<ul class="subnav" id="subnav_1">
+					<li class="subnav__item"> <a class="sublink" title="C语言" href="../html/list-c.html">C语言</a> </li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-java.html" title="Java语言">Java语言</a>
+					</li>
+				</ul>
+			</li>
+			<li class="nav__item"><a class="link" id="link_3" href="../html/computer.html" rel="nofollow"
+					title="计算机">计算机</a>
+				<ul class="subnav" id="subnav_2">
+					<li class="subnav__item"> <a class="sublink" href="../html/list-composition.html"
+							title="计算机组成原理">组成原理</a>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-network.html"
+							title="计算机网络">计算机网络</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-structure.html" title="数据结构">数据结构</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-system.html" title="操作系统">操作系统</a>
+				</ul>
+			</li>
+			<li class="nav__item"><a class="link" id="link_4" href="../html/course.html" title="学科课程">学科课程</a>
+				<ul class="subnav" id="subnav_3">
+					<li class="subnav__item"><a class="sublink" href="../html/list-discrete.html" title="离散数学">离散数学</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-advance.html" title="高等数学">高等数学</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-politics.html" title="考研政治">考研政治</a>
+					<li class="subnav__item"><a class="sublink" href="../html/progress.html" title="学习进程">学习进程</a>
+				</ul>
+			</li>
+			<li class="nav__item"><a class="link" id="link_5" href="../html/software.html" title="软件应用">软件应用</a>
+				<ul class="subnav" id="subnav_4">
+					<li class="subnav__item"><a class="sublink" href="../html/list-excel.html" title="电子表格">电子表格</a>
+				</ul>
+			</li>
+			<input class="textbox" id="searchstr" type="text" size="10" name="searchstr" title="输入关键字查找当前页面">
+		</nav>
+	</header>
+	<section>
+		<div id="toc">
+		</div>
+	</section>
+	<article data-toc="#toc">
+		<hgroup>
+			<h1>第一章 程序设计和C语言（3）</h1>
+		</hgroup>
+		<h2>10.初等运算符及单目运算符</h2>
+		<pre class="line-numbers" data-prismjs-copy='复制' data-prismjs-copy-error='按Ctrl+C复制'
+			data-prismjs-copy-success='成功复制！'>
+<code class="lang-c match-braces rainbow-braces">/*学习目标
 (1)概念理解：优先级、操作数、结合方向--初等运算符优先级为1，单目运算符优先级为2
 (2)只有单目运算符和赋值运算符的结合方向是自右往左的
 */
@@ -73,8 +103,10 @@ int main()
 	printf("%d\n",4*-3);            //乘号比负号的优先级低，括号可以省略
 	return 0;
 }</code></pre>
-<ul><li>11.算术运算符及赋值运算符</li></ul>
-<pre class="line-numbers"><code class="lang-c">//乘号，除号，取余运算符的优先级为3；加号，减号的优先级为4；赋值运算符的优先级为14.
+		<h2>11.算术运算符及赋值运算符</h2>
+		<pre class="line-numbers" data-prismjs-copy='复制' data-prismjs-copy-error='按Ctrl+C复制'
+			data-prismjs-copy-success='成功复制！'>
+<code class="lang-c match-braces rainbow-braces">//乘号，除号，取余运算符的优先级为3；加号，减号的优先级为4；赋值运算符的优先级为14.
 #include &lt;stdio.h&gt;
 int main()
 {
@@ -100,8 +132,10 @@ int main()
 	printf("%d\n",(a = b)=c);   //输出3
 	return 0;
 }</code></pre>
-<ul><li>12.逗号，关系及逻辑运算符</li></ul>
-<pre class="line-numbers"><code class="lang-c">/*
+		<h2>12.逗号，关系及逻辑运算符</h2>
+		<pre class="line-numbers" data-prismjs-copy='复制' data-prismjs-copy-error='按Ctrl+C复制'
+			data-prismjs-copy-success='成功复制！'>
+<code class="lang-c match-braces rainbow-braces">/*
 学习目标：
 (1)优先等级：逗号15(所有运算符中优先等级最低的)；逻辑与11，逻辑或12，不等于7，关系运算符(除了等于与不等于之外)6
 (2)在c语言中，优先级并不完全决定运算顺序；
@@ -134,8 +168,10 @@ int main()
 	printf("%d\n",((a+=1)+(a*=2)));
 	return 0;
 }</code></pre>
-<ul><li>13.条件运算符</li></ul>
-<pre class="line-numbers"><code class="lang-c">/*
+		<h2>13.条件运算符</h2>
+		<pre class="line-numbers" data-prismjs-copy='复制' data-prismjs-copy-error='按Ctrl+C复制'
+			data-prismjs-copy-success='成功复制！'>
+<code class="lang-c match-braces rainbow-braces">/*
 (1)条件运算符是c语言中唯一的三目运算符，其优先级为13
 (2)c语言中条件运算符的运算方向也是必须从左至右的
 */
@@ -217,187 +253,198 @@ void max(int a, int b)
 		printf("%d\n",b);
 */
 }</code></pre>
-<ul><li>13.1C语言关键字</li></ul>
-<table id="table-1">
-<caption>表2 C语言关键字</caption>
-<thead>
-	<th>序号</th>
-	<th>关键字</th>
-	<th>备注</th>
-	<th>序号</th>
-	<th>关键字</th>
-	<th>备注</th>
-</thead>
-<tbody>
-	<tr>
-		<td>1</td>
-		<td>auto</td>
-		<td></td>
-		<td>2</td>
-		<td>braak</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>3</td>
-		<td>case</td>
-		<td></td>
-		<td>4</td>
-		<td>char</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>5</td>
-		<td>const</td>
-		<td></td>
-		<td>6</td>
-		<td>continue</td>
-		<td></td>
-	</tr>
-		<td>7</td>
-		<td>default</td>
-		<td></td>
-		<td>8</td>
-		<td>do</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>9</td>
-		<td>double</td>
-		<td></td>
-		<td>10</td>
-		<td>else</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>11</td>
-		<td>enum</td>
-		<td></td>
-		<td>12</td>
-		<td>extern</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>13</td>
-		<td>float</td>
-		<td></td>
-		<td>14</td>
-		<td>for</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>15</td>
-		<td>goto</td>
-		<td></td>
-		<td>16</td>
-		<td>if</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>17</td>
-		<td style="color:red;font-weight:bold;">inline</td>
-		<td>C99新增</td>
-		<td>18</td>
-		<td>int</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>19</td>
-		<td>long</td>
-		<td></td>
-		<td>20</td>
-		<td style="color:red;font-weight:bold;">register</td>
-		<td>C99新增</td>
-	</tr>
-	<tr>
-		<td>21</td>
-		<td>restrict</td>
-		<td></td>
-		<td>22</td>
-		<td>return</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>23</td>
-		<td>short</td>
-		<td></td>
-		<td>24</td>
-		<td>signed</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>25</td>
-		<td>sizeof</td>
-		<td></td>
-		<td>26</td>
-		<td>static</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>27</td>
-		<td>struct</td>
-		<td></td>
-		<td>28</td>
-		<td>switch</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>29</td>
-		<td>typedef</td>
-		<td></td>
-		<td>30</td>
-		<td>union</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>31</td>
-		<td>unsigned</td>
-		<td></td>
-		<td>32</td>
-		<td>void</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>33</td>
-		<td>volatile</td>
-		<td></td>
-		<td>34</td>
-		<td>while</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>35</td>
-		<td style="color:red;font-weight:bold;">_bool</td>
-		<td>C99新增</td>
-		<td>36</td>
-		<td style="color:red;font-weight:bold;">_Complex</td>
-		<td>C99新增</td>
-	</tr>
-	<tr>
-		<td>37</td>
-		<td style="color:red;font-weight:bold;">_Imaginary</td>
-		<td>C99新增</td>
-	</tr>
-</tbody>
-</thead>
-</table>
-</div>
-<div id="button_group">
-      <button class="custom-btn btn-3">
-        <span onclick="window.open('../html/c-b-1.2.html','_self')">上一页</span>
-      </button>
-	   <button class="custom-btn btn-3" >
-        <span onclick="window.open('../html/c.html','_self')">目录</span>
-      </button>
-	   <button class="custom-btn btn-3">
-        <span onclick="window.open('../html/c-b-1.4.html','_self')">下一页</span>
-      </button>
-</div>
-<footer>
-<a href="../html/index.html" title="网站首页">网站首页</a>|
-<a href="../html/lang.html" title="编程语言">编程语言</a>|
-<a href="../html/computer.html" title="计算机">计算机</a>|
-<a href="../html/math.html" title="数学">数学</a>
-<h5>Copyright &copy; 2021   Passwordgloo    All rights reserved.</h5>
-</footer>
+		<h2>13.1C语言关键字</h2>
+		<table id="table-1">
+			<caption>表2 C语言关键字</caption>
+			<thead>
+				<th>序号</th>
+				<th>关键字</th>
+				<th>备注</th>
+				<th>序号</th>
+				<th>关键字</th>
+				<th>备注</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>auto</td>
+					<td></td>
+					<td>2</td>
+					<td>braak</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>case</td>
+					<td></td>
+					<td>4</td>
+					<td>char</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>const</td>
+					<td></td>
+					<td>6</td>
+					<td>continue</td>
+					<td></td>
+				</tr>
+				<td>7</td>
+				<td>default</td>
+				<td></td>
+				<td>8</td>
+				<td>do</td>
+				<td></td>
+				</tr>
+				<tr>
+					<td>9</td>
+					<td>double</td>
+					<td></td>
+					<td>10</td>
+					<td>else</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>11</td>
+					<td>enum</td>
+					<td></td>
+					<td>12</td>
+					<td>extern</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>13</td>
+					<td>float</td>
+					<td></td>
+					<td>14</td>
+					<td>for</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>15</td>
+					<td>goto</td>
+					<td></td>
+					<td>16</td>
+					<td>if</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>17</td>
+					<td style="color:red;font-weight:bold;">inline</td>
+					<td>C99新增</td>
+					<td>18</td>
+					<td>int</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>19</td>
+					<td>long</td>
+					<td></td>
+					<td>20</td>
+					<td style="color:red;font-weight:bold;">register</td>
+					<td>C99新增</td>
+				</tr>
+				<tr>
+					<td>21</td>
+					<td>restrict</td>
+					<td></td>
+					<td>22</td>
+					<td>return</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>23</td>
+					<td>short</td>
+					<td></td>
+					<td>24</td>
+					<td>signed</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>25</td>
+					<td>sizeof</td>
+					<td></td>
+					<td>26</td>
+					<td>static</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>27</td>
+					<td>struct</td>
+					<td></td>
+					<td>28</td>
+					<td>switch</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>29</td>
+					<td>typedef</td>
+					<td></td>
+					<td>30</td>
+					<td>union</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>31</td>
+					<td>unsigned</td>
+					<td></td>
+					<td>32</td>
+					<td>void</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>33</td>
+					<td>volatile</td>
+					<td></td>
+					<td>34</td>
+					<td>while</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>35</td>
+					<td style="color:red;font-weight:bold;">_bool</td>
+					<td>C99新增</td>
+					<td>36</td>
+					<td style="color:red;font-weight:bold;">_Complex</td>
+					<td>C99新增</td>
+				</tr>
+				<tr>
+					<td>37</td>
+					<td style="color:red;font-weight:bold;">_Imaginary</td>
+					<td>C99新增</td>
+				</tr>
+			</tbody>
+			</thead>
+		</table>
+		</div>
+		<div id="button_group">
+			<button class="custom-btn btn-3" onclick="window.open('../html/c-b-1.2.html','_self')">
+				<span>上一页</span>
+			</button>
+			<button class="custom-btn btn-3" onclick="window.open('../html/list-c.html','_self')">
+				<span>目录</span>
+			</button>
+			<button class="custom-btn btn-3" onclick="window.open('../html/c-b-1.4.html','_self')">
+				<span>下一页</span>
+			</button>
+		</div>
+	</article>
+	<footer>
+		<a href="../html/index.html" title="网站首页">网站首页</a>|
+		<a href="../html/education.html" title="教育学">教育学</a>|
+		<a href="../html/language.html" title="编程语言">编程语言</a>|
+		<a href="../html/computer.html" title="计算机">计算机</a>|
+		<a href="../html/course.html" title="学科课程">学科课程</a>|
+		<a href="../html/software.html" title="软件应用">软件应用</a>
+		<h5>Copyright &copy; 2022 Passwordgloo All rights reserved.</h5>
+	</footer>
+	<script>
+		const tocHelper = new TocHelper({
+			dom: 'article[data-toc]',
+			offsetBody: document.querySelector('#scroll'),
+		})
+		tocHelper.reset()
+	</script>
 </body>
+
 </html>

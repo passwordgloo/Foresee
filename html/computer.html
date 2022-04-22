@@ -1,83 +1,119 @@
 ﻿<!DOCTYPE HTML>
 <html lang="zh-CN">
+
 <head>
-	<meta charset="utf-8">													  <!-- unicode8编码-->
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">                     <!-- ie兼容 -->
-	<meta name="viewport" content="width=device-width, inital-scale:1.0">     <!-- 响应式布局 -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, inital-scale:1.0">
 	<meta name="description" content="预见更好的自己">
 	<title>计算机</title>
-	<link rel="shortcut icon" href="../img/main/logo.ico"  type="image/x-icon" />
+	<link rel="shortcut icon" href="../img/main/logo.ico">
 	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../css/computer.css">
 	<script src="../js/style.js"></script>
-	<style>
-		#Background{padding:0;
-                   margin:0;
-				   width:inherit;
-				   height:750px;
-				   background:url(../img/background/computer.jpg) no-repeat;
-				   background-size:cover;}
-		.Title{text-align:center;
-				   color:#fff;
-				   font-size:48px;
-				   font-family:'Microsoft YaHei';
-				   font-weight:normal;
-				   letter-spacing:.2em;
-				   text-shadow: 2px 2px 16px #00FF00;
-				   padding-top:280px;
-				   margin:0;}
-	</style>
 </head>
-<body id="body">
-<header class="header header_fixed">
-<div class="inner"> 
-	<nav class="nav">
-	<img class="white" src="../img/main/logo_white.png" alt="预见" title="预见"><img class="black" alt="预见" src="../img/main/logo_black.png">
-		<li class="nav__item"><a class="link" href="../html/index.html" title="网站首页">网站首页</a></li> 
-		<li class="nav__item"> <a class="link" href="../html/lang.html" title="编程语言">编程语言</a>
-			<ul class="subnav">
-				<li class="subnav__item cur"> <a class="sublink" title="C语言" href="../html/c.html">C语言</a> </li>              <!-- cur用在当前位置 -->
-				<li class="subnav__item"> <a class="sublink" href="" title="C++">C++</a></li>
-				<li class="subnav__item"> <a class="sublink" href="" title="Java语言">Java语言</a> </li> 
-			</ul>
-		</li>
-		<li class="nav__item cur"><a class="link" href="../html/computer.html" rel="nofollow" title="计算机">计算机</a>
-			<ul class="subnav">
-				<li class="subnav__item cur"> <a class="sublink" href="../html/co.html" title="计算机组成原理">组成原理</a>
-				<li class="subnav__item"> <a class="sublink" href="../html/network.html" title="计算机网络">计算机网络</a>
-				<li class="subnav__item"><a class="sublink" href="../html/structure.html" title="数据结构">数据结构</a>
-			</ul>
-		</li>
-		<li class="nav__item"><a class="link" href="../html/math.html" title="数学">数学</a>
-			<ul class="subnav">
-				<li class="subnav__item"><a class="sublink" href="../html/ls.html" title="离散数学">离散数学</a>
-				<li class="subnav__item"><a class="sublink" href="../html/gs.html" title="高等数学">高等数学</a>
-			</ul>
-		</li>
-	</nav> 
-</div> 
-</header>
-<div id="Background"><h4 class="Title">
-科学的宗旨就是提供宇宙的真正写真。</h4></div>
-<audio autoplay="autoplay" loop="loop" preload="auto" hidden="true"controls="controls"
- src="../other/music/At the edge.mp3">
- </audio>
-<div id="content">
-<h1>计算机</h1>
-<div class="card-norotate" onclick="window.open('../html/co.html')">
-<img alt="" src="../img/card/front_3.JPG">
-<span class="center">组成原理</span>
-</div>
-<div class="card-norotate" onclick="window.open('../html/network.html')">
-<img alt="" src="../img/card/front_6.JPG">
-<span class="center">网络</span>
-</div>
-</div>
-<footer>
-<a href="../html/index.html" title="网站首页">网站首页</a>|
-<a href="../html/lang.html" title="编程语言">编程语言</a>|
-<a href="../html/computer.html" title="计算机">计算机</a>|
-<a href="../html/math.html" title="数学">数学</a>
-<h5>Copyright &copy; 2021   Passwordgloo    All rights reserved.</h5>
-</footer>
+
+<body>
+	<div id="loading">
+		<div id="loading-center">
+			<div id="loading-center-absolute">
+				<div class="sk-fold">
+					<div class="sk-fold-cube"></div>
+					<div class="sk-fold-cube"></div>
+					<div class="sk-fold-cube"></div>
+					<div class="sk-fold-cube"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<header>
+		<nav style="text-align:right">
+			<img id="logo" src="img/main/logo.svg" alt="预见" title="预见"
+				onclick="window.open('../html/loading.html','_self')">
+			<li class="nav__item"><a class="link" href="../html/index.html" title="网站首页">网站首页</a></li>
+			<li class="nav__item"> <a class="link" href="../html/education.html" title="教育学">教育学</a>
+				<ul class="subnav">
+					<li class="subnav__item"> <a class="sublink" href="../html/list-education.html"
+							title="教育学原理">教育学原理</a>
+					</li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-china.html" title="中国教育史">中国教育史</a>
+					</li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-foreign.html"
+							title="外国教育史">外国教育史</a>
+					</li>
+					<li class="subnav__item"> <a class="sublink" title="教育心理学"
+							href="../html/list-edu_psychology.html">教育心理学</a> </li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-psychology.html"
+							title="儿童心理学">儿童心理学</a>
+					</li>
+				</ul>
+			</li>
+			<li class="nav__item"> <a class="link" href="../html/language.html" title="编程语言">编程语言</a>
+				<ul class="subnav">
+					<li class="subnav__item"> <a class="sublink" title="C语言" href="../html/list-c.html">C语言</a> </li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-java.html" title="Java语言">Java语言</a>
+					</li>
+				</ul>
+			</li>
+			<li class="nav__item cur"><a class="link" href="../html/computer.html" rel="nofollow" title="计算机">计算机</a>
+				<ul class="subnav">
+					<li class="subnav__item cur"> <a class="sublink" href="../html/list-composition.html"
+							title="计算机组成原理">组成原理</a>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-network.html"
+							title="计算机网络">计算机网络</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-structure.html" title="数据结构">数据结构</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-system.html" title="操作系统">操作系统</a>
+				</ul>
+			</li>
+			<li class="nav__item"><a class="link" href="../html/course.html" title="学科课程">学科课程</a>
+				<ul class="subnav">
+					<li class="subnav__item"><a class="sublink" href="../html/list-discrete.html" title="离散数学">离散数学</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-advance.html" title="高等数学">高等数学</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-politics.html" title="考研政治">考研政治</a>
+					<li class="subnav__item"><a class="sublink" href="../html/progress.html" title="学习进程">学习进程</a>
+				</ul>
+			</li>
+			<li class="nav__item"><a class="link" href="../html/software.html" title="软件应用">软件应用</a>
+				<ul class="subnav">
+					<li class="subnav__item"><a class="sublink" href="../html/list-excel.html" title="电子表格">电子表格</a>
+				</ul>
+			</li>
+		</nav>
+	</header>
+	<div id="ComputerBackground">
+		<h4 class="SubpageTitleLight">
+			科学的宗旨就是提供宇宙的真正写真。</h4>
+	</div>
+	<div id="content">
+		<hgroup>
+			<h1>计算机</h1>
+			<div class="card-norotate" onclick="window.open('../html/list-composition.html')">
+				<img alt="" src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/card/front_3.jpg">
+				<span class="center">组成原理</span>
+			</div>
+			<div class="card-norotate" onclick="window.open('../html/list-network.html')">
+				<img alt="" src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/card/front_6.jpg">
+				<span class="center">计算机网络</span>
+			</div>
+			<div class="card-norotate" onclick="window.open('../html/list-structure.html')">
+				<img alt="" src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/card/front_9.jpg">
+				<span class="center">数据结构</span>
+			</div>
+			<div class="card-norotate" onclick="window.open('../html/list-system.html')">
+				<img alt="" src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/card/front_8.jpg">
+				<span class="center">操作系统</span>
+			</div>
+	</div>
+	</div>
+	<footer>
+		<a href="../html/index.html" title="网站首页">网站首页</a>|
+		<a href="../html/education.html" title="教育学">教育学</a>|
+		<a href="../html/language.html" title="编程语言">编程语言</a>|
+		<a href="../html/computer.html" title="计算机">计算机</a>|
+		<a href="../html/course.html" title="学科课程">学科课程</a>|
+		<a href="../html/software.html" title="软件应用">软件应用</a>
+		<h5>Copyright &copy; 2022 Passwordgloo All rights reserved.</h5>
+	</footer>
 </body>
+
 </html>

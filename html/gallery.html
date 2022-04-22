@@ -1,0 +1,265 @@
+﻿<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, inital-scale:1.0">
+	<meta name="description" content="预见更好的自己">
+	<title>桃花坞</title>
+	<link rel="shortcut icon" href="../img/main/logo.ico">
+	<link rel="stylesheet" href="../css/software.css">
+	<link rel="stylesheet" href="../css/main.css">
+	<script src="../js/jquery-3.6.0.js"></script>
+	<script src="../js/style.js"></script>
+	<script src='../js/sortable.js'></script>
+</head>
+
+<body>
+	<header>
+		<nav style="text-align:right">
+			<img id="logo" src="../img/main/logo.svg" alt="预见" title="预见"
+				onclick="window.open('../html/index.html','_self')">
+			<li class="nav__item"><a class="link" id="link_1" href="../html/index.html" title="网站首页">网站首页</a></li>
+			<li class="nav__item"> <a class="link" href="../html/education.html" title="教育学">教育学</a>
+				<ul class="subnav">
+					<li class="subnav__item"> <a class="sublink" href="../html/list-education.html"
+							title="教育学原理">教育学原理</a>
+					</li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-china.html" title="中国教育史">中国教育史</a>
+					</li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-foreign.html"
+							title="外国教育史">外国教育史</a>
+					</li>
+					<li class="subnav__item"> <a class="sublink" title="教育心理学"
+							href="../html/list-edu_psychology.html">教育心理学</a> </li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-psychology.html"
+							title="儿童心理学">儿童心理学</a>
+					</li>
+				</ul>
+			</li>
+			<li class="nav__item"> <a class="link" id="link_2" href="../html/language.html" title="编程语言">编程语言</a>
+				<ul class="subnav" id="subnav_1">
+					<li class="subnav__item"> <a class="sublink" title="C语言" href="../html/list-c.html">C语言</a> </li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-java.html" title="Java语言">Java语言</a>
+					</li>
+				</ul>
+			</li>
+			<li class="nav__item"><a class="link" id="link_3" href="../html/computer.html" rel="nofollow"
+					title="计算机">计算机</a>
+				<ul class="subnav" id="subnav_2">
+					<li class="subnav__item"> <a class="sublink" href="../html/list-composition.html"
+							title="计算机组成原理">组成原理</a>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-network.html"
+							title="计算机网络">计算机网络</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-structure.html" title="数据结构">数据结构</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-system.html" title="操作系统">操作系统</a>
+				</ul>
+			</li>
+			<li class="nav__item"><a class="link" id="link_4" href="../html/course.html" title="学科课程">学科课程</a>
+				<ul class="subnav" id="subnav_3">
+					<li class="subnav__item"><a class="sublink" href="../html/list-discrete.html" title="离散数学">离散数学</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-advance.html" title="高等数学">高等数学</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-politics.html" title="考研政治">考研政治</a>
+					<li class="subnav__item"><a class="sublink" href="../html/progress.html" title="学习进程">学习进程</a>
+				</ul>
+			</li>
+			<li class="nav__item cur"><a class="link" id="link_5" href="../html/software.html" title="软件应用">软件应用</a>
+				<ul class="subnav" id="subnav_4">
+					<li class="subnav__item"><a class="sublink" href="../html/list-excel.html" title="电子表格">电子表格</a>
+					<li class="subnav__item"><a class="sublink" href="javascript:void(0);" οnclick="js_method()"
+							title="桃花坞">桃花坞</a>
+				</ul>
+			</li>
+		</nav>
+	</header>
+	<div id="GalleryBackground">
+		<h4 class="SubpageTitleWhite">桃花坞</h4>
+	</div>
+	<div class="rocket" id="gotoTop"><img
+			src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/main/rocket-purple.svg" alt=""></div>
+	<div id='content'>
+		<div id="Nav">
+			<a data-sjslink="all" class="NavLink">
+				全部
+			</a>
+			<a data-sjslink="Animate" class="NavLink">
+				Animate
+			</a>
+			<a data-sjslink="Photoshop" class="NavLink">
+				Photoshop
+			</a>
+		</div>
+		<div id="sortable" class="sjs-default">
+			<div data-sjsel="Photoshop">
+				<img class="CardPicture"
+					src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/gallery/花朵艺术字.png" alt="">
+				<h2 class="CardTitle">花朵艺术字</h2>
+				<p>樱花是爱情与希望的象征</p>
+				<label class='label-3'>Photoshop</label>
+			</div>
+			<div data-sjsel="Photoshop">
+				<img class="CardPicture"
+					src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/gallery/玉石图标.jpg" alt="">
+				<h2 class="CardTitle">玉石图标</h2>
+				<p>仿造玉石效果制作一枚印章</p>
+				<label class='label-3'>Photoshop</label>
+			</div>
+			<div data-sjsel="Photoshop">
+				<img class="CardPicture"
+					src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/gallery/黑板文字.png" alt="">
+				<h2 class="CardTitle">黑板文字</h2>
+				<p>使用剪切蒙版、高斯模糊工具制作 </p>
+				<label class='label-3'>Photoshop</label>
+			</div>
+			<div data-sjsel="Photoshop">
+				<img class="CardPicture"
+					src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/gallery/文字头像.jpg" alt="">
+				<h2 class="CardTitle">文字头像</h2>
+				<p>使用文字描绘人物头像</p>
+				<label class='label-3'>Photoshop</label>
+			</div>
+			<div data-sjsel="Photoshop">
+				<img class="CardPicture"
+					src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/gallery/透明.png" alt="">
+				<h2 class="CardTitle">透明徽章效果</h2>
+				<p>圆形透明徽章效果，增加高光立体</p>
+				<label class='label-3'>Photoshop</label>
+			</div>
+			<div data-sjsel="Photoshop">
+				<img class="CardPicture"
+					src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/gallery/战狼2字体.png" alt="">
+				<h2 class="CardTitle">战狼2风格字体</h2>
+				<p>模仿《战狼2》电影海报标题样式制作</p>
+				<label class='label-3'>Photoshop</label>
+			</div>
+			<div data-sjsel="Photoshop">
+				<img class="CardPicture"
+					src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/gallery/球形.jpg" alt="">
+				<h2 class="CardTitle">球形图片效果</h2>
+				<p>局部小高光半透明效果</p>
+				<label class='label-3'>Photoshop</label>
+			</div>
+			<div data-sjsel="Photoshop">
+				<img class="CardPicture"
+					src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/gallery/美术家教育.png" alt="">
+				<h2 class="CardTitle">教育培训</h2>
+				<p>教育培训机构宣传单页</p>
+				<label class='label-3'>Photoshop</label>
+			</div>
+			<div data-sjsel="Photoshop">
+				<img class="CardPicture"
+					src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/gallery/水果促销.jpg" alt="">
+				<h2 class="CardTitle">水果促销</h2>
+				<p>水果促销单页</p>
+				<label class='label-3'>Photoshop</label>
+			</div>
+			<div data-sjsel='Photoshop'>
+				<img class='CardPicture'
+					src='https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/gallery/衣物促销.jpg' alt=''>
+				<h2 class='CardTitle'>衣物促销</h2>
+				<p>简约风夏季服装促销海报</p>
+				<label class='label-3'>Photoshop</label>
+			</div>
+			<div data-sjsel='Photoshop'>
+				<img class='CardPicture'
+					src='https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/gallery/房产促销.jpg' alt=''>
+				<h2 class='CardTitle'>房产宣传</h2>
+				<p>房地产宣传海报</p>
+				<label class='label-3'>Photoshop</label>
+			</div>
+			<div data-sjsel='Photoshop'>
+				<img class='CardPicture'
+					src='https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/gallery/舞蹈社.jpg' alt=''>
+				<h2 class='CardTitle'>舞蹈社宣传</h2>
+				<p>孟菲斯风格舞蹈社宣传海报</p>
+				<label class='label-3'>Photoshop</label>
+			</div>
+			<div data-sjsel='Animate'>
+				<img class='CardPicture'
+					src='https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/gallery/城堡.png' alt=''>
+				<h2 class='CardTitle'>城堡</h2>
+				<p>2.5D插画风格设计</p>
+				<label class='label-2'>Animate</label>
+			</div>
+			<div data-sjsel='Photoshop'>
+				<img class='CardPicture'
+					src='https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/gallery/药物广告.png' alt=''>
+				<h2 class='CardTitle'>药物广告</h2>
+				<p>复古风药物宣传海报</p>
+				<label class='label-3'>Photoshop</label>
+			</div>
+			<div data-sjsel='Photoshop'>
+				<img class='CardPicture'
+					src='https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/gallery/夏季促销.jpg' alt=''>
+				<h2 class='CardTitle'>夏季促销</h2>
+				<p>夏季折扣大放送促销海报</p>
+				<label class='label-3'>Photoshop</label>
+			</div>
+			<div data-sjsel='Photoshop'>
+				<img class='CardPicture'
+					src='https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/gallery/MBE.png' alt=''>
+				<h2 class='CardTitle'>MBE风格图标</h2>
+				<p>MBE风格图标设计</p>
+				<label class='label-3'>Photoshop</label>
+			</div>
+			<div data-sjsel='Photoshop'>
+				<img class='CardPicture'
+					src='https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/gallery/食品.jpg' alt=''>
+				<h2 class='CardTitle'>餐饮宣传</h2>
+				<p>左右对称布局餐饮店宣传海报</p>
+				<label class='label-3'>Photoshop</label>
+			</div>
+			<div data-sjsel='Animate'>
+				<img class='CardPicture'
+					src='https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/gallery/泳池.png' alt=''>
+				<h2 class='CardTitle'>泳池</h2>
+				<p>2.5D插画风格</p>
+				<label class='label-2'>Animate</label>
+			</div>
+			<div data-sjsel='Photoshop'>
+				<img class='CardPicture'
+					src='https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/gallery/中秋.jpg' alt=''>
+				<h2 class='CardTitle'>中秋节宣传</h2>
+				<p>剪影风中秋佳节宣传海报</p>
+				<label class='label-3'>Photoshop</label>
+			</div>
+			<div data-sjsel='Photoshop'>
+				<img class='CardPicture'
+					src='https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/gallery/拟物.jpg' alt=''>
+				<h2 class='CardTitle'>拟物风格图标</h2>
+				<p>拟物风格图标设计</p>
+				<label class='label-3'>Photoshop</label>
+			</div>
+			<div data-sjsel='Photoshop'>
+				<img class='CardPicture'
+					src='https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/gallery/音乐节.jpg' alt=''>
+				<h2 class='CardTitle'>音乐节</h2>
+				<p>孟菲斯风格音乐节宣传海报</p>
+				<label class='label-3'>Photoshop</label>
+			</div>
+			<div data-sjsel='Photoshop'>
+				<img class='CardPicture'
+					src='https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/gallery/轻拟物.png' alt=''>
+				<h2 class='CardTitle'>轻拟物风格图标</h2>
+				<p>轻拟物风格图标设计</p>
+				<label class='label-3'>Photoshop</label>
+			</div>
+
+		</div>
+	</div>
+	<footer>
+		<a href="../html/index.html" title="网站首页">网站首页</a>|
+		<a href="../html/education.html" title="教育学">教育学</a>|
+		<a href="../html/language.html" title="编程语言">编程语言</a>|
+		<a href="../html/computer.html" title="计算机">计算机</a>|
+		<a href="../html/course.html" title="学科课程">学科课程</a>|
+		<a href="../html/software.html" title="软件应用">软件应用</a>
+		<h5>Copyright &copy; 2022 Passwordgloo All rights reserved.</h5>
+	</footer>
+	<script type="text/javascript">
+		document.querySelector('#sortable').sortablejs()
+	</script>
+</body>
+
+</html>

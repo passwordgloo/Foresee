@@ -1,0 +1,455 @@
+.body {
+	background-color: #ebebeb;
+	margin: 0;
+}
+
+#loading {
+	background-color: #FFB3A7;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	z-index: 4;
+	margin-top: 0;
+	top: 0;
+	opacity: 1;
+}
+
+#loading-center {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+#loading-center-absolute {
+	position: absolute;
+	left: 50%;
+	top: 45%;
+	height: 80px;
+	width: 80px;
+}
+
+/*loading动画 */
+.sk-grid {
+	width: var(--sk-size);
+	height: var(--sk-size);
+}
+
+.sk-grid-cube {
+	width: 33.33%;
+	height: 33.33%;
+	background-color: var(--sk-color);
+	float: left;
+	animation: sk-grid 1.3s infinite ease-in-out;
+}
+
+.sk-grid-cube:nth-child(1) {
+	animation-delay: 0.2s;
+}
+
+.sk-grid-cube:nth-child(2) {
+	animation-delay: 0.3s;
+}
+
+.sk-grid-cube:nth-child(3) {
+	animation-delay: 0.4s;
+}
+
+.sk-grid-cube:nth-child(4) {
+	animation-delay: 0.1s;
+}
+
+.sk-grid-cube:nth-child(5) {
+	animation-delay: 0.2s;
+}
+
+.sk-grid-cube:nth-child(6) {
+	animation-delay: 0.3s;
+}
+
+.sk-grid-cube:nth-child(7) {
+	animation-delay: 0.0s;
+}
+
+.sk-grid-cube:nth-child(8) {
+	animation-delay: 0.1s;
+}
+
+.sk-grid-cube:nth-child(9) {
+	animation-delay: 0.2s;
+}
+
+@keyframes sk-grid {
+	0%, 70%, 100% {
+		transform: scale3D(1, 1, 1);
+	}
+
+	35% {
+		transform: scale3D(0, 0, 1);
+	}
+}
+
+/*滚动条*/
+::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+}
+
+/* 滚动条宽 */
+::-webkit-scrollbar-thumb {
+	background-color: #FFB3A7;
+	/* 滚动条 拖动条 */
+	background-image: -webkit-linear-gradient(45deg,
+			rgba(255, 255, 255, 0.2) 25%,
+			transparent 25%,
+			transparent 50%,
+			rgba(255, 255, 255, 0.2) 50%,
+			rgba(255, 255, 255, 0.2) 75%,
+			transparent 75%,
+			transparent);
+}
+
+::-webkit-scrollbar-track {
+	/* 滚动条背景槽 */
+	/*滚动条里面轨道*/
+	box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+	background: #ededed;
+}
+
+html {
+	cursor: url(paperplane.ico), auto;
+	scrollbar-color: var(--pink) rgba(0, 0, 0, 0.2);
+	scrollbar-width: thin;
+}
+
+#CourseBackground {
+	padding: 0;
+	margin: 0;
+	width: inherit;
+	height: 750px;
+	background: url(https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/background/course.jpg) no-repeat;
+	background-size: cover;
+}
+
+#ProgressBackground {
+	padding: 0;
+	margin: 0;
+	width: inherit;
+	height: 750px;
+	background: url(https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/background/progress.jpg) no-repeat;
+	background-size: cover;
+}
+
+#AdvanceBackground {
+	padding: 0;
+	margin: 0;
+	width: inherit;
+	height: 400px;
+	background: url(https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/background/advance.jpg) no-repeat;
+	background-size: cover;
+}
+
+#AdvanceList {
+	padding: 0;
+	margin: 0 0 60px 0;
+	width: inherit;
+	height: 400px;
+	background: url(https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/background/advance.jpg) no-repeat;
+	background-size: cover;
+}
+
+#DiscreteBackground {
+	padding: 0;
+	margin: 0;
+	width: inherit;
+	height: 400px;
+	background: url(https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/background/discrete.jpg) no-repeat;
+	background-size: cover;
+}
+
+#DiscreteList {
+	padding: 0;
+	margin: 0 0 60px 0;
+	width: inherit;
+	height: 400px;
+	background: url(https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/background/discrete.jpg) no-repeat;
+	background-size: cover;
+}
+
+#PoliticsBackground {
+	padding: 0;
+	margin: 0;
+	width: inherit;
+	height: 400px;
+	background: url(https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/background/politics.jpg) no-repeat;
+	background-size: cover;
+}
+
+#PoliticsList {
+	padding: 0;
+	margin: 0 0 60px 0;
+	width: inherit;
+	height: 400px;
+	background: url(https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/background/politics.jpg) no-repeat;
+	background-size: cover;
+}
+
+.SubpageTitleLight {
+	text-align: center;
+	color: #fff;
+	font-size: 48px;
+	font-family: 'Microsoft YaHei';
+	font-weight: normal;
+	letter-spacing: .2em;
+	text-shadow: 2px 2px 16px Tomato;
+	padding-top: 280px;
+	margin: 0;
+}
+
+.SubpageTitleBlack {
+	text-align: center;
+	color: #000;
+	font-size: 48px;
+	font-family: 'Microsoft YaHei';
+	font-weight: normal;
+	padding-top: 280px;
+	margin: 0;
+}
+
+.SubpageTitleWhite {
+	text-align: center;
+	color: #fff;
+	font-size: 48px;
+	font-family: 'Microsoft YaHei';
+	font-weight: normal;
+	padding-top: 280px;
+	margin: 0;
+}
+
+strong {
+	background: Tomato;
+	color: #fff;
+}
+
+#content {
+	margin-left: 150px;
+	margin-right: 150px;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.progress_bar .pro-bar {
+	background: rgb(249, 249, 249);
+	box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.1) inset;
+	height: 4px;
+	margin-bottom: 12px;
+	margin-top: 50px;
+	position: relative;
+}
+
+.progress_bar .progress_bar_title {
+	color: #555;
+	font-size: 15px;
+	font-weight: 300;
+	position: relative;
+	top: -28px;
+	z-index: 1;
+}
+
+.progress_bar .progress_number {
+	float: right;
+}
+
+.progress_bar .progress-bar-inner {
+	background-color: hsl(0, 0%, 88%);
+	display: block;
+	width: 0;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: width 1s linear 0s;
+	animation: animate-positive 2s;
+}
+
+.progress_bar .progress-bar-inner:before {
+	content: "";
+	background-color: hsl(0, 0%, 100%);
+	border-radius: 50%;
+	width: 4px;
+	height: 4px;
+	position: absolute;
+	right: 1px;
+	top: 0;
+	z-index: 1;
+}
+
+.progress_bar .progress-bar-inner:after {
+	content: "";
+	width: 14px;
+	height: 14px;
+	background-color: inherit;
+	border-radius: 50%;
+	position: absolute;
+	right: -4px;
+	top: -5px;
+}
+
+@-webkit-keyframes animate-positive {
+	0% {
+		width: 0%;
+	}
+}
+
+@keyframes animate-positive {
+	0% {
+		width: 0%;
+	}
+}
+
+.Content {
+	background-image: url("https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/card/body.png");
+	color: #555;
+	border-radius: 0 0 12px 12px;
+	padding-bottom: 3px;
+	font-family: "Microsoft Yahei"
+}
+
+.Content dd:last-child {
+	margin-bottom: 0.5em;
+}
+
+dd img {
+	vertical-align: middle;
+	margin: 0em .3em .2em 0;
+}
+
+.card-back {
+	position: relative;
+	transform: rotateY(-180deg);
+	-webkit-transform: rotateY(-180deg);
+}
+
+.advance {
+	background: url(https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/card/back_14.png);
+}
+
+.discrete {
+	background: url(https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/card/back_15.png);
+}
+
+.politics {
+	background: url(https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/card/back_1.jpg);
+}
+
+.card-back img {
+	margin: 100px 40px;
+}
+
+.card div {
+	text-align: center;
+	font-family: "Microsoft Yahei";
+}
+
+.card-norotate {
+	float: left;
+	margin: 0 30px 20px;
+	width: 180px;
+	height: 240px;
+	cursor: url(../img/main/paperplane.ico), auto;
+	background-color: #fff;
+	border-radius: 12px;
+	text-align: center;
+	transition: all 0.25s ease-in;
+}
+
+.card-norotate img {
+	max-width: 100%;
+	border-radius: 12px 12px 0 0;
+}
+
+.card-norotate .center {
+	display: inline-block;
+	margin-top: 10px;
+	font-size: 18px;
+	color: #666;
+	letter-spacing: .2em;
+}
+
+.card-norotate:hover {
+	box-shadow: 0px 0px 20px rgba(255, 99, 71, .4);
+	transform: translateY(-10px);
+}
+
+.card-norotate:hover .center {
+	font-weight: bold;
+}
+
+#menu {
+	box-sizing: border-box;
+	position: fixed;
+	top: 20%;
+
+}
+
+#menu a, #menu::before {
+	display: block;
+	height: 1.5em;
+	width: inherit;
+	padding: 10px 20px;
+	line-height: 20px;
+	text-align: left;
+	text-decoration: none;
+	font-family: "Microsoft Yahei";
+	color: #555;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	transition: transform 100ms;
+}
+
+#menu::before {
+	content: "目录";
+	font-weight: bold;
+	color: #333;
+	text-align: center;
+}
+
+#menu:hover a {
+	background-color: #f2f2f2;
+	color: #555;
+}
+
+#menu a:last-of-type {
+	border-bottom: 0;
+}
+
+#menu a:hover {
+	transform: scale(1);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+	color: #ff003c;
+	border-left: 4px solid #ff003c;
+	background-color: #fff;
+	cursor: url(../img/main/paperplane.ico), auto;
+}
+
+/*-----------------目录添加滚动条----------------------*/
+#MenuLink {
+	height: 308px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+/* 块标签样式 */
+blockquote {
+	border: none;
+	padding: 12px 0 8px 10px;
+	background-color: rgba(255, 179, 167, 0.1);
+	line-height: inherit;
+	min-height: 20px;
+	margin: 1em 0;
+	max-width: 90%;
+	border-left: 4px solid rgba(255, 179, 167, 0.7)
+}
+
+blockquote dd:last-child {
+	margin-bottom: 0.5em;
+}

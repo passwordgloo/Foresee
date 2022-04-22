@@ -1,0 +1,181 @@
+﻿<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, inital-scale:1.0">
+	<meta name="description" content="预见更好的自己">
+	<title>计算机组成原理</title>
+	<link rel="shortcut icon" href="../img/main/logo.ico">
+	<link rel="stylesheet" href="../css/computer.css">
+	<link rel="stylesheet" href="../css/main.css">
+	<script src="../js/jquery-3.6.0.js"></script>
+	<script src="../js/style.js"></script>
+</head>
+
+<body>
+	<header>
+		<nav style="text-align:right">
+			<img id="logo" src="../img/main/logo.svg" alt="预见" title="预见"
+				onclick="window.open('../html/index.html','_self')">
+			<li class="nav__item"><a class="link" id="link_1" href="../html/index.html" title="网站首页">网站首页</a></li>
+			<li class="nav__item"> <a class="link" href="../html/education.html" title="教育学">教育学</a>
+				<ul class="subnav">
+					<li class="subnav__item"> <a class="sublink" href="../html/list-education.html"
+							title="教育学原理">教育学原理</a>
+					</li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-china.html" title="中国教育史">中国教育史</a>
+					</li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-foreign.html"
+							title="外国教育史">外国教育史</a>
+					</li>
+					<li class="subnav__item"> <a class="sublink" title="教育心理学"
+							href="../html/list-edu_psychology.html">教育心理学</a> </li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-psychology.html"
+							title="儿童心理学">儿童心理学</a>
+					</li>
+				</ul>
+			</li>
+			<li class="nav__item"> <a class="link" id="link_2" href="../html/language.html" title="编程语言">编程语言</a>
+				<ul class="subnav" id="subnav_1">
+					<li class="subnav__item"> <a class="sublink" title="C语言" href="../html/list-c.html">C语言</a> </li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-java.html" title="Java语言">Java语言</a>
+					</li>
+				</ul>
+			</li>
+			<li class="nav__item cur"><a class="link" id="link_3" href="../html/computer.html" rel="nofollow"
+					title="计算机">计算机</a>
+				<ul class="subnav" id="subnav_2">
+					<li class="subnav__item"> <a class="sublink" href="../html/list-composition.html"
+							title="计算机组成原理">组成原理</a>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-network.html"
+							title="计算机网络">计算机网络</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-structure.html" title="数据结构">数据结构</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-system.html" title="操作系统">操作系统</a>
+				</ul>
+			</li>
+			<li class="nav__item"><a class="link" id="link_4" href="../html/course.html" title="学科课程">学科课程</a>
+				<ul class="subnav" id="subnav_3">
+					<li class="subnav__item"><a class="sublink" href="../html/list-discrete.html" title="离散数学">离散数学</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-advance.html" title="高等数学">高等数学</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-politics.html" title="考研政治">考研政治</a>
+					<li class="subnav__item"><a class="sublink" href="../html/progress.html" title="学习进程">学习进程</a>
+				</ul>
+			</li>
+			<li class="nav__item"><a class="link" id="link_5" href="../html/software.html" title="软件应用">软件应用</a>
+				<ul class="subnav" id="subnav_4">
+					<li class="subnav__item"><a class="sublink" href="../html/list-excel.html" title="电子表格">电子表格</a>
+				</ul>
+			</li>
+			<input class="textbox" id="searchstr" type="text" size="10" name="searchstr" title="输入关键字查找当前页面">
+		</nav>
+	</header>
+	<div id="CompositionBackground">
+		<h4 class="SubpageTitleWhite">组成原理</h4>
+	</div>
+	<div class="rocket" id="gotoTop"><img
+			src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/main/rocket-green.svg" alt=""></div>
+	<div id="menu">
+		<a href=#1.1.1>计算机四代的发展</a>
+		<a href=#1.2.1>计算机硬件的基本组成</a>
+		<a href=#1.2.2>计算机软件的分类</a>
+		<a href=#1.3.1>计算机主要性能指标</a>
+	</div>
+
+	<article>
+		<ol>
+			<li class="h1">计算机系统概述
+				<ol>
+					<li class="h2">计算机发展历程
+						<ol>
+							<li class="h3" id="1.1.1">计算机四代的发展</li>
+							<p>电子管——晶体管——大规模集成电路——超大规模集成电路</p>
+							<li class="h3">计算机语言</li>
+							<p><strong>机器语言</strong>：计算机唯一可以<span style="color:red">直接</span>执行的语言</p>
+							<p><strong>汇编语言</strong>：助记符编写</p>
+							<p><strong>解释程序</strong>：一边执行一遍翻译</p>
+							<p><strong>编译</strong>：高级语言转化为机器语言／编译语言</p>
+							<p><strong>汇编</strong>：汇编语言翻译为机器语言</p>
+						</ol>
+					</li>
+					<li class="h2">计算机系统层次结构
+						<ol>
+							<li class="h3" id="1.2.1">计算机硬件的基本组成</li>
+							<table id="table-3">
+								<caption>功能组件一览表</caption>
+								<thead>
+									<th>名称</th>
+									<th>作用</th>
+									<th>位置</th>
+								</thead>
+								<tbody>
+									<tr>
+										<td>MAR（地址寄存器）</td>
+										<td>存放访寄地址</td>
+										<td rowspan="2">CPU的存储器</td>
+									</tr>
+									<tr>
+										<td>MDR（数据寄存器）</td>
+										<td>暂存要读写的信息</td>
+									</tr>
+									<tr>
+										<td>ALU（算术逻辑单元）</td>
+										<td>进行算术运算或逻辑运算</td>
+										<td rowspan="3">CPU的运算器</td>
+									<tr>
+										<td>GPRs（通用寄存器组）</td>
+										<td>暂存操作数和中间结果</td>
+									</tr>
+									<tr>
+										<td>PSW（标志寄存器）</td>
+										<td>存放ALU运算的标志信息</td>
+									</tr>
+									<tr>
+										<td>IR（指令寄存器）</td>
+										<td>存放当前欲执行的指令</td>
+										<td rowspan="2">CPU的控制器</td>
+									</tr>
+									<tr>
+										<td>PC（程序计数器）</td>
+										<td>存放下一条指令</td>
+									</tr>
+								</tbody>
+							</table>
+							<li class="h3" id="1.2.2">计算机软件的分类</li>
+							<p><strong>系统软件</strong>：操作系统、数据库管理系统(DBMS)、标准库程序</p>
+							<p><strong>应用软件</strong>: 数据库系统(DBS)、</p>
+							<li class="h3" id="1.2.3">计算机系统的多级层级结构</li>
+						</ol>
+					</li>
+					<li class="h2">计算机的性能指标
+						<ol>
+							<li class="h3" id="1.3.1">计算机的主要性能指标</li>
+							<p>CPU执行时间= CPU时钟周期数/主频 = (CPIx指令条数)/主频 </p>
+						</ol>
+					</li>
+			</li>
+		<div id="button_group">
+			<button class="custom-btn pure-button">
+				<span>上一页</span>
+			</button>
+			<button class="custom-btn btn-8" onclick="window.open('../html/list-composition.html','_self')">
+				<span>目录</span>
+			</button>
+			<button class="custom-btn btn-8">
+				<span>下一页</span>
+			</button>
+		</div>
+	</article>
+	<footer>
+		<a href="../html/index.html" title="网站首页">网站首页</a>|
+		<a href="../html/education.html" title="教育学">教育学</a>|
+		<a href="../html/language.html" title="编程语言">编程语言</a>|
+		<a href="../html/computer.html" title="计算机">计算机</a>|
+		<a href="../html/course.html" title="学科课程">学科课程</a>|
+		<a href="../html/software.html" title="软件应用">软件应用</a>
+		<h5>Copyright &copy; 2022 Passwordgloo All rights reserved.</h5>
+	</footer>
+</body>
+
+</html>

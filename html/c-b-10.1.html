@@ -1,67 +1,103 @@
 <!DOCTYPE HTML>
 <html lang="zh-CN">
+
 <head>
-	<meta charset="utf-8">													  <!-- unicode8编码-->
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">                     <!-- ie兼容 -->
-	<meta name="viewport" content="width=device-width, inital-scale:1.0">     <!-- 响应式布局 -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>C语言</title>
-	<link rel="shortcut icon" href="../img/logo.ico"  type="image/x-icon" />
+	<link rel="shortcut icon" href="../img/main/logo.ico">
 	<link rel="stylesheet" href="../css/prism.css">
-	<link rel="stylesheet" href="../css/c.css">
+	<link rel="stylesheet" href="../css/language.css">
 	<link rel="stylesheet" href="../css/main.css">
-    <script src="../js/jquery-3.5.1.min.js"></script>
-    <script src="../js/prism.js"></script>
-		<script src="../js/style.js"></script>
+	<script src="../js/jquery-3.6.0.js"></script>
+	<script src="../js/prism.js"></script>
+	<script src="../js/toc-helper.js"></script>
+	<canvas class="fireworks"></canvas>
+	<script type="text/javascript" src="../js/fireworks.js"></script>
 </head>
-<body id="body">
-<header class="header header_fixed">
-<div class="inner"> 
-	<nav class="nav">
-	<img class="white" src="../img/main/logo_white.png" alt="预见" title="预见"><img class="black" alt="预见" src="../img/main/logo_black.png">
-		<li class="nav__item"><a class="link" href="../html/index.html" title="网站首页">网站首页</a></li> 
-		<li class="nav__item cur"> <a class="link" href="../html/lang.html" title="编程语言">编程语言</a>
-			<ul class="subnav">
-				<li class="subnav__item cur"> <a class="sublink" title="C语言" href="../html/c.html">C语言</a> </li>              <!-- cur用在当前位置 -->
-				<li class="subnav__item"> <a class="sublink" href="" title="C++">C++</a></li>
-				<li class="subnav__item"> <a class="sublink" href="" title="Java语言">Java语言</a> </li> 
-			</ul>
-		</li>
-		<li class="nav__item"><a class="link" href="../html/computer.html" rel="nofollow" title="计算机">计算机</a>
-			<ul class="subnav">
-				<li class="subnav__item cur"> <a class="sublink" href="../html/co.html" title="计算机组成原理">组成原理</a>
-				<li class="subnav__item"> <a class="sublink" href="../html/network.html" title="计算机网络">计算机网络</a>
-				<li class="subnav__item"><a class="sublink" href="../html/structure.html" title="数据结构">数据结构</a>
-			</ul>
-		</li>
-		<li class="nav__item"><a class="link" href="../html/math.html" title="数学">数学</a>
-			<ul class="subnav">
-				<li class="subnav__item"><a class="sublink" href="../html/ls.html" title="离散数学">离散数学</a>
-				<li class="subnav__item"><a class="sublink" href="../html/gs.html" title="高等数学">高等数学</a>
-			</ul>
-		</li>
-	</nav> 
-</div> 
-</header>
-<div id="background">
-	<h4 class="subpage_title">C语言</h4>
-</div>
-<h6 class="nav_map"><img alt="" src="../img/main/position.png"><a href="../html/index.html">网站首页</a>>><a href="../html/lang.html">编程语言</a>>><a>C语言</a>
-<div id="switch_module"><span style="color:#555">暗夜模式&nbsp;</span><div class="kaiguan" title="点击开启暗夜模式"><div class="white" id="botton"></div></div></div></h6>
-<div class="rocket" id="gotoTop"><img src="../img/main/rocket.svg" alt=""></div>
-<div class="content">
-<h1>第十章 对文件的输入输出(1)</h1>
-<ul><li>77.文件的基本概念</li></ul>
-<p>文件分类</p>
-<p>(1)<strong>程序文件</strong>这种文件的内容是程序代码，如源程序文件，目标文件，可执行文件等</p>
-<p>(2)<strong>数据文件</strong>其内容不是程序，而是供程序运行时读写的数据</p>
-<p>注：1<span style="color:red">所谓“文件”一般只存储在外边介质(如磁盘)上数据的集合</span> </p>
-<p>2.终端即计算机的各种输入输出设备。操作系统把终端都统一作为文件看待</p>
-<p>文件名</p>
-<p>一个文件要有唯一的文件标识，文件标识包括3个部分：</p>
-<p>①文件路径②文件名主干③文件后缀</p>
-<p>数据文件</p>
-<p>分类：ASCII(文本文件)和二进制文件(镜像文件)</p>
-<pre class="line-numbers"><code class="lang-c">#include &lt;stdio.h&gt;
+
+<body>
+	<header>
+		<nav style="text-align:right">
+			<img id="logo" src="../img/main/logo.svg" alt="预见" title="预见"
+				onclick="window.open('../html/index.html','_self')">
+			<li class="nav__item"><a class="link" id="link_1" href="../html/index.html" title="网站首页">网站首页</a></li>
+			<li class="nav__item"> <a class="link" href="../html/education.html" title="教育学">教育学</a>
+				<ul class="subnav">
+					<li class="subnav__item"> <a class="sublink" href="../html/list-education.html"
+							title="教育学原理">教育学原理</a>
+					</li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-china.html" title="中国教育史">中国教育史</a>
+					</li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-foreign.html"
+							title="外国教育史">外国教育史</a>
+					</li>
+					<li class="subnav__item"> <a class="sublink" title="教育心理学"
+							href="../html/list-edu_psychology.html">教育心理学</a> </li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-psychology.html"
+							title="儿童心理学">儿童心理学</a>
+					</li>
+				</ul>
+			</li>
+			<li class="nav__item cur"> <a class="link" id="link_2" href="../html/language.html" title="编程语言">编程语言</a>
+				<ul class="subnav" id="subnav_1">
+					<li class="subnav__item"> <a class="sublink" title="C语言" href="../html/list-c.html">C语言</a> </li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-java.html" title="Java语言">Java语言</a>
+					</li>
+				</ul>
+			</li>
+			<li class="nav__item"><a class="link" id="link_3" href="../html/computer.html" rel="nofollow"
+					title="计算机">计算机</a>
+				<ul class="subnav" id="subnav_2">
+					<li class="subnav__item"> <a class="sublink" href="../html/list-composition.html"
+							title="计算机组成原理">组成原理</a>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-network.html"
+							title="计算机网络">计算机网络</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-structure.html" title="数据结构">数据结构</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-system.html" title="操作系统">操作系统</a>
+				</ul>
+			</li>
+			<li class="nav__item"><a class="link" id="link_4" href="../html/course.html" title="学科课程">学科课程</a>
+				<ul class="subnav" id="subnav_3">
+					<li class="subnav__item"><a class="sublink" href="../html/list-discrete.html" title="离散数学">离散数学</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-advance.html" title="高等数学">高等数学</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-politics.html" title="考研政治">考研政治</a>
+					<li class="subnav__item"><a class="sublink" href="../html/progress.html" title="学习进程">学习进程</a>
+				</ul>
+			</li>
+			<li class="nav__item"><a class="link" id="link_5" href="../html/software.html" title="软件应用">软件应用</a>
+				<ul class="subnav" id="subnav_4">
+					<li class="subnav__item"><a class="sublink" href="../html/list-excel.html" title="电子表格">电子表格</a>
+				</ul>
+			</li>
+			<input class="textbox" id="searchstr" type="text" size="10" name="searchstr" title="输入关键字查找当前页面">
+		</nav>
+	</header>
+	<section>
+		<div id="toc">
+		</div>
+	</section>
+	<article data-toc="#toc">
+		<hgroup>
+			<h1>第十章 对文件的输入输出(1)</h1>
+		</hgroup>
+		<h2>77.文件的基本概念</h2>
+		<div class='name'>
+			<div class='attention'>文件分类</div>
+			<div class='Content'>
+				<dd><strong>程序文件</strong>这种文件的内容是程序代码，如源程序文件，目标文件，可执行文件等</dd>
+				<dd><strong>数据文件</strong>其内容不是程序，而是供程序运行时读写的数据</dd>
+				<dd class='squarepurple'>终端即计算机的各种输入输出设备。操作系统把终端都统一作为文件看待</dd>
+				<dd class='squarepurple'>一个文件要有唯一的文件标识，文件标识包括3个部分：</dd>
+				<dd>&ensp;&ensp;①文件路径&ensp;②文件名主干&ensp;③文件后缀</dd>
+				<dd class='squarepurple'>数据文件分类：ASCII(文本文件)和二进制文件(镜像文件)</dd>
+			</div>
+		</div>
+		<p><img src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/main/warning.png"
+				alt="">所谓“文件”一般指存储在外边介质(如磁盘)上数据的集合</p>
+		<pre class="line-numbers" data-prismjs-copy='复制' data-prismjs-copy-error='按Ctrl+C复制'
+			data-prismjs-copy-success='成功复制！'>
+<code class="lang-c match-braces rainbow-braces">#include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
 int main(void)
 {
@@ -85,85 +121,88 @@ int main(void)
 	fclose(fp2);
 	return 0;
 }</code></pre>
-<ul><li>78.读入文件并输出指定位置</li></ul>
-<table id="table-2">
-<caption>文件使用方式一览表</caption>
-<thead>
-	<th>文件使用方式</th>
-	<th>含义</th>
-	<th>如果指定文件不存在</th>
-</thead>
-<tbody>
-	<tr>
-		<td>"r"(只读)</td>
-		<td>为了输出数据，打开一个已存在的文本文件</td>
-		<td>出错</td>
-	</tr>
-	<tr>
-		<td>"w"(只写)</td>
-		<td>为了输出数据，打开一个文本文件</td>
-		<td>建立新文件</td>
-	</tr>
-	<tr>
-		<td>"a"(追加)</td>
-		<td>向文本文件末尾添加数据</td>
-		<td>建立新文件</td>
-	</tr>
-	<tr>
-		<td>"rb"(只读)</td>
-		<td>为了输出数据，打开一个二进制文件</td>
-		<td>出错</td>
-	</tr>
-	<tr>
-		<td>"wb"(只写)</td>
-		<td>为了输出数据，打开一个二进制文件</td>
-		<td>建立新文件</td>
-	</tr>
-	<tr>
-		<td>"ab"(追加)</td>
-		<td>向二进制文件末尾添加数据</td>	
-		<td>建立新文件</td>
-	</tr>
-	<tr>
-		<td>"r+"(读写)</td>
-		<td>为了读和写，打开一个文本文件</td>
-		<td>出错</td>
-	</tr>
-	<tr>
-		<td>"w+"(读写)</td>
-		<td>为了读和写，新建一个文本文件</td>
-		<td>建立新文件</td>
-	</tr>
-	<tr>
-		<td>"a+"(读写)</td>
-		<td>为了读和写，打开一个文本文件</td>
-		<td>建立新文件</td>
-	</tr>
-	<tr>
-		<td>"rb+"(读写)</td>
-		<td>为了读和写，打开一个二进制文件</td>
-		<td>出错</td>
-	</tr>
-	<tr>
-		<td>"wb+(读写)"</td>
-		<td>为了读和写。新建的二进制文件</td>
-		<td>建立新文件</td>
-	</tr>
-	<tr>
-		<td>"ab+(读写)"</td>
-		<td>为了读和写，打开了一个二进制文件</td>
-		<td>建立新文件</td>
-	</tr>
-</tbody>
-</table>
-<p><strong>注意：</strong>①不带b，操作的是文本文件，带b操作的是二进制文件，带+是读写；如果指定文件不存在，只有带r的才会出错</p>
-<p>②带w的，若文件存在则文件长度为0，即该文件内容消失，若该文件不存在则建立该文件</p>
-<p>③对一个文件进行读和写，读到或者写到哪一个位置，是通过“文件位置标记”实现的</p>
-<p>④带r和带w的，文件位置标记都是在文件的开头位置；如果我们想对一个文件添加数据，就使用带a的，文件位置标记会在文件的末尾位置</p>
-<p>⑤如果fopen不能打开文件，其返回值为NULL</p>
-<p>⑥有的c编译系统可能不能完全提供上述表格的功能，有的会用"rw","wr","ar"替代"r+","w+","a+"</p>
-<p>⑦程序中可以使用三个标准流文件——标准输入流、标准输出流、标准出错输入流</p>
-<pre class="line-numbers"><code class="lang-c">#include &lt;stdio.h&gt;
+		<h2>78.读入文件并输出指定位置</h2>
+		<table id="table-2">
+			<caption>文件使用方式一览表</caption>
+			<thead>
+				<th>文件使用方式</th>
+				<th>含义</th>
+				<th>如果指定文件不存在</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td>"r"(只读)</td>
+					<td>为了输出数据，打开一个已存在的文本文件</td>
+					<td>出错</td>
+				</tr>
+				<tr>
+					<td>"w"(只写)</td>
+					<td>为了输出数据，打开一个文本文件</td>
+					<td>建立新文件</td>
+				</tr>
+				<tr>
+					<td>"a"(追加)</td>
+					<td>向文本文件末尾添加数据</td>
+					<td>建立新文件</td>
+				</tr>
+				<tr>
+					<td>"rb"(只读)</td>
+					<td>为了输出数据，打开一个二进制文件</td>
+					<td>出错</td>
+				</tr>
+				<tr>
+					<td>"wb"(只写)</td>
+					<td>为了输出数据，打开一个二进制文件</td>
+					<td>建立新文件</td>
+				</tr>
+				<tr>
+					<td>"ab"(追加)</td>
+					<td>向二进制文件末尾添加数据</td>
+					<td>建立新文件</td>
+				</tr>
+				<tr>
+					<td>"r+"(读写)</td>
+					<td>为了读和写，打开一个文本文件</td>
+					<td>出错</td>
+				</tr>
+				<tr>
+					<td>"w+"(读写)</td>
+					<td>为了读和写，新建一个文本文件</td>
+					<td>建立新文件</td>
+				</tr>
+				<tr>
+					<td>"a+"(读写)</td>
+					<td>为了读和写，打开一个文本文件</td>
+					<td>建立新文件</td>
+				</tr>
+				<tr>
+					<td>"rb+"(读写)</td>
+					<td>为了读和写，打开一个二进制文件</td>
+					<td>出错</td>
+				</tr>
+				<tr>
+					<td>"wb+(读写)"</td>
+					<td>为了读和写。新建的二进制文件</td>
+					<td>建立新文件</td>
+				</tr>
+				<tr>
+					<td>"ab+(读写)"</td>
+					<td>为了读和写，打开了一个二进制文件</td>
+					<td>建立新文件</td>
+				</tr>
+			</tbody>
+		</table>
+		<p><img src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/main/warning.png" alt="">注意：</p>
+		<p>①不带b，操作的是文本文件，带b操作的是二进制文件，带+是读写；如果指定文件不存在，只有带r的才会出错</p>
+		<p>②带w的，若文件存在则文件长度为0，即该文件内容消失，若该文件不存在则建立该文件</p>
+		<p>③对一个文件进行读和写，读到或者写到哪一个位置，是通过“文件位置标记”实现的</p>
+		<p>④带r和带w的，文件位置标记都是在文件的开头位置；如果我们想对一个文件添加数据，就使用带a的，文件位置标记会在文件的末尾位置</p>
+		<p>⑤如果fopen不能打开文件，其返回值为NULL</p>
+		<p>⑥有的c编译系统可能不能完全提供上述表格的功能，有的会用"rw","wr","ar"替代"r+","w+","a+"</p>
+		<p>⑦程序中可以使用三个标准流文件——标准输入流、标准输出流、标准出错输入流</p>
+		<pre class="line-numbers" data-prismjs-copy='复制' data-prismjs-copy-error='按Ctrl+C复制'
+			data-prismjs-copy-success='成功复制！'>
+<code class="lang-c match-braces rainbow-braces">#include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
 int main(void)
 {
@@ -193,8 +232,10 @@ int main(void)
 	fp=NULL;              //最好将一个使用完毕的指针赋值为NULL,避免野指针的出现
 	return 0;
 }</code></pre>
-<ul><li>79.向文件读写一个字符串</li></ul>
-<pre class="line-numbers"><code class="lang-c">#include &lt;stdio.h&gt;
+		<h2>79.向文件读写一个字符串</h2>
+		<pre class="line-numbers" data-prismjs-copy='复制' data-prismjs-copy-error='按Ctrl+C复制'
+			data-prismjs-copy-success='成功复制！'>
+<code class="lang-c match-braces rainbow-braces">#include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
 int main(void)
 {
@@ -221,8 +262,10 @@ int main(void)
 	p2 = NULL;
 	return 0;
 }</code></pre>
-<ul><li>80.用格式化的方式读写文件</li></ul>
-<pre class="line-numbers"><code class="lang-c">#include &lt;stdio.h&gt;
+		<h2>80.用格式化的方式读写文件</h2>
+		<pre class="line-numbers" data-prismjs-copy='复制' data-prismjs-copy-error='按Ctrl+C复制'
+			data-prismjs-copy-success='成功复制！'>
+<code class="lang-c match-braces rainbow-braces">#include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
 typedef struct 
 {
@@ -254,24 +297,35 @@ int main(void)
 	fclose(p1);
 	return 0;
 }</code></pre>
-</div>
-<div id="button_group">
-      <button class="custom-btn btn-3">
-        <span onclick="window.open('../html/c-b-9.html','_self')">上一页</span>
-      </button>
-	   <button class="custom-btn btn-3" >
-        <span onclick="window.open('../html/c.html','_self')">目录</span>
-      </button>
-	   <button class="custom-btn btn-3">
-        <span onclick="window.open('../html/c-b-10.2.html','_self')">下一页</span>
-      </button>
-</div>
-<footer>
-<a href="../html/index.html" title="网站首页">网站首页</a>|
-<a href="../html/lang.html" title="编程语言">编程语言</a>|
-<a href="../html/computer.html" title="计算机">计算机</a>|
-<a href="../html/math.html" title="数学">数学</a>
-<h5>Copyright &copy; 2021   Passwordgloo    All rights reserved.</h5>
-</footer>
+		</div>
+		<div id="button_group">
+			<button class="custom-btn btn-3" onclick="window.open('../html/c-b-9.html','_self')">
+				<span>上一页</span>
+			</button>
+			<button class="custom-btn btn-3" onclick="window.open('../html/list-c.html','_self')">
+				<span>目录</span>
+			</button>
+			<button class="custom-btn btn-3" onclick="window.open('../html/c-b-10.2.html','_self')">
+				<span>下一页</span>
+			</button>
+		</div>
+	</article>
+	<footer>
+		<a href="../html/index.html" title="网站首页">网站首页</a>|
+		<a href="../html/education.html" title="教育学">教育学</a>|
+		<a href="../html/language.html" title="编程语言">编程语言</a>|
+		<a href="../html/computer.html" title="计算机">计算机</a>|
+		<a href="../html/course.html" title="学科课程">学科课程</a>|
+		<a href="../html/software.html" title="软件应用">软件应用</a>
+		<h5>Copyright &copy; 2022 Passwordgloo All rights reserved.</h5>
+	</footer>
+	<script>
+		const tocHelper = new TocHelper({
+			dom: 'article[data-toc]',
+			offsetBody: document.querySelector('#scroll'),
+		})
+		tocHelper.reset()
+	</script>
 </body>
+
 </html>

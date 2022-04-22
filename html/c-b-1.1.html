@@ -1,69 +1,99 @@
-﻿<!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html lang="zh-CN">
+
 <head>
-	<meta charset="utf-8">													  <!-- unicode8编码-->
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">                     <!-- ie兼容 -->
-	<meta name="viewport" content="width=device-width, inital-scale:1.0">     <!-- 响应式布局 -->
-	<meta name="description" content="预见更好的自己">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>C语言</title>
-	<link rel="shortcut icon" href="../img/main/logo.ico"  type="image/x-icon" />
+	<link rel="shortcut icon" href="../img/main/logo.ico">
 	<link rel="stylesheet" href="../css/prism.css">
-	<link rel="stylesheet" href="../css/c.css">
+	<link rel="stylesheet" href="../css/language.css">
 	<link rel="stylesheet" href="../css/main.css">
-	<script src="../js/jquery-1.7.2.min.js"></script>
-    <script src="../js/prism.js"></script>
-	<script src="../js/style.js"></script>
+	<script src="../js/jquery-3.6.0.js"></script>
+	<script src="../js/prism.js"></script>
+	<script src="../js/toc-helper.js"></script>
 	<canvas class="fireworks"></canvas>
-	<script type="text/javascript" src="../js/fireworks.js"></script> 
+	<script type="text/javascript" src="../js/fireworks.js"></script>
 </head>
-<body id="body">
-<header class="header header_fixed">
-<div class="inner"> 
-	<nav class="nav">
-	<img class="white" src="../img/main/logo_white.png" alt="预见" title="预见"><img class="black" alt="预见" src="../img/main/logo_black.png">
-		<li class="nav__item"><a class="link" href="../html/index.html" title="网站首页">网站首页</a></li> 
-		<li class="nav__item cur"> <a class="link" href="../html/lang.html" title="编程语言">编程语言</a>
-			<ul class="subnav">
-				<li class="subnav__item cur"> <a class="sublink" title="C语言" href="../html/c.html">C语言</a> </li>              <!-- cur用在当前位置 -->
-				<li class="subnav__item"> <a class="sublink" href="" title="C++">C++</a></li>
-				<li class="subnav__item"> <a class="sublink" href="" title="Java语言">Java语言</a> </li> 
-			</ul>
-		</li>
-		<li class="nav__item"><a class="link" href="../html/computer.html" rel="nofollow" title="计算机">计算机</a>
-			<ul class="subnav">
-				<li class="subnav__item cur"> <a class="sublink" href="../html/co.html" title="计算机组成原理">组成原理</a>
-				<li class="subnav__item"> <a class="sublink" href="../html/network.html" title="计算机网络">计算机网络</a>
-				<li class="subnav__item"><a class="sublink" href="../html/structure.html" title="数据结构">数据结构</a>
-			</ul>
-		</li>
-		<li class="nav__item"><a class="link" href="../html/math.html" title="数学">数学</a>
-			<ul class="subnav">
-				<li class="subnav__item"><a class="sublink" href="../html/ls.html" title="离散数学">离散数学</a>
-				<li class="subnav__item"><a class="sublink" href="../html/gs.html" title="高等数学">高等数学</a>
-			</ul>
-		</li>
-		<input class="textbox" id="searchstr" type="text" size="10" name="searchstr" title="输入关键字查找当前页面">
-	</nav> 
-</div> 
-</header>
-<div id="background">
-	<h4 class="subpage_title">C语言</h4>
-</div>
-<h6 class="nav_map"><img alt="" src="../img/main/position.png"><a href="../html/index.html">网站首页</a>>><a href="../html/lang.html">编程语言</a>>><a>C语言</a>
-<div id="switch_module"><span style="color:#555">暗夜模式&nbsp;</span><div class="kaiguan" title="点击开启暗夜模式"><div class="white" id="botton"></div></div></div></h6>
-<div class="rocket" id="gotoTop"><img src="../img/main/rocket.svg" alt=""></div>
-<div id="content">
-<h1>第一章 程序设计和C语言（1）</h1>
-<ul><li>1.最简单的C语言程序</li></ul>
-	<pre class="line-numbers">
-<code class="lang-c">#include &lt;stdio.h&gt
+
+<body>
+	<header>
+		<nav style="text-align:right">
+			<img id="logo" src="../img/main/logo.svg" alt="预见" title="预见"
+				onclick="window.open('../html/index.html','_self')">
+			<li class="nav__item"><a class="link" id="link_1" href="../html/index.html" title="网站首页">网站首页</a></li>
+			<li class="nav__item"> <a class="link" href="../html/education.html" title="教育学">教育学</a>
+				<ul class="subnav">
+					<li class="subnav__item"> <a class="sublink" href="../html/list-education.html"
+							title="教育学原理">教育学原理</a>
+					</li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-china.html" title="中国教育史">中国教育史</a>
+					</li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-foreign.html"
+							title="外国教育史">外国教育史</a>
+					</li>
+					<li class="subnav__item"> <a class="sublink" title="教育心理学"
+							href="../html/list-edu_psychology.html">教育心理学</a> </li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-psychology.html"
+							title="儿童心理学">儿童心理学</a>
+					</li>
+				</ul>
+			</li>
+			<li class="nav__item cur"> <a class="link" id="link_2" href="../html/language.html" title="编程语言">编程语言</a>
+				<ul class="subnav" id="subnav_1">
+					<li class="subnav__item"> <a class="sublink" title="C语言" href="../html/list-c.html">C语言</a> </li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-java.html" title="Java语言">Java语言</a>
+					</li>
+				</ul>
+			</li>
+			<li class="nav__item"><a class="link" id="link_3" href="../html/computer.html" rel="nofollow"
+					title="计算机">计算机</a>
+				<ul class="subnav" id="subnav_2">
+					<li class="subnav__item"> <a class="sublink" href="../html/list-composition.html"
+							title="计算机组成原理">组成原理</a>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-network.html"
+							title="计算机网络">计算机网络</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-structure.html" title="数据结构">数据结构</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-system.html" title="操作系统">操作系统</a>
+				</ul>
+			</li>
+			<li class="nav__item"><a class="link" id="link_4" href="../html/course.html" title="学科课程">学科课程</a>
+				<ul class="subnav" id="subnav_3">
+					<li class="subnav__item"><a class="sublink" href="../html/list-discrete.html" title="离散数学">离散数学</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-advance.html" title="高等数学">高等数学</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-politics.html" title="考研政治">考研政治</a>
+					<li class="subnav__item"><a class="sublink" href="../html/progress.html" title="学习进程">学习进程</a>
+				</ul>
+			</li>
+			<li class="nav__item"><a class="link" id="link_5" href="../html/software.html" title="软件应用">软件应用</a>
+				<ul class="subnav" id="subnav_4">
+					<li class="subnav__item"><a class="sublink" href="../html/list-excel.html" title="电子表格">电子表格</a>
+				</ul>
+			</li>
+			<input class="textbox" id="searchstr" type="text" size="10" name="searchstr" title="输入关键字查找当前页面">
+		</nav>
+	</header>
+	<section>
+		<div id="toc">
+		</div>
+	</section>
+	<article data-toc="#toc">
+		<hgroup>
+			<h1>第一章 程序设计和C语言（1）</h1>
+		</hgroup>
+		<h2>1.最简单的C语言程序</h2>
+		<pre class="line-numbers" data-prismjs-copy='复制' data-prismjs-copy-error='按Ctrl+C复制'
+			data-prismjs-copy-success='成功复制！'>
+<code class="lang-c match-braces rainbow-braces">#include &lt;stdio.h&gt;
 int main()
 {
 	printf("C programme\n");
 	return 0;
 }</code></pre>
-<ul><li>2.基本格式（1）</li></ul>
-	<pre class="line-numbers"><code class="lang-c">#include &lt;stdio.h&gt;
+		<h2>2.基本格式（1）</h2>
+		<pre class="line-numbers" data-prismjs-copy='复制' data-prismjs-copy-error='按Ctrl+C复制'
+			data-prismjs-copy-success='成功复制！'>
+<code class="lang-c match-braces rainbow-braces">#include &lt;stdio.h&gt;
 int f(int a)                 //函数原型/首部  返回值类型·函数名·参数及参数类型   该处参数被称为形式参数
 {			     //2.函数体
 	return a*a;	     
@@ -80,8 +110,10 @@ int main(void)
 	g(3,4);
 	return 0;
 }</code></pre>
-<ul><li>3.基本格式（2）</li></ul>
-	<pre class="line-numbers"><code class="lang-c">#include &lt;stdio.h&gt;
+		<h2>3.基本格式（2）</h2>
+		<pre class="line-numbers" data-prismjs-copy='复制' data-prismjs-copy-error='按Ctrl+C复制'
+			data-prismjs-copy-success='成功复制！'>
+<code class="lang-c match-braces rainbow-braces">#include &lt;stdio.h&gt;
 /*                           //去掉注释，程序编译报错，各个函数之间应该是平行的，一个函数定义不能放在另一个函数的函数体
 void g(void)
 {
@@ -112,8 +144,10 @@ void h(int a)
 	g();                     //h函数的定义必须在g函数的定义域内，因为h函数有g函数的调用
 }</code></pre>
 
-<ul><li>4.求两个整数的和</li></ul>
-<pre class="line-numbers"><code class="lang-c">#include &lt;stdio.h&gt;
+		<h2>4.求两个整数的和</h2>
+		<pre class="line-numbers" data-prismjs-copy='复制' data-prismjs-copy-error='按Ctrl+C复制'
+			data-prismjs-copy-success='成功复制！'>
+<code class="lang-c match-braces rainbow-braces">#include &lt;stdio.h&gt;
 int main()
 {
 	int a,b,sum;
@@ -124,8 +158,10 @@ int main()
 	return 0;
 }</code></pre>
 
-<ul><li>5.1求两个整数最大值</li></ul>
-<pre class="line-numbers"><code class="lang-c">#include &lt;stdio.h&gt
+		<h2>5.1求两个整数最大值</h2>
+		<pre class="line-numbers" data-prismjs-copy='复制' data-prismjs-copy-error='按Ctrl+C复制'
+			data-prismjs-copy-success='成功复制！'>
+<code class="lang-c match-braces rainbow-braces">#include &lt;stdio.h&gt
 int main()
 {
 	int max(int x,int y);          //对被调用函数max的声明
@@ -145,8 +181,10 @@ int max(int x,int y)
 	return(z);                     //返回到调用max函数位置
 }</code></pre>
 
-<ul><li>5.2求两个数最大值</li></ul>
-<pre class="line-numbers"><code class="lang-c">#include &lt;stdio.h&gt                    //printf和scanf函数声明在stdio.h里
+		<h2>5.2求两个数最大值</h2>
+		<pre class="line-numbers" data-prismjs-copy='复制' data-prismjs-copy-error='按Ctrl+C复制'
+			data-prismjs-copy-success='成功复制！'>
+<code class="lang-c match-braces rainbow-braces">#include &lt;stdio.h&gt                    //printf和scanf函数声明在stdio.h里
 int main(void)
 {
 	double a,b;                       //double浮点型数据类型
@@ -165,8 +203,10 @@ int main(void)
 	return 0;
 }</code></pre>
 
-<ul><li>6.scanf函数与printf函数</li></ul>
-<pre class="line-numbers"><code class="lang-c">#include &lt;stdio.h&gt;
+		<h2>6.scanf函数与printf函数</h2>
+		<pre class="line-numbers" data-prismjs-copy='复制' data-prismjs-copy-error='按Ctrl+C复制'
+			data-prismjs-copy-success='成功复制！'>
+<code class="lang-c match-braces rainbow-braces">#include &lt;stdio.h&gt;
 int main(void)
 {
 	printf("%d\n",printf("haha\n"));   //printf函数的返回值为整型，会把所输出的字符个数返回
@@ -179,8 +219,10 @@ int main(void)
 	printf("%d\n",scanf("%d%d",&a,&b)); //scanf函数的会返回其按照正确格式输入的变量的个数
 	return 0;
 }</code></pre>
-<ul><li>7.给定分数判断成绩是否合格</li></ul>
-<pre class="line-numbers"><code class="lang-c">#include <stdio.h>
+		<h2>7.给定分数判断成绩是否合格</h2>
+		<pre class="line-numbers" data-prismjs-copy='复制' data-prismjs-copy-error='按Ctrl+C复制'
+			data-prismjs-copy-success='成功复制！'>
+<code class="lang-c match-braces rainbow-braces">#include <stdio.h>
 int main(void)
 {
 	double a;
@@ -218,8 +260,10 @@ int main(void)
 	return 0;*/
 }
 //一个if语句中有且只有一个if，else if可以有多个，else语句至多只能有一个</code></pre>
-<ul><li>8.if语句</li></ul>
-<pre class="line-numbers"><code class="lang-c">#include &lt;stdio.h&gt;
+		<h2>8.if语句</h2>
+		<pre class="line-numbers" data-prismjs-copy='复制' data-prismjs-copy-error='按Ctrl+C复制'
+			data-prismjs-copy-success='成功复制！'>
+<code class="lang-c match-braces rainbow-braces">#include &lt;stdio.h&gt;
 int main()
 {
 	printf("%d,%d\n",3>2,3<2);     //输出1，0
@@ -235,8 +279,10 @@ int main()
 	}
 	return 0;
 }</code></pre>
-<ul><li>9.scanf函数注意事项</li></ul>
-<pre class="line-numbers"><code class="lang-c">/*
+		<h2>9.scanf函数注意事项</h2>
+		<pre class="line-numbers" data-prismjs-copy='复制' data-prismjs-copy-error='按Ctrl+C复制'
+			data-prismjs-copy-success='成功复制！'>
+<code class="lang-c match-braces rainbow-braces">/*
 （1）使用scanf函数输入数据，按回车可以刷新键盘缓冲区的内容，键盘缓冲区会有一个换行字符
 （2）scanf函数遇到错误会停止
 （3) scanf函数的格式字符串中的字符分类：
@@ -277,27 +323,34 @@ int main()
 	printf("ch1 = %c,ch2 = %c\n",ch1,ch2);   //char函数会记录空白字符，输入1个数据后不需要加空白字符
 	return 0;
 }</code></pre>
-</div>
-<div id="button_group">
-      <button class="custom-btn btn-3" id="unable">
-        <span>上一页</span>
-      </button>
-	   <button class="custom-btn btn-3" >
-        <span onclick="window.open('../html/c.html','_self')">目录</span>
-      </button>
-	   <button class="custom-btn btn-3">
-        <span onclick="window.open('../html/c-b-1.2.html','_self')">下一页</span>
-      </button>
-</div>
-<footer id="footer">
-<iframe id="MusicPlayer" frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=110 src="https://music.163.com/outchain/player?type=0&id=2621806774&auto=1&height=90"></iframe>
-<div id="center">
-<a href="../html/index.html" title="网站首页">网站首页</a>|
-<a href="../html/lang.html" title="编程语言">编程语言</a>|
-<a href="../html/computer.html" title="计算机">计算机</a>|
-<a href="../html/math.html" title="数学">数学</a>
-<h5>Copyright &copy; 2021   Passwordgloo    All rights reserved.</h5>
-</div>
-<img src="../img/main/qc.png" width="7%" height="7%"; >
-</footer>
+		<div id="button_group">
+			<button class="custom-btn pure-button">
+				<span>上一页</span>
+			</button>
+			<button class="custom-btn btn-3" onclick="window.open('../html/list-c.html','_self')">
+				<span>目录</span>
+			</button>
+			<button class="custom-btn btn-3" onclick="window.open('../html/c-b-1.2.html','_self')">
+				<span>下一页</span>
+			</button>
+		</div>
+	</article>
+	<footer>
+		<a href="../html/index.html" title="网站首页">网站首页</a>|
+		<a href="../html/education.html" title="教育学">教育学</a>|
+		<a href="../html/language.html" title="编程语言">编程语言</a>|
+		<a href="../html/computer.html" title="计算机">计算机</a>|
+		<a href="../html/course.html" title="学科课程">学科课程</a>|
+		<a href="../html/software.html" title="软件应用">软件应用</a>
+		<h5>Copyright &copy; 2022 Passwordgloo All rights reserved.</h5>
+	</footer>
+	<script>
+		const tocHelper = new TocHelper({
+			dom: 'article[data-toc]',
+			offsetBody: document.querySelector('#scroll'),
+		})
+		tocHelper.reset()
+	</script>
+</body>
+
 </html>

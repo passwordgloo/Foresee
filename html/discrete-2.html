@@ -1,0 +1,238 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, inital-scale:1.0">
+	<meta name="description" content="预见更好的自己">
+	<title>离散数学</title>
+	<link rel="shortcut icon" href="../img/main/logo.ico">
+	<link rel="stylesheet" href="../css/course.css">
+	<link rel="stylesheet" href="../css/main.css">
+	<script src="../js/jquery-3.6.0.js"></script>
+	<script>MathJax = {
+			tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			},
+			svg: {
+				fontCache: 'global'
+			}
+		};
+	</script>
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script type="text/javascript" id="MathJax-script" async
+		src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+	<canvas class="fireworks"></canvas>
+	<script type="text/javascript" src="../js/fireworks.js"></script>
+	<script src="../js/style.js"></script>
+</head>
+
+<body>
+	<header>
+		<nav style="text-align:right">
+			<img id="logo" src="../img/main/logo.svg" alt="预见" title="预见"
+				onclick="window.open('../html/index.html','_self')">
+			<li class="nav__item"><a class="link" id="link_1" href="../html/index.html" title="网站首页">网站首页</a></li>
+			<li class="nav__item"> <a class="link" href="../html/education.html" title="教育学">教育学</a>
+				<ul class="subnav">
+					<li class="subnav__item"> <a class="sublink" href="../html/list-education.html"
+							title="教育学原理">教育学原理</a>
+					</li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-china.html" title="中国教育史">中国教育史</a>
+					</li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-foreign.html"
+							title="外国教育史">外国教育史</a>
+					</li>
+					<li class="subnav__item"> <a class="sublink" title="教育心理学"
+							href="../html/list-edu_psychology.html">教育心理学</a> </li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-psychology.html"
+							title="儿童心理学">儿童心理学</a>
+					</li>
+				</ul>
+			</li>
+			<li class="nav__item"> <a class="link" id="link_2" href="../html/language.html" title="编程语言">编程语言</a>
+				<ul class="subnav" id="subnav_1">
+					<li class="subnav__item"> <a class="sublink" title="C语言" href="../html/list-c.html">C语言</a> </li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-java.html" title="Java语言">Java语言</a>
+					</li>
+				</ul>
+			</li>
+			<li class="nav__item"><a class="link" id="link_3" href="../html/computer.html" rel="nofollow"
+					title="计算机">计算机</a>
+				<ul class="subnav" id="subnav_2">
+					<li class="subnav__item"> <a class="sublink" href="../html/list-composition.html"
+							title="计算机组成原理">组成原理</a>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-network.html"
+							title="计算机网络">计算机网络</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-structure.html" title="数据结构">数据结构</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-system.html" title="操作系统">操作系统</a>
+				</ul>
+			</li>
+			<li class="nav__item cur"><a class="link" id="link_4" href="../html/course.html" title="学科课程">学科课程</a>
+				<ul class="subnav" id="subnav_3">
+					<li class="subnav__item"><a class="sublink" href="../html/list-discrete.html" title="离散数学">离散数学</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-advance.html" title="高等数学">高等数学</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-politics.html" title="考研政治">考研政治</a>
+					<li class="subnav__item"><a class="sublink" href="../html/progress.html" title="学习进程">学习进程</a>
+				</ul>
+			</li>
+			<li class="nav__item"><a class="link" id="link_5" href="../html/software.html" title="软件应用">软件应用</a>
+				<ul class="subnav" id="subnav_4">
+					<li class="subnav__item"><a class="sublink" href="../html/list-excel.html" title="电子表格">电子表格</a>
+				</ul>
+			</li>
+			<input class="textbox" id="searchstr" type="text" size="10" name="searchstr" title="输入关键字查找当前页面">
+		</nav>
+	</header>
+	<div id="DiscreteBackground">
+		<h4 class="SubpageTitleWhite">离散数学</h4>
+	</div>
+	<div class="rocket" id="gotoTop"><img
+			src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/main/rocket-red.svg" alt=""></div>
+	<div id="menu">
+		<a href="#1.1">集合运算的基本等式</a>
+		<a href='#1.2'>自然数集的定义</a>
+	</div>
+
+	<article>
+		<img alt="" src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/top.png" class="top"
+			id="gotoTop">
+		<ol>
+			<li class="h1">集合论基础（2）
+				<ol style="counter-reset: nested-counter 3;">
+					<li class="h2" id='1.1'>集合运算的基本等式
+						<ol>
+							<div class="name">
+								<div class="define">幂等律</div>
+								<div class="Content">
+									<dd class="none">设<i>U</i>为全集，<i>A,B,C</i>为任意集合</dd>
+									<dd class="none">$A\cup A = A,A\,\cap B = A$</dd>
+								</div>
+							</div>
+							<div class="name">
+								<div class="define">交换律</div>
+								<div class="Content">
+									<dd class="none">设<i>U</i>为全集，<i>A,B,C</i>为任意集合</dd>
+									<dd class="none">$A\cup B = B\,\cup A,A\cap B = B\,\cap A$</dd>
+								</div>
+							</div>
+							<div class="name">
+								<div class="define">结合律</div>
+								<div class="Content">
+									<dd class="none">设<i>U</i>为全集，<i>A,B,C</i>为任意集合</dd>
+									<dd class="none">$A\cup(B\,\cup C)=(A\,\cup B)\,\cup C,A\cap(B\,\cap C)=(A\,\cap
+										B)\,\cap C$</dd>
+								</div>
+							</div>
+							<div class="name">
+								<div class="define">同一律</div>
+								<div class="Content">
+									<dd class="none">设<i>U</i>为全集，<i>A,B,C</i>为任意集合</dd>
+									<dd class="none">$A\,\cup \varnothing = A,A\,\cup U=A$</dd>
+								</div>
+							</div>
+							<div class="name">
+								<div class="define">零律</div>
+								<div class="Content">
+									<dd class="none">设<i>U</i>为全集，<i>A,B,C</i>为任意集合</dd>
+									<dd class="none">$A\,\cup U=U, A\,\cap \varnothing =\varnothing$</dd>
+								</div>
+							</div>
+							<div class="name">
+								<div class="define">分配律</div>
+								<div class="Content">
+									<dd class="none">设<i>U</i>为全集，<i>A,B,C</i>为任意集合</dd>
+									<dd class='none'>$A\cup(B\cap C) = (A\cup B)\cap(A \cup C),\;A\cap(B\cup C) = (A
+										\cap B)\cup(A \cap C)$</dd>
+								</div>
+							</div>
+							<div class="name">
+								<div class="define">吸收律</div>
+								<div class="Content">
+									<dd class="none">设<i>U</i>为全集，<i>A,B,C</i>为任意集合</dd>
+									<dd class='none'>$A\cup(A\cap B)=A,\;A\cap(A\cup B)=A$</dd>
+								</div>
+							</div>
+							<div class="name">
+								<div class="define">矛盾律与排中律</div>
+								<div class="Content">
+									<dd class="none">设<i>U</i>为全集，<i>A,B,C</i>为任意集合</dd>
+									<dd class='none'>$\overline{A}\,\cap A=\varnothing,\;\overline{A}\,\cup A=U$</dd>
+								</div>
+							</div>
+							<div class="name">
+								<div class="define">双重否定律</div>
+								<div class="Content">
+									<dd class="none">设<i>U</i>为全集，<i>A,B,C</i>为任意集合</dd>
+									<dd class='none'>$\overline{\overline{A}}=A $</dd>
+								</div>
+							</div>
+							<div class="name">
+								<div class="define">德·摩根律</div>
+								<div class="Content">
+									<dd class="none">设<i>U</i>为全集，<i>A,B,C</i>为任意集合</dd>
+									<dd class='none'>$\overline{A \cup B}=\overline{A}\,\cap\overline{B},\;\overline{A
+										\cap B}=\overline{A}\cup \overline{B}
+										$</dd>
+								</div>
+							</div>
+						</ol>
+					<li class='h2'>可数集合与不可数集合
+						<ol>
+							<li class='h3' id='1.2'>自然数集的定义</li>
+							<div class='name'>
+								<div class='define'>皮亚诺公理</div>
+								<div class='Content'>
+									<dd class='none'>$若\varphi是一个自然数的预测，满足一下条件\varphi(n)对任意自然数都成立$</dd>
+									<dd class='none'>$\varphi(0)$为真；</dd>
+									<dd class='none'>$\varphi(n)$为真，则有$\varphi(S(n))$为真，即$\varphi$的后继也为真</dd>
+								</div>
+							</div>
+							<div class='name'>
+								<div class='define'>冯·诺依曼自然数定义</div>
+								<div class='Content'>
+									<dd class='none'>$(1)\;\varnothing\in N$</dd>
+									<dd class='none'>$(2)若n\in N,则n'\equiv n\cup\{n\}\in N$</dd>
+								</div>
+							</div>
+							<li class='h3' id='1.3'>等势</li>
+							<div class='name'>
+								<div class='define'>等势</div>
+								<div class='Content'>
+									<dd class='none'>$\textup{设集合A,B若存在}\Psi:A\to B，称A与B是等势的，记作：A\sim B$</dd>
+									<p><img src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/main/warning.png"
+											alt="">如果A = B,那么A~B，反之 <span style='color:var(--red)'>不成立</span></p>
+								</div>
+							</div>
+						</ol>
+					</li>
+			</li>
+		</ol>
+		</li>
+		</ol>
+		</div>
+		<div id="button_group">
+			<button class="custom-btn btn-13" onclick="window.open('../html/discrete-1.html','_self')">
+				<span>上一页</span>
+			</button>
+			<button class="custom-btn btn-13" onclick="window.open('../html/list-discrete.html','_self')">
+				<span>目录</span>
+			</button>
+			<button class="custom-btn btn-13" onclick="window.open('../html/discrete-3.html','_self')">
+				<span>下一页</span>
+			</button>
+		</div>
+	</article>
+	<footer>
+		<a href="../html/index.html" title="网站首页">网站首页</a>|
+		<a href="../html/education.html" title="教育学">教育学</a>|
+		<a href="../html/language.html" title="编程语言">编程语言</a>|
+		<a href="../html/computer.html" title="计算机">计算机</a>|
+		<a href="../html/course.html" title="学科课程">学科课程</a>|
+		<a href="../html/software.html" title="软件应用">软件应用</a>
+		<h5>Copyright &copy; 2022 Passwordgloo All rights reserved.</h5>
+	</footer>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, inital-scale:1.0"> 
+	<meta name="description" content="预见更好的自己">
+	<title>预见·初见</title>
+    <link rel="shortcut icon" href="img/main/logo.ico"  type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/fullpage.css"/>
+    <script type="text/javascript" src="js/fullpage.js"></script>
+    <script src="js/typed.js"></script>
+</head>
+<body>
+<div id="fullpage">
+	<div class="section " id="section0">
+		<video id="myVideo" loop muted data-autoplay>
+			<source src="other/windmill.mp4" type="video/mp4">
+		</video>
+		<div class="layer">
+			<header>
+                <div class="inner"> 
+                    <nav>
+                    <img id="logo" src="img/main/logo.svg" alt="预见" title="预见">
+                        <li class="nav__item"><a class="link" href="index.html" title="网站首页">网站首页</a></li>
+                        <li class="nav__item"> <a class="link" href="html/education.html" title="教育学">教育学</a></li>
+                        <li class="nav__item"> <a class="link" href="html/language.html" title="编程语言">编程语言</a>
+                        </li>
+                        <li class="nav__item"><a class="link" href="html/computer.html" rel="nofollow" title="计算机">计算机</a>
+                        </li>
+                        <li class="nav__item"><a class="link" href="html/course.html" title="数学政治">数学政治</a>
+                        </li>
+                        <li class="nav__item"><a class="link" href="html/software.html" title="软件应用">软件应用</a>
+                        </li>
+                    </nav> 
+                </header>
+                <span id="typed"></span>
+		</div>
+	</div>
+	<div class="section" id="section1">
+        <div class="slide" id="slide1"><h1>也许会落空，也许会痛苦</h1></div>
+        <div class="slide" id="slide2"><h1>翻过高山，越过平原</h1></div>
+	</div>
+	<div class="section" id="section2"><h1>皆在不言中</h1></div>
+</div>
+
+<script type="text/javascript">
+    var myFullpage = new fullpage('#fullpage', {
+        verticalCentered: true,
+        sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE']
+    });
+    var typed = new Typed("#typed", {
+    strings: ["计算机并不解决问题，它们只是执行解决方案。^3000", "等风来，不如追风去!^3000","遇见你真好！^3000"],
+    typeSpeed: 80,
+    backSpeed: 40,
+    backDelay: 100,
+    startDelay: 1000,
+    loop: true});
+</script>
+
+</body>
+</html>

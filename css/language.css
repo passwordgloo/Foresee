@@ -1,0 +1,326 @@
+.body {
+	background-color: #ebebeb;
+	margin: 0;
+}
+
+#loading {
+	background-color: Skyblue;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	z-index: 90;
+	margin-top: 0;
+	top: 0;
+	opacity: 1;
+}
+
+#loading-center {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+#loading-center-absolute {
+	position: absolute;
+	left: 50%;
+	top: 45%;
+	height: 200px;
+	width: 200px;
+}
+
+.sk-plane {
+	width: var(--sk-size);
+	height: var(--sk-size);
+	background-color: var(--sk-color);
+	animation: sk-plane 1.2s infinite ease-in-out;
+}
+
+@keyframes sk-plane {
+	0% {
+		transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+	}
+
+	50% {
+		transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+	}
+
+	100% {
+		transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+	}
+}
+
+/*滚动条*/
+::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+}
+
+/* 滚动条宽 */
+::-webkit-scrollbar-thumb {
+	background-color: skyblue;
+	/* 滚动条 拖动条 */
+	background-image: -webkit-linear-gradient(45deg,
+			rgba(255, 255, 255, 0.2) 25%,
+			transparent 25%,
+			transparent 50%,
+			rgba(255, 255, 255, 0.2) 50%,
+			rgba(255, 255, 255, 0.2) 75%,
+			transparent 75%,
+			transparent);
+}
+
+::-webkit-scrollbar-track {
+	/* 滚动条背景槽 */
+	/*滚动条里面轨道*/
+	box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+	background: #ededed;
+}
+
+html {
+	cursor: url(paperplane.ico), auto;
+	scrollbar-color: var(--pink) rgba(0, 0, 0, 0.2);
+	scrollbar-width: thin;
+}
+
+#LanguageBackground {
+	padding: 0;
+	margin: 0;
+	width: inherit;
+	height: 750px;
+	background: url(https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/background/language.jpg) no-repeat;
+	background-size: cover;
+}
+
+#C_Background {
+	padding: 0;
+	margin: 0;
+	width: inherit;
+	height: 400px;
+	background: url(https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/background/c.jpg) no-repeat;
+	background-size: cover;
+}
+
+#C_List {
+	padding: 0;
+	margin: 0 0 60px 0;
+	width: inherit;
+	height: 400px;
+	background: url(https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/background/c.jpg) no-repeat;
+	background-size: cover;
+}
+
+#JavaBackground {
+	padding: 0;
+	margin: 0;
+	width: inherit;
+	height: 400px;
+	background: url(https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/background/java.jpg) no-repeat;
+	background-size: cover;
+}
+
+#JavaList {
+	padding: 0;
+	margin: 0 0 60px 0;
+	width: inherit;
+	height: 400px;
+	background: url(https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/background/java.jpg) no-repeat;
+	background-size: cover;
+}
+
+#PhpBackground {
+	padding: 0;
+	margin: 0;
+	width: inherit;
+	height: 400px;
+	background: url(https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/background/php.jpg) no-repeat;
+	background-size: cover;
+}
+
+#PhpList {
+	padding: 0;
+	margin: 0 0 60px 0;
+	width: inherit;
+	height: 400px;
+	background: url(https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/background/php.jpg) no-repeat;
+	background-size: cover;
+}
+
+.SubpageTitleLight {
+	text-align: center;
+	color: #fff;
+	font-size: 48px;
+	font-family: 'Microsoft YaHei';
+	font-weight: normal;
+	letter-spacing: .2em;
+	text-shadow: 2px 2px 16px Cyan;
+	padding-top: 280px;
+	margin: 0;
+}
+
+.SubpageTitleBlack {
+	text-align: center;
+	color: #666;
+	font-size: 48px;
+	font-family: 'Microsoft YaHei';
+	font-weight: normal;
+	padding-top: 280px;
+	margin: 0;
+}
+
+.SubpageTitleWhite {
+	text-align: center;
+	color: #fff;
+	font-size: 48px;
+	font-family: 'Microsoft YaHei';
+	font-weight: normal;
+	padding-top: 280px;
+	margin: 0;
+}
+
+strong {
+	background: skyblue;
+	color: #fff;
+}
+
+.card-back {
+	position: relative;
+	transform: rotateY(-180deg);
+	-webkit-transform: rotateY(-180deg);
+}
+
+.c {
+	background: url(https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/card/back_1.jpg);
+}
+
+.java {
+	background: url(https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/card/back_2.jpg);
+}
+
+.Content {
+	background-image: url("https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/card/body.png");
+	color: #555;
+	border-radius: 0 0 12px 12px;
+	padding-bottom: 3px;
+	font-family: "Microsoft Yahei"
+}
+
+.Content dd:last-child {
+	margin-bottom: 0.5em;
+}
+
+p img, dd img {
+	vertical-align: middle;
+	margin: 0em .3em .2em 0;
+}
+
+.card-back img {
+	margin: 100px 40px;
+}
+
+.card div {
+	text-align: center;
+	font-family: "Microsoft Yahei";
+}
+
+.card-norotate {
+	float: left;
+	margin: 0 30px 20px;
+	width: 180px;
+	height: 240px;
+	cursor: url(../img/main/paperplane.ico), auto;
+	background-color: #fff;
+	border-radius: 12px;
+	text-align: center;
+	transition: all 0.25s ease-in;
+}
+
+.card-norotate img {
+	max-width: 100%;
+	border-radius: 12px 12px 0 0;
+}
+
+.card-norotate .center {
+	display: inline-block;
+	margin-top: 10px;
+	font-size: 18px;
+	color: #666;
+	letter-spacing: .2em;
+}
+
+.card-norotate:hover {
+	box-shadow: 0px 0px 20px rgba(135, 206, 250, .5);
+	transform: translateY(-10px);
+}
+
+.card-norotate:hover .center {
+	font-weight: bold;
+}
+
+#menu {
+	box-sizing: border-box;
+	position: fixed;
+	top: 20%;
+
+}
+
+#menu a, #menu::before {
+	display: block;
+	height: 1.5em;
+	width: inherit;
+	padding: 10px 20px;
+	line-height: 20px;
+	text-align: left;
+	text-decoration: none;
+	font-family: "Microsoft Yahei";
+	color: #555;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	transition: transform 100ms;
+}
+
+#menu::before {
+	content: "目录";
+	font-weight: bold;
+	color: #333;
+	text-align: center;
+}
+
+#menu:hover a {
+	background-color: #f2f2f2;
+	color: #555;
+}
+
+#menu a:last-of-type {
+	border-bottom: 0;
+}
+
+#menu a:hover {
+	transform: scale(1);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+	color: #89f7fe;
+	border-left: 4px solid #89f7fe;
+	background-color: #fff;
+	cursor: url(../img/main/paperplane.ico), auto;
+}
+
+/*-----------------目录添加滚动条----------------------*/
+#MenuLink {
+	height: 308px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+/* 块标签样式 */
+blockquote {
+	border: none;
+	padding: 12px 0 8px 10px;
+	background-color: rgba(135, 206, 250, .1);
+	line-height: inherit;
+	min-height: 20px;
+	margin: 1em 0;
+	border-left: 4px solid Skyblue
+}
+
+blockquote dd:last-child {
+	margin-bottom: 0.5em;
+}

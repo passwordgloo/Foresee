@@ -1,0 +1,432 @@
+﻿<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, inital-scale:1.0">
+	<meta name="description" content="预见更好的自己">
+	<title>C语言</title>
+	<link rel="shortcut icon" href="../img/main/logo.ico">
+	<link rel="stylesheet" href="../css/language.css">
+	<link rel="stylesheet" href="../css/main.css">
+	<script src="../js/style.js"></script>
+</head>
+
+<body>
+	<div style="float:right;" id="hub_iframe"></div>
+	<script type="text/javascript">
+		function async_load() {
+			i.scrolling = "no";
+			i.frameborder = "0";
+			i.border = "0";
+			i.setAttribute("frameborder", "0", 0);
+			i.width = "100px";
+			i.height = "20px";
+			document.getElementById("hub_iframe").appendChild(i);
+		}
+
+		if (window.addEventListener) { window.addEventListener("load", async_load, false); }
+		else if (window.attachEvent) { window.attachEvent("onload", async_load); }
+		else { window.onload = async_load; }
+	</script>
+	<script>
+		! function () {
+			//封装方法，压缩之后减少文件大小
+			function get_attribute(node, attr, default_value) {
+				return node.getAttribute(attr) || default_value;
+			}
+			//封装方法，压缩之后减少文件大小
+			function get_by_tagname(name) {
+				return document.getElementsByTagName(name);
+			}
+			//获取配置参数
+			function get_config_option() {
+				var scripts = get_by_tagname("script"),
+					script_len = scripts.length,
+					script = scripts[script_len - 1]; //当前加载的script
+				return {
+					l: script_len, //长度，用于生成id用
+					z: get_attribute(script, "zIndex", -1), //z-index
+					o: get_attribute(script, "opacity", 0.8), //opacity
+					c: get_attribute(script, "color", "0,0,0"), //color
+					n: get_attribute(script, "count", 200) //蜘蛛网数量
+				};
+			}
+			//设置canvas的高宽
+			function set_canvas_size() {
+				canvas_width = the_canvas.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+					canvas_height = the_canvas.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+			}
+
+			//绘制过程
+			function draw_canvas() {
+				context.clearRect(0, 0, canvas_width, canvas_height);
+				//随机的线条和当前位置联合数组
+				var e, i, d, x_dist, y_dist, dist; //临时节点
+				//遍历处理每一个点
+				random_lines.forEach(function (r, idx) {
+					r.x += r.xa,
+						r.y += r.ya, //移动
+						r.xa *= r.x > canvas_width || r.x < 0 ? -1 : 1,
+						r.ya *= r.y > canvas_height || r.y < 0 ? -1 : 1, //碰到边界，反向反弹
+						context.fillRect(r.x - 0.5, r.y - 0.5, 1, 1); //绘制一个宽高为1的点
+					//从下一个点开始
+					for (i = idx + 1; i < all_array.length; i++) {
+						e = all_array[i];
+						//不是当前点
+						if (null !== e.x && null !== e.y) {
+							x_dist = r.x - e.x, //x轴距离 l
+								y_dist = r.y - e.y, //y轴距离 n
+								dist = x_dist * x_dist + y_dist * y_dist; //总距离, m
+							dist < e.max && (e === current_point && dist >= e.max / 2 && (r.x -= 0.03 * x_dist, r.y -= 0.03 * y_dist), //靠近的时候加速
+								d = (e.max - dist) / e.max,
+								context.beginPath(),
+								context.lineWidth = d / 2,
+								context.strokeStyle = "rgba(" + config.c + "," + (d + 0.2) + ")",
+								context.moveTo(r.x, r.y),
+								context.lineTo(e.x, e.y),
+								context.stroke());
+						}
+					}
+				}), frame_func(draw_canvas);
+			}
+			//创建画布，并添加到body中
+			var the_canvas = document.createElement("canvas"), //画布
+				config = get_config_option(), //配置
+				canvas_id = "c_n" + config.l, //canvas id
+				context = the_canvas.getContext("2d"), canvas_width, canvas_height,
+				frame_func = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function (func) {
+					window.setTimeout(func, 1000 / 45);
+				}, random = Math.random,
+				current_point = {
+					x: null, //当前鼠标x
+					y: null, //当前鼠标y
+					max: 20000
+				},
+				all_array;
+			the_canvas.id = canvas_id;
+			the_canvas.style.cssText = "position:fixed;top:0;left:0;z-index:" + config.z + ";opacity:" + config.o;
+			get_by_tagname("body")[0].appendChild(the_canvas);
+			//初始化画布大小
+
+			set_canvas_size(), window.onresize = set_canvas_size;
+			//当时鼠标位置存储，离开的时候，释放当前位置信息
+			window.onmousemove = function (e) {
+				e = e || window.event, current_point.x = e.clientX, current_point.y = e.clientY;
+			}, window.onmouseout = function () {
+				current_point.x = null, current_point.y = null;
+			};
+			//随机生成config.n条线位置信息
+			for (var random_lines = [], i = 0; config.n > i; i++) {
+				var x = random() * canvas_width, //随机位置
+					y = random() * canvas_height,
+					xa = 2 * random() - 1, //随机运动方向
+					ya = 2 * random() - 1;
+				random_lines.push({
+					x: x,
+					y: y,
+					xa: xa,
+					ya: ya,
+					max: 6000 //沾附距离
+				});
+			}
+			all_array = random_lines.concat([current_point]);
+			//0.1秒后绘制
+			setTimeout(function () {
+				draw_canvas();
+			}, 100);
+		}();
+	</script>
+	<header>
+		<nav style="text-align:right">
+			<img id="logo" src="../img/main/logo.svg" alt="预见" title="预见"
+				onclick="window.open('../html/index.html','_self')">
+			<li class="nav__item"><a class="link" href="../html/index.html" title="网站首页">网站首页</a></li>
+			<li class="nav__item"> <a class="link" href="../html/education.html" title="教育学">教育学</a>
+				<ul class="subnav">
+					<li class="subnav__item"> <a class="sublink" href="../html/list-education.html"
+							title="教育学原理">教育学原理</a>
+					</li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-china.html" title="中国教育史">中国教育史</a>
+					</li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-foreign.html"
+							title="外国教育史">外国教育史</a>
+					</li>
+					<li class="subnav__item"> <a class="sublink" title="教育心理学"
+							href="../html/list-edu_psychology.html">教育心理学</a> </li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-psychology.html"
+							title="儿童心理学">儿童心理学</a>
+					</li>
+				</ul>
+			</li>
+			<li class="nav__item cur"> <a class="link" href="../html/language.html" title="编程语言">编程语言</a>
+				<ul class="subnav">
+					<li class="subnav__item"> <a class="sublink" title="C语言" href="javascript:void(0);"
+							οnclick="js_method()">C语言</a> </li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-java.html" title="Java语言">Java语言</a>
+					</li>
+				</ul>
+			</li>
+			<li class="nav__item"><a class="link" href="../html/computer.html" rel="nofollow" title="计算机">计算机</a>
+				<ul class="subnav">
+					<li class="subnav__item cur"> <a class="sublink" href="../html/list-composition.html"
+							title="计算机组成原理">组成原理</a>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-network.html"
+							title="计算机网络">计算机网络</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-structure.html" title="数据结构">数据结构</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-system.html" title="操作系统">操作系统</a>
+				</ul>
+			</li>
+			<li class="nav__item"><a class="link" href="../html/course.html" title="学科课程">学科课程</a>
+				<ul class="subnav">
+					<li class="subnav__item"><a class="sublink" href="../html/list-discrete.html" title="离散数学">离散数学</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-advance.html" title="高等数学">高等数学</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-politics.html" title="考研政治">考研政治</a>
+					<li class="subnav__item"><a class="sublink" href="../html/progress.html" title="学习进程">学习进程</a>
+				</ul>
+			</li>
+			<li class="nav__item"><a class="link" href="../html/software.html" title="软件应用">软件应用</a>
+				<ul class="subnav">
+					<li class="subnav__item"><a class="sublink" href="../html/list-excel.html" title="电子表格">电子表格</a>
+				</ul>
+			</li>
+		</nav>
+	</header>
+	<div id="C_List">
+		<h4 class="SubpageTitleWhite">C语言</h4>
+	</div>
+	<div id="content">
+		<div class="card" onclick="window.open('../html/c-b-1.1.html','_self')">
+			<dl class="card-front">
+				<dt><img alt="" src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/card/front_1.jpg">
+				</dt>
+				<div class="card-title">第一章</div>
+				<div class="card-describ">程序设计和C语言(1)</div>
+			</dl>
+			<div class="card-back c">
+				<img alt="" src="../img/main/logo_black.png">
+			</div>
+		</div>
+		<div class="card" onclick="window.open('../html/c-b-1.2.html','_self')">
+			<dl class="card-front">
+				<dt><img alt="" src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/card/front_1.jpg">
+				</dt>
+				<div class="card-title">第一章</div>
+				<div class="card-describ">程序设计和C语言(2)</div>
+			</dl>
+			<div class="card-back c">
+				<img alt="" src="../img/main/logo_black.png">
+			</div>
+		</div>
+		<div class="card" onclick="window.open('../html/c-b-1.3.html','_self')">
+			<dl class="card-front">
+				<dt><img alt="" src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/card/front_1.jpg">
+				</dt>
+				<div class="card-title">第一章</div>
+				<div class="card-describ">程序设计和C语言(3)</div>
+			</dl>
+			<div class="card-back c">
+				<img alt="" src="../img/main/logo_black.png">
+			</div>
+		</div>
+		<div class="card" onclick="window.open('../html/c-b-1.4.html','_self')">
+			<dl class="card-front">
+				<dt><img alt="" src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/card/front_1.jpg">
+				</dt>
+				<div class="card-title">第一章</div>
+				<div class="card-describ">程序设计和C语言(4)</div>
+			</dl>
+			<div class="card-back c">
+				<img alt="" src="../img/main/logo_black.png">
+			</div>
+		</div>
+		<div class="card" onclick="window.open('../html/c-b-2.1.html','_self')">
+			<dl class="card-front">
+				<dt><img alt="" src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/card/front_2.jpg">
+				</dt>
+				<div class="card-title">第二章</div>
+				<div class="card-describ">算法——程序的灵魂(1)</div>
+			</dl>
+			<div class="card-back c">
+				<img alt="" src="../img/main/logo_black.png">
+			</div>
+		</div>
+		<div class="card" onclick="window.open('../html/c-b-2.2.html','_self')">
+			<dl class="card-front">
+				<dt><img alt="" src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/card/front_2.jpg">
+				</dt>
+				<div class="card-title">第二章</div>
+				<div class="card-describ">算法——程序的灵魂(2)</div>
+			</dl>
+			<div class="card-back c">
+				<img alt="" src="../img/main/logo_black.png">
+			</div>
+		</div>
+		<div class="card" onclick="window.open('../html/c-b-3.1.html','_self')">
+			<dl class="card-front">
+				<dt><img alt="" src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/card/front_3.jpg">
+				</dt>
+				<div class="card-title">第三章</div>
+				<div class="card-describ">顺序程序设计(1)</div>
+			</dl>
+			<div class="card-back c">
+				<img alt="" src="../img/main/logo_black.png">
+			</div>
+		</div>
+		<div class="card" onclick="window.open('../html/c-b-3.2.html','_self')">
+			<dl class="card-front">
+				<dt><img alt="" src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/card/front_3.jpg">
+				</dt>
+				<div class="card-title">第三章</div>
+				<div class="card-describ">顺序程序设计(2)</div>
+			</dl>
+			<div class="card-back c">
+				<img alt="" src="../img/main/logo_black.png">
+			</div>
+		</div>
+		<div class="card" onclick="window.open('../html/c-b-4.html','_self')">
+			<dl class="card-front">
+				<dt><img alt="" src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/card/front_4.jpg">
+				</dt>
+				<div class="card-title">第四章</div>
+				<div class="card-describ">选择程序设计</div>
+			</dl>
+			<div class="card-back c">
+				<img alt="" src="../img/main/logo_black.png">
+			</div>
+		</div>
+		<div class="card" onclick="window.open('../html/c-b-5.html','_self')">
+			<dl class="card-front">
+				<dt><img alt="" src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/card/front_5.jpg">
+				</dt>
+				<div class="card-title">第五章</div>
+				<div class="card-describ">循环结构程序</div>
+			</dl>
+			<div class="card-back c">
+				<img alt="" src="../img/main/logo_black.png">
+			</div>
+		</div>
+		<div class="card" onclick="window.open('../html/c-b-6.1.html','_self')">
+			<dl class="card-front">
+				<dt><img alt="" src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/card/front_6.jpg">
+				</dt>
+				<div class="card-title">第六章</div>
+				<div class="card-describ">数组(1)</div>
+			</dl>
+			<div class="card-back c">
+				<img alt="" src="../img/main/logo_black.png">
+			</div>
+		</div>
+		<div class="card" onclick="window.open('../html/c-b-6.2.html','_self')">
+			<dl class="card-front">
+				<dt><img alt="" src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/card/front_6.jpg">
+				</dt>
+				<div class="card-title">第六章</div>
+				<div class="card-describ">数组(2)</div>
+			</dl>
+			<div class="card-back c">
+				<img alt="" src="../img/main/logo_black.png">
+			</div>
+		</div>
+		<div class="card" onclick="window.open('../html/c-b-7.1.html','_self')">
+			<dl class="card-front">
+				<dt><img alt="" src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/card/front_7.jpg">
+				</dt>
+				<div class="card-title">第七章</div>
+				<div class="card-describ">函数(1)</div>
+			</dl>
+			<div class="card-back c">
+				<img alt="" src="../img/main/logo_black.png">
+			</div>
+		</div>
+		<div class="card" onclick="window.open('../html/c-b-7.2.html','_self')">
+			<dl class="card-front">
+				<dt><img alt="" src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/card/front_7.jpg">
+				</dt>
+				<div class="card-title">第气章</div>
+				<div class="card-describ">函数(2)</div>
+			</dl>
+			<div class="card-back c">
+				<img alt="" src="../img/main/logo_black.png">
+			</div>
+		</div>
+		<div class="card" onclick="window.open('../html/c-b-8.1.html','_self')">
+			<dl class="card-front">
+				<dt><img alt="" src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/card/front_8.jpg">
+				</dt>
+				<div class="card-title">第八章</div>
+				<div class="card-describ">指针(1)</div>
+			</dl>
+			<div class="card-back c">
+				<img alt="" src="../img/main/logo_black.png">
+			</div>
+		</div>
+		<div class="card" onclick="window.open('../html/c-b-8.2.html','_self')">
+			<dl class="card-front">
+				<dt><img alt="" src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/card/front_8.jpg">
+				</dt>
+				<div class="card-title">第八章</div>
+				<div class="card-describ">指针(2)</div>
+			</dl>
+			<div class="card-back c">
+				<img alt="" src="../img/main/logo_black.png">
+			</div>
+		</div>
+		<div class="card" onclick="window.open('../html/c-b-9.html','_self')">
+			<dl class="card-front">
+				<dt><img alt="" src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/card/front_9.jpg">
+				</dt>
+				<div class="card-title">第九章</div>
+				<div class="card-describ">用户自定义数据类型</div>
+			</dl>
+			<div class="card-back c">
+				<img alt="" src="../img/main/logo_black.png">
+			</div>
+		</div>
+		<div class="card" onclick="window.open('../html/c-b-10.1.html','_self')">
+			<dl class="card-front">
+				<dt><img alt="" src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/card/front_10.jpg">
+				</dt>
+				<div class="card-title">第十章</div>
+				<div class="card-describ">对文件的输入输出(1)</div>
+			</dl>
+			<div class="card-back c">
+				<img alt="" src="../img/main/logo_black.png">
+			</div>
+		</div>
+		<div class="card" onclick="window.open('../html/c-b-10.2.html','_self')">
+			<dl class="card-front">
+				<dt><img alt="" src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/card/front_10.jpg">
+				</dt>
+				<div class="card-title">第十章</div>
+				<div class="card-describ">对文件的输入输出(2)</div>
+			</dl>
+			<div class="card-back c">
+				<img alt="" src="../img/main/logo_black.png">
+			</div>
+		</div>
+		<div class="card" onclick="window.open('../html/c-b-11.html','_self')">
+			<dl class="card-front">
+				<dt><img alt="" src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/card/front_11.jpg">
+				</dt>
+				<div class="card-title">第十一章</div>
+				<div class="card-describ">位运算</div>
+			</dl>
+			<div class="card-back c">
+				<img alt="" src="../img/main/logo_black.png">
+			</div>
+		</div>
+		</div>
+		<footer>
+			<a href="../html/index.html" title="网站首页">网站首页</a>|
+			<a href="../html/education.html" title="教育学">教育学</a>|
+			<a href="../html/language.html" title="编程语言">编程语言</a>|
+			<a href="../html/computer.html" title="计算机">计算机</a>|
+			<a href="../html/course.html" title="学科课程">学科课程</a>|
+			<a href="../html/software.html" title="软件应用">软件应用</a>
+			<h5>Copyright &copy; 2022 Passwordgloo All rights reserved.</h5>
+		</footer>
+</body>
+
+</html>

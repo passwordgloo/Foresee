@@ -1,268 +1,329 @@
 ﻿<!DOCTYPE HTML>
 <html lang="zh-CN">
+
 <head>
-	<meta charset="utf-8">													  <!-- unicode8编码-->
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">                     <!-- ie兼容 -->
-	<meta name="viewport" content="width=device-width, inital-scale:1.0">     <!-- 响应式布局 -->
-	<meta name="description" content="预见更好的自己">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>C语言</title>
-	<link rel="shortcut icon" href="../img/logo.ico"  type="image/x-icon" />
-	<link rel="stylesheet" href="../css/c.css">
+	<link rel="shortcut icon" href="../img/main/logo.ico">
+	<link rel="stylesheet" href="../css/prism.css">
+	<link rel="stylesheet" href="../css/language.css">
 	<link rel="stylesheet" href="../css/main.css">
-    <script src="../js/jquery-1.7.2.min.js"></script>
-	<script src="../js/style.js"></script>
+	<script src="../js/jquery-3.6.0.js"></script>
+	<script src="../js/prism.js"></script>
+	<canvas class="fireworks"></canvas>
+	<script type="text/javascript" src="../js/fireworks.js"></script>
 </head>
-<body id="body">
-<header class="header header_fixed">
-<div class="inner"> 
-	<nav class="nav">
-	<img class="white" src="../img/main/logo_white.png" alt="预见" title="预见"><img class="black" alt="预见" src="../img/main/logo_black.png">
-		<li class="nav__item"><a class="link" href="../html/index.html" title="网站首页">网站首页</a></li> 
-		<li class="nav__item cur"> <a class="link" href="../html/lang.html" title="编程语言">编程语言</a>
-			<ul class="subnav">
-				<li class="subnav__item cur"> <a class="sublink" title="C语言" href="../html/c.html">C语言</a> </li>              <!-- cur用在当前位置 -->
-				<li class="subnav__item"> <a class="sublink" href="" title="C++">C++</a></li>
-				<li class="subnav__item"> <a class="sublink" href="" title="Java语言">Java语言</a> </li> 
-			</ul>
-		</li>
-		<li class="nav__item"><a class="link" href="../html/computer.html" rel="nofollow" title="计算机">计算机</a>
-			<ul class="subnav">
-				<li class="subnav__item cur"> <a class="sublink" href="../html/co.html" title="计算机组成原理">组成原理</a>
-				<li class="subnav__item"> <a class="sublink" href="../html/network.html" title="计算机网络">计算机网络</a>
-				<li class="subnav__item"><a class="sublink" href="../html/structure.html" title="数据结构">数据结构</a>
-			</ul>
-		</li>
-		<li class="nav__item"><a class="link" href="../html/math.html" title="数学">数学</a>
-			<ul class="subnav">
-				<li class="subnav__item"><a class="sublink" href="../html/ls.html" title="离散数学">离散数学</a>
-				<li class="subnav__item"><a class="sublink" href="../html/gs.html" title="高等数学">高等数学</a>
-			</ul>
-		</li>
-		<input class="textbox" id="searchstr" type="text" size="10" name="searchstr" title="输入关键字查找当前页面">
-	</nav> 
-</div> 
-</header>
-<div id="background">
-	<h4 class="subpage_title">C语言</h4>
-</div>
-<h6 class="nav_map"><img alt="" src="../img/main/position.png"><a href="../html/index.html">网站首页</a>>><a href="../html/lang.html">编程语言</a>>><a>C语言</a>
-<div id="switch_module"><span style="color:#555">暗夜模式&nbsp;</span><div class="kaiguan" title="点击开启暗夜模式"><div class="white" id="botton"></div></div></div></h6>
-<div class="rocket" id="gotoTop"><img src="../img/main/rocket.svg" alt=""></div>
-<div id="content">
-<h1>第一章 程序设计和C语言（2）</h1>
-<ul>
-	<li>10.1 运算符</li>
-	<table id="table-2"><caption>表1 运算符</caption>
-	<thead>
-		<th>优先级</th>
-		<th>运算符</th>
-		<th>含义</th>
-		<th>运算对象个数</th>
-		<th>结合方向</th>
-	</thead>
-	<tbody>
-		<tr>
-			<td rowspan="4">1</td>
-			<td>(   )</td>
-			<td>圆括号</td>
-			<td rowspan="4"></td>
-			<td rowspan="4">自左至右</td>
-		</tr>
-		<tr>
-			<td>[   ]</td>
-			<td>下标运算符</td>
-		</tr>
-		<tr>
-			<td>-></td>
-			<td>指向结构体成员运算符</td>
-		</tr>
-		<tr>
-			<td>.</td>
-			<td>结构体成员运算符</td>
-		</tr>
-		<tr>
-			<td rowspan="9">2</td>
-			<td>!</td>
-			<td>逻辑非运算符</td>
-			<td rowspan="9">单目运算符</td>
-			<td rowspan="9">自右至左</td>
-		</tr>
-		<tr>
-			<td>~</td>
-			<td>逻辑取反运算符</td>
-		</tr>
-		<tr>
-			<td>++</td>
-			<td>自增运算符</td>
-		</tr>
-		<tr>
-			<td>--</td>
-			<td>自减运算符</td>
-		</tr>
-		<tr>
-			<td>-</td>
-			<td>负号运算符</td>
-		</tr>
-		<tr>
-			<td>(类型)</td>
-			<td>类型转换运算符符</td>
-		</tr>
-		<tr>
-			<td>*</td>
-			<td>指针运算符</td>
-		</tr>
-		<tr>
-			<td>&</td>
-			<td>取地址符运算符</td>
-		</tr>
-		<tr>
-			<td>sizeof</td>
-			<td>长度运算符</td>
-		</tr>
-		<tr>
-			<td rowspan="3">3</td>
-			<td>*</td>
-			<td>乘法运算符</td>
-			<td rowspan="3">双目运算符</td>
-			<td rowspan="3">自左至右</td>
-		<tr>
-			<td>/</td>
-			<td>除法运算符</td>
-		</tr>
-		<tr>
-			<td>%</td>
-			<td>求余运算符</td>
-		</tr>
-		<tr>
-			<td rowspan="2">4</td>
-			<td>+</td>
-			<td>加法运算符</td>
-			<td rowspan="2">双目运算符</td>
-			<td rowspan="2">自左至右</td>
-		</tr>
-		<tr>
-			<td>-</td>
-			<td>减法运算符</td>
-		</tr>
-		<tr>
-			<td rowspan="2">5</td>
-			<td><<</td>
-			<td>左移运算符</td>
-			<td rowspan="2">双目运算符</td>
-			<td rowspan="2">自左至右</td>
-		</tr>
-		<tr>
-			<td>>></td>
-			<td>右移运算符</td>
-		</tr>
-		<tr>
-			<td rowspan="4">6</td>
-			<td><</td>
-			<td rowspan="4">关系运算符</td>
-			<td rowspan="4">双目运算符</td>
-			<td rowspan="4">自左至右</td>
-		</tr>
-		<tr><td><=</td></tr>
-		<tr><td>></td></tr>
-		<tr><td>>=</td></tr>
-		<tr>
-			<td rowspan="2">7</td>
-			<td>==</td>
-			<td>等于运算符</td>
-			<td rowspan="2">双目运算符</td>
-			<td rowspan="2">自左至右</td>
-		</tr>
-		<tr>
-			<td>!=</td>
-			<td>不等于运算符</td>
-		</tr>
-		<tr>
-			<td>8</td>
-			<td>&</td>
-			<td>按位与运算符</td>
-			<td>双目运算符</td>
-			<td>自左至右</td>
-		</tr>
-		<tr>
-			<td>9</td>
-			<td>^</td>
-			<td>按位异或运算符</td>
-			<td>双目运算符</td>
-			<td>自左至右</td>
-		</tr>
-		<tr>
-			<td>10</td>
-			<td>|</td>
-			<td>按位或运算符</td>
-			<td>双目运算符</td>
-			<td>自左至右</td>
-		</tr>
-		<tr>
-			<td>11</td>
-			<td>&&</td>
-			<td>逻辑与运算符</td>
-			<td>双目运算符</td>
-			<td>自左至右</td>
-		</tr>
-		<tr>
-			<td>12</td>
-			<td>||</td>
-			<td>逻辑或运算符</td>
-			<td>双目运算符</td>
-			<td>自左至右</td>
-		</tr>
-		<tr>
-			<td>13</td>
-			<td>?:</td>
-			<td>条件运算符</td>
-			<td>三目运算符</td>
-			<td>自左至右</td>
-		</tr>
-		<tr>
-			<td rowspan="11">14</td>
-			<td>=</td>
-			<td rowspan="11">赋值运算符</td>
-			<td rowspan="11">双目运算符</td>
-			<td rowspan="11">自右至左</td>
-		</tr>
-		<tr><td>+=</td></tr>
-		<tr><td>-=</td></tr>
-		<tr><td>*=</td></tr>
-		<tr><td>/=</td></tr>
-		<tr><td>%/</td></tr>
-		<tr><td>>>=</td></tr>
-		<tr><td><<=</td></tr>
-		<tr><td>&=</td></tr>
-		<tr><td>^=</td></tr>
-		<tr><td>|=</td></tr>
-		<tr>
-			<td>15</td>
-			<td>,</td>
-			<td>逗号运算符</td>
-			<td></td>
-			<td>自左至右</td>
-		</tr>
-	</tbody>
+
+<body>
+	<header>
+		<nav style="text-align:right">
+			<img id="logo" src="../img/main/logo.svg" alt="预见" title="预见"
+				onclick="window.open('../html/index.html','_self')">
+			<li class="nav__item"><a class="link" id="link_1" href="../html/index.html" title="网站首页">网站首页</a></li>
+			<li class="nav__item"> <a class="link" href="../html/education.html" title="教育学">教育学</a>
+				<ul class="subnav">
+					<li class="subnav__item"> <a class="sublink" href="../html/list-education.html"
+							title="教育学原理">教育学原理</a>
+					</li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-china.html" title="中国教育史">中国教育史</a>
+					</li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-foreign.html"
+							title="外国教育史">外国教育史</a>
+					</li>
+					<li class="subnav__item"> <a class="sublink" title="教育心理学"
+							href="../html/list-edu_psychology.html">教育心理学</a> </li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-psychology.html"
+							title="儿童心理学">儿童心理学</a>
+					</li>
+				</ul>
+			</li>
+			<li class="nav__item cur"> <a class="link" id="link_2" href="../html/language.html" title="编程语言">编程语言</a>
+				<ul class="subnav" id="subnav_1">
+					<li class="subnav__item"> <a class="sublink" title="C语言" href="../html/list-c.html">C语言</a> </li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-java.html" title="Java语言">Java语言</a>
+					</li>
+				</ul>
+			</li>
+			<li class="nav__item"><a class="link" id="link_3" href="../html/computer.html" rel="nofollow"
+					title="计算机">计算机</a>
+				<ul class="subnav" id="subnav_2">
+					<li class="subnav__item"> <a class="sublink" href="../html/list-composition.html"
+							title="计算机组成原理">组成原理</a>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-network.html"
+							title="计算机网络">计算机网络</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-structure.html" title="数据结构">数据结构</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-system.html" title="操作系统">操作系统</a>
+				</ul>
+			</li>
+			<li class="nav__item"><a class="link" id="link_4" href="../html/course.html" title="学科课程">学科课程</a>
+				<ul class="subnav" id="subnav_3">
+					<li class="subnav__item"><a class="sublink" href="../html/list-discrete.html" title="离散数学">离散数学</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-advance.html" title="高等数学">高等数学</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-politics.html" title="考研政治">考研政治</a>
+					<li class="subnav__item"><a class="sublink" href="../html/progress.html" title="学习进程">学习进程</a>
+				</ul>
+			</li>
+			<li class="nav__item"><a class="link" id="link_5" href="../html/software.html" title="软件应用">软件应用</a>
+				<ul class="subnav" id="subnav_4">
+					<li class="subnav__item"><a class="sublink" href="../html/list-excel.html" title="电子表格">电子表格</a>
+				</ul>
+			</li>
+			<input class="textbox" id="searchstr" type="text" size="10" name="searchstr" title="输入关键字查找当前页面">
+		</nav>
+	</header>
+	<div id="C_Background">
+		<h4 class="SubpageTitleWhite">C语言</h4>
+	</div>
+	<hgroup>
+		<h1>第一章 程序设计和C语言（2）</h1>
+	</hgroup>
+	<div id="content">
+	<table id="table-2">
+		<caption>表1 运算符</caption>
+		<thead>
+			<th>优先级</th>
+			<th>运算符</th>
+			<th>含义</th>
+			<th>运算对象个数</th>
+			<th>结合方向</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td rowspan="4">1</td>
+				<td>( )</td>
+				<td>圆括号</td>
+				<td rowspan="4"></td>
+				<td rowspan="4">自左至右</td>
+			</tr>
+			<tr>
+				<td>[ ]</td>
+				<td>下标运算符</td>
+			</tr>
+			<tr>
+				<td>-></td>
+				<td>指向结构体成员运算符</td>
+			</tr>
+			<tr>
+				<td>.</td>
+				<td>结构体成员运算符</td>
+			</tr>
+			<tr>
+				<td rowspan="9">2</td>
+				<td>!</td>
+				<td>逻辑非运算符</td>
+				<td rowspan="9">单目运算符</td>
+				<td rowspan="9">自右至左</td>
+			</tr>
+			<tr>
+				<td>~</td>
+				<td>逻辑取反运算符</td>
+			</tr>
+			<tr>
+				<td>++</td>
+				<td>自增运算符</td>
+			</tr>
+			<tr>
+				<td>--</td>
+				<td>自减运算符</td>
+			</tr>
+			<tr>
+				<td>-</td>
+				<td>负号运算符</td>
+			</tr>
+			<tr>
+				<td>(类型)</td>
+				<td>类型转换运算符符</td>
+			</tr>
+			<tr>
+				<td>*</td>
+				<td>指针运算符</td>
+			</tr>
+			<tr>
+				<td>&</td>
+				<td>取地址符运算符</td>
+			</tr>
+			<tr>
+				<td>sizeof</td>
+				<td>长度运算符</td>
+			</tr>
+			<tr>
+				<td rowspan="3">3</td>
+				<td>*</td>
+				<td>乘法运算符</td>
+				<td rowspan="3">双目运算符</td>
+				<td rowspan="3">自左至右</td>
+			<tr>
+				<td>/</td>
+				<td>除法运算符</td>
+			</tr>
+			<tr>
+				<td>%</td>
+				<td>求余运算符</td>
+			</tr>
+			<tr>
+				<td rowspan="2">4</td>
+				<td>+</td>
+				<td>加法运算符</td>
+				<td rowspan="2">双目运算符</td>
+				<td rowspan="2">自左至右</td>
+			</tr>
+			<tr>
+				<td>-</td>
+				<td>减法运算符</td>
+			</tr>
+			<tr>
+				<td rowspan="2">5</td>
+				<td>
+					<<< /td>
+				<td>左移运算符</td>
+				<td rowspan="2">双目运算符</td>
+				<td rowspan="2">自左至右</td>
+			</tr>
+			<tr>
+				<td>>></td>
+				<td>右移运算符</td>
+			</tr>
+			<tr>
+				<td rowspan="4">6</td>
+				<td>
+					<< /td>
+				<td rowspan="4">关系运算符</td>
+				<td rowspan="4">双目运算符</td>
+				<td rowspan="4">自左至右</td>
+			</tr>
+			<tr>
+				<td>
+					<=< /td>
+			</tr>
+			<tr>
+				<td>></td>
+			</tr>
+			<tr>
+				<td>>=</td>
+			</tr>
+			<tr>
+				<td rowspan="2">7</td>
+				<td>==</td>
+				<td>等于运算符</td>
+				<td rowspan="2">双目运算符</td>
+				<td rowspan="2">自左至右</td>
+			</tr>
+			<tr>
+				<td>!=</td>
+				<td>不等于运算符</td>
+			</tr>
+			<tr>
+				<td>8</td>
+				<td>&</td>
+				<td>按位与运算符</td>
+				<td>双目运算符</td>
+				<td>自左至右</td>
+			</tr>
+			<tr>
+				<td>9</td>
+				<td>^</td>
+				<td>按位异或运算符</td>
+				<td>双目运算符</td>
+				<td>自左至右</td>
+			</tr>
+			<tr>
+				<td>10</td>
+				<td>|</td>
+				<td>按位或运算符</td>
+				<td>双目运算符</td>
+				<td>自左至右</td>
+			</tr>
+			<tr>
+				<td>11</td>
+				<td>&&</td>
+				<td>逻辑与运算符</td>
+				<td>双目运算符</td>
+				<td>自左至右</td>
+			</tr>
+			<tr>
+				<td>12</td>
+				<td>||</td>
+				<td>逻辑或运算符</td>
+				<td>双目运算符</td>
+				<td>自左至右</td>
+			</tr>
+			<tr>
+				<td>13</td>
+				<td>?:</td>
+				<td>条件运算符</td>
+				<td>三目运算符</td>
+				<td>自左至右</td>
+			</tr>
+			<tr>
+				<td rowspan="11">14</td>
+				<td>=</td>
+				<td rowspan="11">赋值运算符</td>
+				<td rowspan="11">双目运算符</td>
+				<td rowspan="11">自右至左</td>
+			</tr>
+			<tr>
+				<td>+=</td>
+			</tr>
+			<tr>
+				<td>-=</td>
+			</tr>
+			<tr>
+				<td>*=</td>
+			</tr>
+			<tr>
+				<td>/=</td>
+			</tr>
+			<tr>
+				<td>%/</td>
+			</tr>
+			<tr>
+				<td>>>=</td>
+			</tr>
+			<tr>
+				<td>
+					<<=< /td>
+			</tr>
+			<tr>
+				<td>&=</td>
+			</tr>
+			<tr>
+				<td>^=</td>
+			</tr>
+			<tr>
+				<td>|=</td>
+			</tr>
+			<tr>
+				<td>15</td>
+				<td>,</td>
+				<td>逗号运算符</td>
+				<td></td>
+				<td>自左至右</td>
+			</tr>
+		</tbody>
 	</table>
-</ul>
-</div>
-<div id="button_group">
-      <button class="custom-btn btn-3">
-        <span onclick="window.open('../html/c-b-1.1.html','_self')">上一页</span>
-      </button>
-	   <button class="custom-btn btn-3" >
-        <span onclick="window.open('../html/c.html','_self')">目录</span>
-      </button>
-	   <button class="custom-btn btn-3">
-        <span onclick="window.open('../html/c-b-1.3.html','_self')">下一页</span>
-      </button>
-</div>
-<footer>
-<a href="../html/index.html" title="网站首页">网站首页</a>|
-<a href="../html/lang.html" title="编程语言">编程语言</a>|
-<a href="../html/computer.html" title="计算机">计算机</a>|
-<a href="../html/math.html" title="数学">数学</a>
-<h5>Copyright &copy; 2021   Passwordgloo    All rights reserved.</h5>
-</footer>
+	</ul>
+	<div id="button_group">
+		<button class="custom-btn btn-3" onclick="window.open('../html/c-b-1.1.html','_self')">
+			<span>上一页</span>
+		</button>
+		<button class="custom-btn btn-3" onclick="window.open('../html/list-c.html','_self')">
+			<span>目录</span>
+		</button>
+		<button class="custom-btn btn-3" onclick="window.open('../html/c-b-1.3.html','_self')">
+			<span>下一页</span>
+		</button>
+	</div>
+	<footer>
+		<a href="../html/index.html" title="网站首页">网站首页</a>|
+		<a href="../html/education.html" title="教育学">教育学</a>|
+		<a href="../html/language.html" title="编程语言">编程语言</a>|
+		<a href="../html/computer.html" title="计算机">计算机</a>|
+		<a href="../html/course.html" title="学科课程">学科课程</a>|
+		<a href="../html/software.html" title="软件应用">软件应用</a>
+		<h5>Copyright &copy; 2022 Passwordgloo All rights reserved.</h5>
+	</footer>
+	</div>
 </body>
+
 </html>

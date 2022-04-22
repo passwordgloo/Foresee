@@ -1,0 +1,191 @@
+﻿<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="utf-8"> <!-- unicode8编码-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- ie兼容 -->
+	<meta name="description" content="预见更好的自己">
+	<title>高等数学</title>
+	<link rel="shortcut icon" href="../img/main/logo.ico">
+	<link rel="stylesheet" href="../css/course.css">
+	<link rel="stylesheet" href="../css/main.css">
+	<script src="../js/jquery-3.6.0.js"></script>
+	<script>MathJax = {
+			tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			},
+			svg: {
+				fontCache: 'global'
+			}
+		};
+	</script>
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script type="text/javascript" id="MathJax-script" async
+		src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+	<script src="../js/style.js"></script>
+</head>
+
+<body>
+	<header>
+		<nav style="text-align:right">
+			<img id="logo" src="../img/main/logo.svg" alt="预见" title="预见"
+				onclick="window.open('../html/index.html','_self')">
+			<li class="nav__item"><a class="link" id="link_1" href="../html/index.html" title="网站首页">网站首页</a></li>
+			<li class="nav__item"> <a class="link" href="../html/education.html" title="教育学">教育学</a>
+				<ul class="subnav">
+					<li class="subnav__item"> <a class="sublink" href="../html/list-education.html"
+							title="教育学原理">教育学原理</a>
+					</li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-china.html" title="中国教育史">中国教育史</a>
+					</li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-foreign.html"
+							title="外国教育史">外国教育史</a>
+					</li>
+					<li class="subnav__item"> <a class="sublink" title="教育心理学"
+							href="../html/list-edu_psychology.html">教育心理学</a> </li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-psychology.html"
+							title="儿童心理学">儿童心理学</a>
+					</li>
+				</ul>
+			</li>
+			<li class="nav__item"> <a class="link" id="link_2" href="../html/language.html" title="编程语言">编程语言</a>
+				<ul class="subnav" id="subnav_1">
+					<li class="subnav__item"> <a class="sublink" title="C语言" href="../html/list-c.html">C语言</a> </li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-java.html" title="Java语言">Java语言</a>
+					</li>
+				</ul>
+			</li>
+			<li class="nav__item"><a class="link" id="link_3" href="../html/computer.html" rel="nofollow"
+					title="计算机">计算机</a>
+				<ul class="subnav" id="subnav_2">
+					<li class="subnav__item"> <a class="sublink" href="../html/list-composition.html"
+							title="计算机组成原理">组成原理</a>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-network.html"
+							title="计算机网络">计算机网络</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-structure.html" title="数据结构">数据结构</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-system.html" title="操作系统">操作系统</a>
+				</ul>
+			</li>
+			<li class="nav__item cur"><a class="link" id="link_4" href="../html/course.html" title="学科课程">学科课程</a>
+				<ul class="subnav" id="subnav_3">
+					<li class="subnav__item"><a class="sublink" href="../html/list-discrete.html" title="离散数学">离散数学</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-advance.html" title="高等数学">高等数学</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-politics.html" title="考研政治">考研政治</a>
+					<li class="subnav__item"><a class="sublink" href="../html/progress.html" title="学习进程">学习进程</a>
+				</ul>
+			</li>
+			<li class="nav__item"><a class="link" id="link_5" href="../html/software.html" title="软件应用">软件应用</a>
+				<ul class="subnav" id="subnav_4">
+					<li class="subnav__item"><a class="sublink" href="../html/list-excel.html" title="电子表格">电子表格</a>
+				</ul>
+			</li>
+			<input class="textbox" id="searchstr" type="text" size="10" name="searchstr" title="输入关键字查找当前页面">
+		</nav>
+	</header>
+	<div id="AdvanceBackground">
+		<h4 class="SubpageTitleWhite">高等数学</h4>
+	</div>
+	<div class="rocket" id="gotoTop"><img
+			src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/main/rocket-red.svg" alt=""></div>
+	<div id="menu">
+		<a href='#1.1'>和差乘积求导原则</a>
+		<a href='#1.2'>反函数的求导法则</a>
+		<a href='#1.3'>复合函数求导法则</a>
+	</div>
+	<article>
+		<hgroup>
+			<h1>第二章 导数与微分（2）</h1>
+			<h2 style="text-align:center">函数的求导法则
+				<ol>
+					<li class='h2' id="1.1">和差乘积求导原则
+						<ol>
+							<div class='name'>
+								<div class='define'>和差乘积求导原则</div>
+								<div class='Content'>
+									<dd class='mark'>$[u(x)\pm v(x)]'=u'(x)\pm v'(x)$</dd>
+									<dd class='mark'>$[u(x)* v(x)]'=u'(x)*v(x)+u(x)*v'(x)$</dd>
+									<dd class='mark'>${\LARGE
+										\biggr[\frac{u(x)}{v(x)}\biggr]'=\frac{u'(x)v(x){\color{Red} -}
+										u(x)*v'(x)}{v^2(x)}} $</dd>
+									<dd class='mark'>$(C\,u)'=Cu'\qquad C为常数$</dd>
+								</div>
+							</div>
+							<p><img src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/main/warning.png"
+									alt=""><strong>多项乘积</strong>：$[u(x)*v(x)*w(x)]'=\\u'(x)*v(x)*w(x)\;+u(x)*v'(x)*w(x)\;+u(x)*v(x)*w'(x)$
+							</p>
+							<div class='name'>
+								<div class='conclude'>推论</div>
+								<div class='Content'>
+									<dd class='none'>$[u(x)\pm v(x)\pm w(x)]'=u'(x)\pm v'(x)\pm w'(x)$</dd>
+								</div>
+							</div>
+							<div class='name'>
+								<div class='tip'>三角函数求导法则</div>
+								<div class='Content'>
+									<dd class='none'>$(\tan x)'=\frac{1}{\cos^2 x}=\sec^2 x\qquad(\sec x)'=\sec x\tan
+										x\qquad(\cot x)'=-\csc^2 x$</dd>
+									<dd class='none'>$(\csc^2 x)=-\csc x\cot x$</dd>
+								</div>
+							</div>
+						</ol>
+					</li>
+					<li class='h2' id='1.2'>反函数的求导法则
+						<ol>
+							<div class='name'>
+								<div class='define'>反函数的求导法则</div>
+								<div class='Content'>
+									<dd class='none'>$\displaylines {[f^{-1}(x)]'=\lim_{\bigtriangleup x\to
+										0}\frac{\bigtriangleup y}{\bigtriangleup x}=\lim_{\bigtriangleup y \to
+										0}\frac{1}{\bigtriangleup x}=\frac{1}{f'(y)}}$</dd>
+									<p><img src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/main/warning.png"
+											alt="">反函数导数是直接函数导数的<strong>倒数</strong></p>
+								</div>
+							</div>
+							<div class='name'>
+								<div class='tip'>反三角函数求导原则</div>
+								<div class='Content'>
+									<dd class='mark'>$(\arcsin x)'=\frac{1}{\cos y}=\frac{1}{\sqrt{1-x^2}}\qquad(\arccos
+										x)'={\color{Red} -} \frac{1}{\sqrt{1-x^2}}\qquad(\arctan x)'=\frac{1}{\sec^2 y}$
+									</dd>
+									<dd class='mark'>$(\operatorname{arccot} x)'={\color{Red} -} \frac{1}{1+x^2}$</dd>
+								</div>
+							</div>
+						</ol>
+					</li>
+					<li class='h2' id='1.3'>复合函数求导法则
+						<ol>
+							<div class='name'>
+								<div class='define'>复合函数求导法则</div>
+								<div class='Content'>
+									<dd class='none'>$y'(x)=f[g(x)]'=f'(x)*g'(x)$</dd>
+								</div>
+							</div>
+						</ol>
+					</li>
+				</ol>
+			</h2>
+			</div>
+			<div id="button_group">
+				<button class="custom-btn btn-11" onclick="window.open('../html/advance-11.html','_self')">
+					<span>上一页</span>
+				</button>
+				<button class="custom-btn btn-11" onclick="window.open('../html/list-advance.html','_self')">
+					<span>目录</span>
+				</button>
+				<button class="custom-btn btn-11" onclick="window.open('../html/advance-13.html','_self')">
+					<span>下一页</span>
+				</button>
+			</div>
+	</article>
+	<footer>
+		<a href="../html/index.html" title="网站首页">网站首页</a>|
+		<a href="../html/education.html" title="教育学">教育学</a>|
+		<a href="../html/language.html" title="编程语言">编程语言</a>|
+		<a href="../html/computer.html" title="计算机">计算机</a>|
+		<a href="../html/course.html" title="学科课程">学科课程</a>|
+		<a href="../html/software.html" title="软件应用">软件应用</a>
+		<h5>Copyright &copy; 2022 Passwordgloo All rights reserved.</h5>
+	</footer>
+</body>
+
+</html>

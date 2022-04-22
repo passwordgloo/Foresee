@@ -1,0 +1,208 @@
+﻿<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="utf-8"> <!-- unicode8编码-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- ie兼容 -->
+	<meta name="description" content="预见更好的自己">
+	<title>高等数学</title>
+	<link rel="shortcut icon" href="../img/main/logo.ico">
+	<link rel="stylesheet" href="../css/course.css">
+	<link rel="stylesheet" href="../css/main.css">
+	<script src="../js/jquery-3.6.0.js"></script>
+	<script>MathJax = {
+			tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			},
+			svg: {
+				fontCache: 'global'
+			}
+		};
+	</script>
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script type="text/javascript" id="MathJax-script" async
+		src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+	<script src="../js/style.js"></script>
+</head>
+
+<body>
+	<header>
+		<nav style="text-align:right">
+			<img id="logo" src="../img/main/logo.svg" alt="预见" title="预见"
+				onclick="window.open('../html/index.html','_self')">
+			<li class="nav__item"><a class="link" id="link_1" href="../html/index.html" title="网站首页">网站首页</a></li>
+			<li class="nav__item"> <a class="link" href="../html/education.html" title="教育学">教育学</a>
+				<ul class="subnav">
+					<li class="subnav__item"> <a class="sublink" href="../html/list-education.html"
+							title="教育学原理">教育学原理</a>
+					</li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-china.html" title="中国教育史">中国教育史</a>
+					</li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-foreign.html"
+							title="外国教育史">外国教育史</a>
+					</li>
+					<li class="subnav__item"> <a class="sublink" title="教育心理学"
+							href="../html/list-edu_psychology.html">教育心理学</a> </li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-psychology.html"
+							title="儿童心理学">儿童心理学</a>
+					</li>
+				</ul>
+			</li>
+			<li class="nav__item"> <a class="link" id="link_2" href="../html/language.html" title="编程语言">编程语言</a>
+				<ul class="subnav" id="subnav_1">
+					<li class="subnav__item"> <a class="sublink" title="C语言" href="../html/list-c.html">C语言</a> </li>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-java.html" title="Java语言">Java语言</a>
+					</li>
+				</ul>
+			</li>
+			<li class="nav__item"><a class="link" id="link_3" href="../html/computer.html" rel="nofollow"
+					title="计算机">计算机</a>
+				<ul class="subnav" id="subnav_2">
+					<li class="subnav__item"> <a class="sublink" href="../html/list-composition.html"
+							title="计算机组成原理">组成原理</a>
+					<li class="subnav__item"> <a class="sublink" href="../html/list-network.html"
+							title="计算机网络">计算机网络</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-structure.html" title="数据结构">数据结构</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-system.html" title="操作系统">操作系统</a>
+				</ul>
+			</li>
+			<li class="nav__item cur"><a class="link" id="link_4" href="../html/course.html" title="学科课程">学科课程</a>
+				<ul class="subnav" id="subnav_3">
+					<li class="subnav__item"><a class="sublink" href="../html/list-discrete.html" title="离散数学">离散数学</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-advance.html" title="高等数学">高等数学</a>
+					<li class="subnav__item"><a class="sublink" href="../html/list-politics.html" title="考研政治">考研政治</a>
+					<li class="subnav__item"><a class="sublink" href="../html/progress.html" title="学习进程">学习进程</a>
+				</ul>
+			</li>
+			<li class="nav__item"><a class="link" id="link_5" href="../html/software.html" title="软件应用">软件应用</a>
+				<ul class="subnav" id="subnav_4">
+					<li class="subnav__item"><a class="sublink" href="../html/list-excel.html" title="电子表格">电子表格</a>
+				</ul>
+			</li>
+			<input class="textbox" id="searchstr" type="text" size="10" name="searchstr" title="输入关键字查找当前页面">
+		</nav>
+	</header>
+	<div id="AdvanceBackground">
+		<h4 class="SubpageTitleWhite">高等数学</h4>
+	</div>
+	<div class="rocket" id="gotoTop">
+		<img src="https://gitee.com/passwordgloo/drawing-bed/raw/master/foresee/main/rocket-red.svg" alt="">
+	</div>
+	<div id="menu">
+		<a href=#1.1.1>映射概念</a>
+		<a href=#1.1.2>逆映射</a>
+		<a href=#1.2.1>函数概念</a>
+		<a href=#1.2.2>函数的几种特性</a>
+		<a href=#1.2.3>反函数</a>
+		<a href=#1.2.4>函数的运算</a>
+		<a href=#1.2.5>初等函数</a>
+	</div>
+	<article>
+		<h1>第一章 函数与极限（1）</h1>
+		<h2 style="text-align:center">映射与函数
+			<ol>
+				<li class="h2">映射
+					<ol>
+						<li class="h3" id="1.1.1">映射概念</li>
+						<div class="name">
+							<div class="define">映射</div>
+							<div class="Content">
+								<dd class="none">
+									设X,Y是两个非空集合，如果存在一个对应法则f，使得对X中每一个元素x，在Y中都由唯一的元素y与之对应，称f为从X到Y的映射，记作：$$ f:X \to Y$$
+								</dd>
+							</div>
+						</div>
+						<p>注意：单射(一一对应)、满射(y全用)、双射(x,y数目一样)</p>
+					</ol>
+				</li>
+				<li class="h2">函数
+					<ol>
+						<li class="h3" id="1.2.1">函数概念</li>
+						<div class="name">
+							<div class="define">函数</div>
+							<div class="Content">
+								<dd class="none">设数集$D \subseteq\mathbf R$，则称映射$f:D \to \mathbf R$为定义在D上的函数,通常简记为：$$
+									y=f(x),x\in D$$</dd>
+							</div>
+						</div>
+						<li class="h3" id="1.2.2">函数的几种特性</li>
+						<div class="name">
+							<div class="tip">有界性</div>
+							<div class="Content">
+								<dd class="mark">$上界：\exists k_1使f(x)\le k_1，对\forall x\in X都成立$</dd>
+								<dd class="mark">$下界：\exists k_2使f(x)\ge k_2，对\forall x\in X都成立$</dd>
+								<dd class="mark">$有界：\exists 正数M使|f(x)|\le M$</dd>
+							</div>
+						</div>
+						<div class="name">
+							<div class="tip">单调性</div>
+							<div class="Content">
+								<dd class="none">$单调增：D_f=X,\forall x_1,x_2\in X,x_1 < x_2,恒有f(x_1) < f(x_2)$</dd>
+								<dd class="none">$单调减：D_f=X,\forall x_1,x_2\in X,x_1 > x_2,恒有f(x_1) < f(x_2)$</dd>
+							</div>
+						</div>
+						<div class="name">
+							<div class="tip">奇偶性</div>
+							<div class="Content">
+								<dd class="none">$奇函数：D_f=D,\forall x\in D,f(x)=-f(-x)$</dd>
+								<dd class="none">$偶函数：D_f=D,\forall x\in D,f(x)=f(-x)$</dd>
+							</div>
+						</div>
+						<div class="name">
+							<div class="tip">周期性</div>
+							<div class="Content">
+								<dd class="none">$D_f=D,\exists 正数l使\forall x\in D,有f(x\pm l)=f(x)$</dd>
+							</div>
+						</div>
+						<li class="h3" id="1.2.3">反函数</li>
+						<div class="name">
+							<div class="define">反函数</div>
+							<div class="Content">
+								<dd class="none">$设函数f:D\to f(D)是{\color{Red} 单射} ，存在逆映射f^{-1}:f(D)\to D$</dd>
+							</div>
+						</div>
+						<li class="h3" id="1.2.4">函数的运算</li>
+						<div class="name">
+							<div class="conclude">函数的运算</div>
+							<div class="Content">
+								<dd class="mark">$(f\pm g)(x)=f(x)\pm g(x),x\in D$</dd>
+								<dd class="mark">$(f* g)(x)=f(x)* g(x),x\in D$</dd>
+								<dd class="mark">$(\frac{f}{g})(x)=\frac{f(x)}{g(x)} ,g(x)\ne 0$</dd>
+							</div>
+						</div>
+						<li class="h3" id="1.2.5">初等函数</li>
+						<p>$\mathbb{幂函数：} y=x^u$</p>
+						<p>$\mathbb{指数函数：} y=a^x(a>0且a\ne1)$</p>
+						<p>$\mathbb{对数函数：} y=\log_{a}{x} (a>0且a\ne1)$</p>
+						<p>$\mathbb{三角函数：} y=\sin x,y=\cos x,y=\tan x $</p>
+						<p>$\mathbb{反三角函数：} y=\arcsin x,y=\arccos x,y=\arctan x $</p>
+					</ol>
+				</li>
+			</ol>
+		</h2>
+		</div>
+		<div id="button_group">
+			<button class="custom-btn btn-11" id="unable">
+				<span>上一页</span>
+			</button>
+			<button class="custom-btn btn-11" onclick="window.open('../html/list-advance.html','_self')">
+				<span>目录</span>
+			</button>
+			<button class="custom-btn btn-11" onclick="window.open('../html/advance-2.html','_self')">
+				<span>下一页</span>
+			</button>
+		</div>
+	</article>
+
+	<footer>
+		<a href="../html/index.html" title="网站首页">网站首页</a>|
+		<a href="../html/education.html" title="教育学">教育学</a>|
+		<a href="../html/language.html" title="编程语言">编程语言</a>|
+		<a href="../html/computer.html" title="计算机">计算机</a>|
+		<a href="../html/course.html" title="学科课程">学科课程</a>|
+		<a href="../html/software.html" title="软件应用">软件应用</a>
+		<h5>Copyright &copy; 2022 Passwordgloo All rights reserved.</h5>
+	</footer>
+</body>
+
+</html>
