@@ -1,0 +1,141 @@
+﻿<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">													  <!-- unicode8编码-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">                     <!-- ie兼容 -->
+	<meta name="viewport" content="width=device-width, inital-scale:1.0">     <!-- 响应式布局 -->
+	<meta name="description" content="预见更好的自己">
+	<title>计算机组成原理</title>
+	<link rel="shortcut icon" href="../img/main/logo.ico"  type="image/x-icon" />
+	<link rel="stylesheet" href="../css/prism.css">
+	<link rel="stylesheet" href="../css/co.css">
+	<link rel="stylesheet" href="../css/main.css">
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/prism.js"></script>
+	<script src="../js/style.js"></script>
+</head>
+<body id="body">
+<header class="header header_fixed">
+<div class="inner"> 
+	<nav class="nav">
+	<img class="white" src="../img/main/logo_white.png" alt="预见" title="预见"><img class="black" alt="预见" src="../img/main/logo_black.png">
+		<li class="nav__item"><a class="link" href="../html/index.html" title="网站首页">网站首页</a></li> 
+		<li class="nav__item"> <a class="link" href="../html/lang.html" title="编程语言">编程语言</a>
+			<ul class="subnav">
+				<li class="subnav__item cur"> <a class="sublink" title="C语言" href="../html/c.html">C语言</a> </li>              <!-- cur用在当前位置 -->
+				<li class="subnav__item"> <a class="sublink" href="" title="C++">C++</a></li>
+				<li class="subnav__item"> <a class="sublink" href="" title="Java语言">Java语言</a> </li> 
+			</ul>
+		</li>
+		<li class="nav__item cur"><a class="link" href="../html/computer.html" rel="nofollow" title="计算机">计算机</a>
+			<ul class="subnav">
+				<li class="subnav__item cur"> <a class="sublink" href="../html/co.html" title="计算机组成原理">组成原理</a>
+				<li class="subnav__item"> <a class="sublink" href="../html/network.html" title="计算机网络">计算机网络</a>
+				<li class="subnav__item"><a class="sublink" href="../html/structure.html" title="数据结构">数据结构</a>
+			</ul>
+		</li>
+		<li class="nav__item"><a class="link" href="../html/math.html" title="数学">数学</a>
+			<ul class="subnav">
+				<li class="subnav__item"><a class="sublink" href="../html/ls.html" title="离散数学">离散数学</a>
+				<li class="subnav__item"><a class="sublink" href="../html/gs.html" title="高等数学">高等数学</a>
+			</ul>
+		</li>
+	</nav> 
+</div> 
+</header>
+<div id="background"><h4 class="subpage_title">组成原理</h4></div>
+<h6 class="nav_map"><img alt="" src="../img/main/position.png"><a href="../html/index.html">网站首页</a>>><a href="../html/computer.html">计算机</a>>><a>组成原理</a>
+<div id="switch_module"><span style="color:#555">暗夜模式&nbsp;</span><div class="kaiguan" title="点击开启暗夜模式"><div class="white" id="botton"></div></div></div></h6>
+<div class="rocket" id="gotoTop"><img src="../img/main/rocket.svg" alt=""></div>
+<div id="menu">
+	<a href=#1.1.1>计算机四代的发展</a>
+	<a href=#1.2.1>计算机硬件的基本组成</a>
+	<a href=#1.2.2>计算机软件的分类</a>
+</div>
+<div class="content">
+<ol>
+<li class="h1">计算机系统概述
+<ol>
+	<li class="h2">计算机发展历程
+		<ol>
+		<li class="h3" id="1.1.1">计算机四代的发展</li>
+		<p>电子管——晶体管——大规模集成电路——超大规模集成电路</p>
+		<li class="h3">计算机语言</li>
+		<p><strong>机器语言</strong>：计算机唯一可以<span style="color:red">直接</span>执行的语言</p>
+		<p><strong>汇编语言</strong>：助记符编写</p>
+		<p><strong>解释程序</strong>：一边执行一遍翻译</p>
+		<p><strong>编译</strong>：高级语言转化为机器语言／编译语言</p>
+		<p><strong>汇编</strong>：汇编语言翻译为机器语言</p>
+		</ol>
+	</li>
+	<li class="h2">计算机系统层次结构
+		<ol>
+		<li class="h3" id="1.2.1">计算机硬件的基本组成</li>
+		<table id="table-3">
+		<caption>功能组件一览表</caption>
+		<thead>
+			<th>名称</th>
+			<th>作用</th>
+			<th>位置</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td>MAR（地址寄存器）</td>
+				<td>存放访寄地址</td>
+				<td rowspan="2">CPU的存储器</td>
+			</tr>
+			<tr>
+				<td>MDR（数据寄存器）</td>
+				<td>暂存要读写的信息</td>
+			</tr>
+			<tr>
+				<td>ALU（算术逻辑单元）</td>
+				<td>进行算术运算或逻辑运算</td>
+				<td rowspan="3">CPU的运算器</td>
+			<tr>
+				<td>GPRs（通用寄存器组）</td>
+				<td>暂存操作数和中间结果</td>
+			</tr>
+			<tr>
+				<td>PSW（标志寄存器）</td>
+				<td>存放ALU运算的标志信息</td>
+			</tr>
+			<tr>
+				<td>IR（指令寄存器）</td>
+				<td>存放当前欲执行的指令</td>
+				<td rowspan="2">CPU的控制器</td>
+			</tr>
+			<tr>
+				<td>PC（程序计数器）</td>
+				<td>存放下一条指令</td>
+			</tr>
+		</tbody>
+		</table>
+		<li class="h3" id="1.2.2">计算机软件的分类</li>
+		<p><strong>系统软件</strong>：操作系统、数据库管理系统(DBMS)、标准库程序</p>
+		<p><strong>应用软件</strong>: 数据库系统(DBS)、</p>
+		</ol>
+		</li>
+	</li>
+</ol>
+</div>
+<div id="button_group">
+      <button class="custom-btn btn-3" id="unable">
+        <span>上一页</span>
+      </button>
+	   <button class="custom-btn btn-3">
+        <span>目录</span>
+      </button>
+	   <button class="custom-btn btn-3">
+        <span>下一页</span>
+      </button>
+</div>
+<footer>
+<a href="../html/index.html" title="网站首页">网站首页</a>|
+<a href="../html/lang.html" title="编程语言">编程语言</a>|
+<a href="../html/computer.html" title="计算机">计算机</a>|
+<a href="../html/math.html" title="数学">数学</a>
+<h5>Copyright &copy; 2021   Passwordgloo    All rights reserved.</h5>
+</footer>
+</body>
+</html>

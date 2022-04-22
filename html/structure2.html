@@ -14,40 +14,57 @@
     <script src="../js/prism.js"></script>
 	<script src="../js/style.js"></script>
 </head>
-<body>
+<body id="body">
 <header class="header header_fixed">
 <div class="inner"> 
 	<nav class="nav">
-	<img class="white" src="../img/logo_white.png" alt="预见" title="预见"><img class="black" alt="预见" src="../img/logo_black.png" onclick="window.open('../html/index.html','_self')"" cursor="pointer";>
-		<li class="nav__item"><a class="link" href="" title="网站首页">网站首页</a></li> 
-		<li class="nav__item"> <a class="link" href="" title="编程语言">编程语言</a>
+	<img class="white" src="../img/main/logo_white.png" alt="预见" title="预见"><img class="black" alt="预见" src="../img/main/logo_black.png">
+		<li class="nav__item"><a class="link" href="../html/index.html" title="网站首页">网站首页</a></li> 
+		<li class="nav__item"> <a class="link" href="../html/lang.html" title="编程语言">编程语言</a>
 			<ul class="subnav">
-				<li class="subnav__item cur"> <a class="sublink" title="C语言">C语言</a> </li>              <!-- cur用在当前位置 -->
-				<li class="subnav__item"> <a class="sublink" href="" target="_blank" title="C++语言">C++语言</a></li>
-				<li class="subnav__item"> <a class="sublink" href="" target="_blank" title="Java语言">Java语言</a> </li> 
+				<li class="subnav__item"> <a class="sublink" title="C语言" href="../html/c.html">C语言</a> </li>              <!-- cur用在当前位置 -->
+				<li class="subnav__item"> <a class="sublink" href="" title="C++">C++</a></li>
+				<li class="subnav__item"> <a class="sublink" href="" title="Java语言">Java语言</a> </li> 
 			</ul>
 		</li>
-		<li class="nav__item cur"><a class="link" href="" target="_blank" rel="nofollow" title="计算机">计算机</a>
+		<li class="nav__item cur"><a class="link" href="../html/computer.html" rel="nofollow" title="计算机">计算机</a>
 			<ul class="subnav">
-				<li class="subnav__item cur"> <a class="sublink" title="计算机组成原理">组成原理</a>
-				<li class="subnav__item"><a class="sublink" title="数据结构">数据结构</a>
+				<li class="subnav__item cur"> <a class="sublink" href="../html/co.html" title="计算机组成原理">组成原理</a>
+				<li class="subnav__item"> <a class="sublink" href="../html/network.html" title="计算机网络">计算机网络</a>
+				<li class="subnav__item"><a class="sublink" href="../html/structure.html" title="数据结构">数据结构</a>
 			</ul>
 		</li>
-		<li class="nav__item"><a class="link" href="" title="正在更新">尚未更新</a></li>
+		<li class="nav__item"><a class="link" href="../html/math.html" title="数学">数学</a>
+			<ul class="subnav">
+				<li class="subnav__item"><a class="sublink" href="../html/ls.html" title="离散数学">离散数学</a>
+				<li class="subnav__item"><a class="sublink" href="../html/gs.html" title="高等数学">高等数学</a>
+			</ul>
+		</li>
 	</nav> 
 </div> 
 </header>
-<div id="background">
-	<h4 class="subpage_title">线性表</h4>
-</div>
-<h6 class="nav_map"><img alt="" src="../img/position.png"><a href="">网站首页</a>>><a href="">计算机</a>>><a href="">数据结构</a></h6>
+<div id="background"><h4 class="subpage_title">数据结构</h4></div>
+<h6 class="nav_map"><img alt="" src="../img/main/position.png"><a href="../html/index.html">网站首页</a>>><a href="../html/computer.html">计算机</a>>><a>数据结构</a>
+<div id="switch_module"><span style="color:#555">暗夜模式&nbsp;</span><div class="kaiguan" title="点击开启暗夜模式"><div class="white" id="botton"></div></div></div></h6>
+<div class="rocket" id="gotoTop"><img src="../img/main/rocket.svg" alt=""></div>
 <h1>线性表</h1>
 <embed src="../img/structure/线性表.svg" style="user-select:none;max-width:100%">
+<div id="button_group">
+      <button class="custom-btn btn-10">
+        <span  onclick="window.open('../html/structure.html','_self')">上一页</span>
+      </button>
+	   <button class="custom-btn btn-10" >
+        <span>目录</span>
+      </button>
+	   <button class="custom-btn btn-10" >
+        <span onclick="window.open('../html/structure3.html','_self')">下一页</span>
+      </button>
+</div>
 <footer>
-<a href="" title="网站首页">网站首页</a>|
-<a href="" title="编程语言">编程语言</a>|
-<a href="" title="计算机">计算机</a>|
-<a href="" title="尚未更新">尚未更新</a>
+<a href="../html/index.html" title="网站首页">网站首页</a>|
+<a href="../html/lang.html" title="编程语言">编程语言</a>|
+<a href="../html/computer.html" title="计算机">计算机</a>|
+<a href="../html/math.html" title="数学">数学</a>
 <h5>Copyright &copy; 2021   Passwordgloo    All rights reserved.</h5>
 </footer>
 </body>

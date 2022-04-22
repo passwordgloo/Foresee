@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, inital-scale:1.0">     <!-- 响应式布局 -->
 	<meta name="description" content="预见更好的自己">
 	<title>预见·初见</title>
-	<link rel="shortcut icon" href="../img/logo.ico"  type="image/x-icon" />
+	<link rel="shortcut icon" href="../img/main/logo.ico"  type="image/x-icon" />
 	<link rel="stylesheet" href="../css/prism.css">
 	<link rel="stylesheet" href="../css/gs.css">
 	<link rel="stylesheet" href="../css/main.css">
@@ -14,12 +14,12 @@
     <script src="../js/prism.js"></script>
 	<script type="text/javascript">
         var bodyBgs = [];
-        bodyBgs[0] = "../img/index_1.jpg";
-        bodyBgs[1] = "../img/index_2.jpg";
-		bodyBgs[2] = "../img/index_3.jpg";
-		bodyBgs[3] = "../img/index_4.jpg";
-		bodyBgs[4] = "../img/index_5.jpg";
-		bodyBgs[5] = "../img/index_6.jpg";
+        bodyBgs[0] = "../img/background/index_1.jpg";
+        bodyBgs[1] = "../img/background/index_2.jpg";
+		bodyBgs[2] = "../img/background/index_3.jpg";
+		bodyBgs[3] = "../img/background/index_4.jpg";
+		bodyBgs[4] = "../img/background/index_5.jpg";
+		bodyBgs[5] = "../img/background/index_6.jpg";
 
         var randomBgIndex = Math.round( Math.random() * 5 );
 
@@ -55,26 +55,30 @@
 }
    </style>
 </head>
-<body>
+<body id="body">
 <header class="header header_fixed">
 <div class="inner"> 
 	<nav class="nav">
-	<img class="white" src="../img/logo_white.png" alt="预见" title="预见"><img class="black" alt="预见" src="../img/logo_black.png">
-		<li class="nav__item cur"><a class="link" href="" title="网站首页">网站首页</a></li> 
-		<li class="nav__item"> <a class="link" href="" title="编程语言">编程语言</a>
+	<img class="white" src="../img/main/logo_white.png" alt="预见" title="预见"><img class="black" alt="预见" src="../img/main/logo_black.png">
+		<li class="nav__item cur"><a class="link" href="../html/index.html" title="网站首页">网站首页</a></li> 
+		<li class="nav__item"> <a class="link" href="../html/lang.html" title="编程语言">编程语言</a>
 			<ul class="subnav">
-				<li class="subnav__item cur"> <a class="sublink" title="C语言">C语言</a> </li>              <!-- cur用在当前位置 -->
+				<li class="subnav__item"> <a class="sublink" title="C语言" href="../html/c.html">C语言</a> </li>              <!-- cur用在当前位置 -->
+				<li class="subnav__item"> <a class="sublink" href="" target="_blank" title="C++">C++</a></li>
+				<li class="subnav__item"> <a class="sublink" href="" target="_blank" title="Java语言">Java语言</a> </li> 
 			</ul>
 		</li>
-		<li class="nav__item"><a class="link" href="" target="_blank" rel="nofollow" title="计算机">计算机</a>
+		<li class="nav__item"><a class="link" href="../html/computer.html" target="_blank" rel="nofollow" title="计算机">计算机</a>
 			<ul class="subnav">
-				<li class="subnav__item cur"> <a class="sublink" title="计算机组成原理">组成原理</a>
+				<li class="subnav__item"> <a class="sublink" href="../html/co.html" title="计算机组成原理">组成原理</a>
+				<li class="subnav__item"> <a class="sublink" href="../html/network.html" title="计算机网络">计算机网络</a>
+				<li class="subnav__item"><a class="sublink" href="../html/structure.html" title="数据结构">数据结构</a>
 			</ul>
 		</li>
-		<li class="nav__item"><a class="link" href="" title="考研数学">考研数学</a>
+		<li class="nav__item"><a class="link" href="../html/math.html" title="数学">数学</a>
 			<ul class="subnav">
-				<li class="subnav__item cur"> <a class="sublink" title="离散数学">离散数学</a></li>
-				<li class="subnav__item cur"> <a class="sublink" title="高等数学">高等数学</a></li>
+				<li class="subnav__item"><a class="sublink" href="../html/ls.html" title="离散数学">离散数学</a>
+				<li class="subnav__item"><a class="sublink" href="../html/gs.html" title="高等数学">高等数学</a>
 			</ul>
 		</li>
 	</nav> 
@@ -83,15 +87,15 @@
 <div class="void">
 <p class="typing">计算机并不解决问题，它们只是执行解决方案。</p>
 <audio autoplay="autoplay" loop="loop" preload="auto" hidden="true"controls="controls"
- src="../media/遇见.mp3">
+ src="../other/music/遇见.mp3">
 </audio>
 </div>
-<footer>
-	<a href="" title="网站首页">网站首页</a>|
-	<a href="" title="编程语言">编程语言</a>|
-	<a href="" title="计算机">计算机</a>|
-	<a href="" title="考研数学">考研数学</a>
-	<h5>Copyright &copy; 2021   Passwordgloo    All rights reserved.</h5>
+<footer style="box-shadow:none;">
+<a href="../html/index.html" title="网站首页">网站首页</a>|
+<a href="../html/lang.html" title="编程语言">编程语言</a>|
+<a href="../html/computer.html" title="计算机">计算机</a>|
+<a href="../html/math.html" title="数学">数学</a>
+<h5>Copyright &copy; 2021   Passwordgloo    All rights reserved.</h5>
 </footer>
 </body>
 </html>
