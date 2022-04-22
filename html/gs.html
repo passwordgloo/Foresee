@@ -8,9 +8,9 @@
 	<title>高等数学</title>
 	<link rel="shortcut icon" href="../img/logo.ico"  type="image/x-icon" />
 	<link rel="stylesheet" href="../css/prism.css">
-	<link rel="stylesheet" href="../css/math.css">
+	<link rel="stylesheet" href="../css/gs.css">
 	<link rel="stylesheet" href="../css/main.css">
-    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/jquery-1.7.2.min.js"></script>
     <script src="../js/prism.js"></script>
 	<script src="../js/style.js"></script>
 	<script>MathJax = {
@@ -62,13 +62,13 @@
 <div class="rocket" id="gotoTop"><img src="../img/main/rocket.svg" alt=""></div></h6>
 <div class="content">
 <h1>第一章 函数与极限</h1>
-<div class="define"><p><strong>映射</strong>：设X,Y是两个非空集合，如果存在一个对应法则f，使得对X中每一个元素x，在Y中都由唯一的元素y与之对应，称f为从X到Y的映射，记作：</p>
-$$ f:X \to Y$$</div>
-<div class="define"><p><strong>函数</strong>： 设数集$D \subseteq\mathbf R$，则称映射$f:D \to \mathbf R$为定义在D上的函数,通常简记为：</p>
-$$ y=f(x),x\in D$$</div>
-<div class="define"><p><strong>极限</strong>： 设数集$\lbrace X_n \rbrace$为一数列，如果存在常数a,对于任意给定的正数$\epsilon,总存在正整数N,使得n>N时\color{black}{
+<div class="define"><div class="DefineTitle">映射</div><div class="DefineContent"><p>设X,Y是两个非空集合，如果存在一个对应法则f，使得对X中每一个元素x，在Y中都由唯一的元素y与之对应，称f为从X到Y的映射，记作：</p>
+$$ f:X \to Y$$</div></div>
+<div class="define"><div class="DefineTitle">函数</div><div class="DefineContent"><p>设数集$D \subseteq\mathbf R$，则称映射$f:D \to \mathbf R$为定义在D上的函数,通常简记为：</p>
+$$ y=f(x),x\in D$$</div></div>
+<div class="define"><div class="DefineTitle">极限</div><div class="DefineContent"><p>设数集$\lbrace X_n \rbrace$为一数列，如果存在常数a,对于任意给定的正数$\epsilon,总存在正整数N,使得n>N时\color{black}{
 \lvert X_n -a \rvert\lt\epsilon}$都成立，那么称常数a为数列$\lbrace X_n\rbrace$的极限，记为：</p>
-$$\lim \limits_{x\to\infty}X_n = a $$</div>
+$$\lim \limits_{x\to\infty}X_n = a $$</div></div>
 <div id="button_group">
       <button class="custom-btn btn-3" id="unable">
         <span>上一页</span>

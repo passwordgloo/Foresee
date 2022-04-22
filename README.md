@@ -1,14 +1,16 @@
 # 预见 · 未来
 
-![](https://img.shields.io/github/license/passwordgloo/Foresee)&emsp;![](https://img.shields.io/badge/author-passwordgloo-blueviolet)&emsp;![](https://img.shields.io/badge/version-0.0.0.3-success)&emsp;![](https://img.shields.io/badge/repo_size-65.9_MB-blue)
+![](https://img.shields.io/github/license/passwordgloo/Foresee)&emsp;![](https://img.shields.io/badge/author-passwordgloo-blueviolet)&emsp;![](https://img.shields.io/badge/version-0.0.0.4-success)&emsp;![](https://img.shields.io/badge/repo_size-64.6_MB-blue)
 
 ## 更新介绍
 
-- [x] 导航条样式V1.1
-- [x] 返回顶部动画V1.0
-- [x] 标题自动编号
-- [x] 暗夜模式V1.0
-- [x] 目录样式V1.0
+- [x] 滚动条样式V2.0
+- [x] 暗夜模式样式V2.0
+- [x] 导航条样式V2.0
+- [x] 板块加载动画V1.0
+- [x] 鼠标点击样式Firework
+- [x] 页面搜索按钮
+- [ ] 使用自建Wordpress主题
 
 ## 项目用途
 

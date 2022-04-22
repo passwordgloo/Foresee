@@ -1,3 +1,4 @@
+  	body{margin:0;padding:0;}
 
 #background{
 			padding:0;
@@ -8,6 +9,8 @@
 			background-size:cover;
 			}
 .subpage_title{text-align:center;color:#fff;font-size:48px;font-family:'Microsoft YaHei';font-weight:normal;padding-top:280px;margin:0;}
-ul{list-style-image:url(../img/main/list_c.png);}
+#content{width:1000px;margin:0 auto;}
+#content ul li{font-size:20px;padding-top:20px;}                             /*列表样式*/
+ul{list-style-image:url(../img/main/list_1.png);}
 .card-back{position:relative;transform:rotateY(-180deg);-webkit-transform:rotateY(-180deg);background:url(../img/card/back_1.jpg);}
 .card-back img{margin:100px 40px;}

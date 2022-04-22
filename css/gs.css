@@ -7,7 +7,6 @@
 	background:url(../img/background/gs.jpg) no-repeat;
 	background-size:cover;
 	}
-.subpage_title{text-align:center;color:aqua;font-size:48px;font-family:'Microsoft YaHei';font-weight:normal;padding-top:280px;margin:0}
-.content{width:1000px;
-        margin:0 auto;}
+.subpage_title{text-align:center;color:#fff;font-size:48px;font-family:'Microsoft YaHei';font-weight:normal;padding-top:280px;margin:0}
+#content{width:1000px;margin:0 auto;} 
 ul{list-style-image:url(../img/main/list_gs.png);}
