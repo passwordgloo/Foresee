@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">													  <!-- unicode8编码-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">                     <!-- ie兼容 -->
+	<meta name="viewport" content="width=device-width, inital-scale:1.0">     <!-- 响应式布局 -->
+	<title>C语言</title>
+	<link rel="shortcut icon" href="../img/logo.ico"  type="image/x-icon" />
+	<link rel="stylesheet" href="../css/prism.css">
+	<link rel="stylesheet" href="../css/c.css">
+	<link rel="stylesheet" href="../css/main.css">
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/prism.js"></script>
+	<script src="../js/clickstyle.js"></script>
+</head>
+<body leftmargin= "0 " topmargin= "0 " rightmargin= "0 " marginwidth= "00 " marginheight= "0 ">
+
+<nav>
+	<div class="logo"><img src="../img/logo2.png"></div>
+	<ul>
+		<li>
+		<a>网站首页</a>
+			<span>Home</span>
+		</li>
+		<li>
+			<a>爪洼语言</a>
+			<span>JAVA</span>
+		</li>
+		<li class="current">
+			<a>C语言</a>
+			<span>C LANGUAGE</span>
+		</li>
+		<li>
+			<a>后续补充</a>
+			<span>CONTINUE</span>
+		</li>
+</nav>
+<div id="background">
+	<h1>C语言</h1>
+</div>
+<div class="content">
+<h2>第八章 指针(1)</h2>
+<ul><li>64.指针数组和多重指针</li></ul>
+<pre class="line-numbers"><code class="lang-c">//对一个字符型数组指针数组排序
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+void show(char *a[4],int len)
+{
+	for(int i =0;i<len;++i)
+		puts(a[i]);
+}
+void sort(char **a,int len)
+{
+	for(int i=0;i<len-1;++i)
+		for(int j =0; j<len-i-1;++j)
+		{
+			if(strcmp(a[j],a[j+1])>0)
+			{
+				char *p=a[j];
+				a[j]=a[j+1];
+				a[j+1] =p;
+			}
+		}
+}
+int main(void)
+{
+	char *a[4]={"haha","lala","hello","hehe"};
+	sort(a,4);
+	show(a,4);
+	return 0;
+}</code></pre>
+<ul><li>65.指针数组做main函数形参</li></ul>
+<p>1.main函数无参时，调用main函数时不必给出实参</p>
+<p>2.main函数可以带参，例如int main(<span style="color:red">int argc,char*argv[]</span>)</p>
+<p>argc和argv是main函数的形参，它们是程序的"命令行参数"</p>
+<p>argc表示参数个数，argv表示参数向量，它是一个指向字符指针的指针变量，其每一个元素指向一个字符串</p>
+<p>3.一个带参main函数程序的运行</p>
+<pre class="line-numbers"><code class="lang-c">//该程序功能 输出argv中元素的内容
+#include &lt;stdio.h&gt;
+int main(int argc,char *argv[])
+{
+	while (argc-- >0)
+	{
+		printf("%s\n",*(argv++));
+	}
+	return 0;
+}</code></pre>
+<ul><li>66.void指针</li></ul>
+<pre class="line-numbers"><code class="lang-c">#include &lt;stdio.h&gt;
+int main(void)
+{
+	int a = 3,*p1;
+	p1 = &a;
+
+	char ch = '0',*p2;
+	p2 = &ch;
+
+	void *p3 = (void *)p1; //也可以写成void *p3 =p1;因为其他指针和void*类型的指针发生相互赋值时。会进行隐式数据类型转换
+//	p2 = p1;
+// printf("%d\n",*p3);  error因为p3不是void *类型，不指向确定类型的指针，所以无法通过*p3来访问变量a
+
+p3=p2;
+printf("%d\n",*(char*)p3);
+return 0;
+}</code></pre>
+</div>
+</body>

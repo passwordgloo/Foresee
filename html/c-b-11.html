@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">													  <!-- unicode8编码-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">                     <!-- ie兼容 -->
+	<meta name="viewport" content="width=device-width, inital-scale:1.0">     <!-- 响应式布局 -->
+	<title>C语言</title>
+	<link rel="shortcut icon" href="../img/logo.ico"  type="image/x-icon" />
+	<link rel="stylesheet" href="../css/prism.css">
+	<link rel="stylesheet" href="../css/c.css">
+	<link rel="stylesheet" href="../css/main.css">
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/prism.js"></script>
+	<script src="../js/clickstyle.js"></script>
+</head>
+<body leftmargin= "0 " topmargin= "0 " rightmargin= "0 " marginwidth= "00 " marginheight= "0 ">
+
+<nav>
+	<div class="logo"><img src="../img/logo2.png"></div>
+	<ul>
+		<li>
+		<a>网站首页</a>
+			<span>Home</span>
+		</li>
+		<li>
+			<a>爪洼语言</a>
+			<span>JAVA</span>
+		</li>
+		<li class="current">
+			<a>C语言</a>
+			<span>C LANGUAGE</span>
+		</li>
+		<li>
+			<a>后续补充</a>
+			<span>CONTINUE</span>
+		</li>
+</nav>
+<div id="background">
+	<h1>C语言</h1>
+</div>
+
+<div class="content">
+<h2>第十一章 位运算</h2>
+<ul><li>89.按位与按位或运算符</li></ul>
+<strong>&(按位与)</strong>
+<p>1.参加运算的两个数据，如果相应的二进制都为1，则该结果为1，否则为0</p>
+<strong>|(按位或)</strong>
+<p>1.参加运算的两个数据，如果相应的二进制都为0，则该位结果都为0，否则为1</p>
+<ul><li>90.按位异或</li></ul>
+<p>按位异或也称为XOF运算符，如果相应的二进制位不同，则该位结果为1，否则为0</p>
+<pre class="line-numbers"><code class="lang-c">#include &lt;stdio.h&gt;
+void jh(void)                //交换两个变量的值，不使用中间变量
+{
+	int a = 3,b = 10;
+	a = a^b;
+	b = a^b;
+	a = a^b;
+	b = a^b;
+	printf("%d,%d\n",a,b);
+}
+int main(void)
+{
+	int a = 123;
+	printf("%d\n%d\n%d\n",a&lt;&lt;38,a&lt;&lt;(38%32),123&lt;&lt;38);   //让一个数值或者变量左移大于自身长度的位数或者使用左移右移的位数为负值，在不同的编译器中可能结果不一样，应尽量避免这种情况的发生
+	return 0;
+}</code></pre>
+<ul><li>91.按位运算的综合运用</li></ul>
+<pre class="line-numbers"><code class="lang-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+int add(int a,int b)                               //整数相加返回其和
+{
+	int c;
+	while(c = a&b);
+	{
+		a = (c^a) | (c^b);
+		b = c&lt;&lt;1;
+	}
+	return a|b;
+}     
+int pv(int a,int index)                             //返回a的第index个二进制位的值
+{
+	if(index &lt;= 0 || index &gt;32)
+	{
+		printf("pv的参数有误，程序退出\n");
+		exit(-1);
+	}
+	return 1&(a&gt;&gt;index-1);
+}
+int po(int a,int index)                                 //返回把a的第index个二进制位打开之后的值
+{
+	if(index &lt;= 0 || index &gt;32)
+	{
+		printf("po的参数有误，程序退出\n");
+		exit(-1);
+	}
+	return a|(1&lt;&lt;index-1);
+}
+int pc(int a,int index)                               //返回把a的第index个二进制位关闭之后的值
+{
+	if(index &lt;= 0 || index &gt;32)
+	{
+		printf("pc的参数有误，程序退出\n");
+		exit(-1);
+	}
+	return (~(1&lt;&lt;index-1)) &a;
+}
+unsigned pd(unsigned a,int start,int end)              //返回a的从第start到end个二进制位的值
+{
+	if(start &gt; 0 && start &lt;= end && end &lt;=32)
+		return a &lt;&lt; 32-end &gt;&gt; 32-(end+1-start);
+	printf("pd函数参数有误，程序退出\n");
+	exit(-1);
+}
+unsigned pf(unsigned a,unsigned b,int start,int end)   //把b的低(end-1+start)个二进制位赋给 a当中的第start到第end个二进制位，最后返回a的值
+{
+	if(start &gt; 0 && start &lt;= end && end &lt;=32)
+	{
+		int len = end+1-start;
+		for(int i =1;i&lt;len;++i)
+		{
+			if(pv(b,1))
+				a = po(a,start++);
+			else
+				a = pc(a,start++);
+		}
+		return a;
+	}
+	printf("pf函数参数有误，程序退出\n");
+	exit(-1);
+}
+int mul(int a,int b)                                   //返回两个整型相乘的积
+{
+	int s = 0;
+	for(int i =1;i&lt;=32;++i)
+	{
+		if(pv(b,i))
+			s+=a&lt;&lt;i-1;
+	}
+	return s;
+}
+int chufa(int a,int b)                                 //返回两个整型的商
+{
+	if(b == 0)
+	{
+		printf("0不能被整除，程序退出\n");
+		exit(-1);
+	}
+	if(a == 0)
+		return 0;
+	int a0 = pv(a,32);
+	int b0 = pv(b,32);
+	int zheng;
+	if(a0^b0 == 0)
+		zheng =1;
+	else
+		zheng =0;
+	if(a0)
+		a = ~(a-1);
+	if(b0)
+		b = ~(b-1);
+	int i;
+	for(i=31;i&gt;-1;--i)
+	{
+		if(pv(a,i))
+			break;
+	}
+	int shang = 0,bc = 1;
+	while(i-- != 0)
+	{
+		if(b&gt;bc)
+		{
+			shang &lt;&lt;1;
+			if(i != 0)
+				bc = bc&lt;&lt;1|pv(a,i);
+		}
+		else
+		{
+			shang &lt;&lt;=1;
+			if(i != 0)
+				bc = bc-b&lt;&lt;1|pv(a,i);
+		}
+	}
+	return zheng?shang:~shang+1;
+}
+int main(void)
+{
+	printf("%d\n",add(23,14));
+	printf("%d\n",pv(13,2));
+	printf("%d\n",po(13,2));
+	printf("%d\n",pc(13,3));
+	printf("%u\n",pd(145,3,6));
+	printf("%u\n",pf(15,4,2,3));
+	printf("%d\n",chufa(13,2));
+	return 0;
+}</code></pre>
+<ul><li>92.位段</li></ul>
+<p>定义：c允许一个结构体中以位为单位指定成员所占内存长度，这种以位为单位的成员称为“位段”，利用位段能够用较少的位数存储数据</p>
+<pre class="line-numbers"><code class="lang-c">//举例
+struct
+{
+	unsigned a:2;
+	unsigned b:4;
+	unsigned c:2;
+	short m;
+}data;              //a,b,c分别占2，4，2位，m为short型</code></pre>
+<strong>注意：</strong>
+<p>①给位段赋值注意位段的范围</p>
+<p>②声明位段的一般形式：类型名 成员名:宽度   成员名可以省略代表无名位段</p>
+<p>③一个位段必须存储到同一存储单元中，不能跨两个单元</p>
+<div>
+</body>

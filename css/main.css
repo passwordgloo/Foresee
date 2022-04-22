@@ -1,0 +1,70 @@
+﻿<!-- 全局样式-->
+body,h1,h2,h3,h4,h5,h6,p,ul,li,ol,dl,dt,div,input,textarea,img,select,a,html{margin:0;padding:0;}
+a{text-decoration:none;}
+
+nav{width:1000px;height:80px;margin:0 auto;padding:0;}
+nav .logo{width:302px;float:left;}
+nav .logo img{margin-top:10px;}
+nav ul{float:right;}                                                                                  /*让ul整体到右侧*/
+nav ul li{float:left;text-align:center;height:80px;padding:0 10px;cursor:pointer;list-style:none;}   /*横过来*/
+nav ul li a{margin-top:24px;color:#666;display:inline-block;font-weight:bold;}
+nav ul li span{display:block;overflow:hidden;margin-top:10px;font-family:"Aria";font-size:12px;color:#999;}
+nav ul li:hover,
+nav ul li.current{background:#ff003c;}
+nav ul li.current a,
+nav ul li.current span{color:#fff;}
+nav ul li:hover a,
+nav ul li:hover span{color:#fff;}
+
+table{border-collapse:collapse;margin:0 auto;}
+caption{color:rgb(55,55,55);font-weight:bold;font-family:"黑体";font-size:16px;margin:20px 0 10px 0;}
+#table-1 thead,#table-1 th,#table-1 td{border:4px solid rgb(255,255,255);}        /*表格样式-1*/
+#table-1 td,#table-1 th{padding:10px 15px;}
+#table-1 th{color:rgb(255,255,255);background:rgb(0,0,0);}
+#table-1 td{text-align:center;}
+#table-1 tr:nth-child(even){background:rgb(217,217,217);}
+#table-1 tr:nth-child(odd){background:rgb(166,166,166);}
+#table-2 thead,#table-2 th,#table-2 td{border:4px solid rgb(255,255,255);}        /*表格样式-2*/
+#table-2 th,#table-2 td{padding:20px 25px;font-size:16px;font-family:Verdana;}
+#table-2 th{color:rgb(255,255,255);background:#4472c4;}
+#table-2 td{text-align:center;}
+#table-2 tr:nth-child(even){background:#d9e1f2;}
+#table-2 tr:nth-child(odd){background:#b4c6e7;}
+#table-3 thead,#table-3 th,#table-3 td{border:4px solid rgb(255,255,255);}        /*表格样式-3*/
+#table-3 th,#table-3 td{padding:20px 25px;font-size:16px;font-family:Verdana;}
+#table-3 th{color:rgb(255,255,255);background:#ed7d31;}
+#table-3 td{text-align:center;}
+#table-3 tr:nth-child(even){background:#fce4d6;}
+#table-3 tr:nth-child(odd){background:#f8cbad;}
+#table-4 thead,#table-4 th,#table-4 td{border:4px solid rgb(255,255,255);}        /*表格样式-4*/
+#table-4 th,#table-4 td{padding:20px 25px;font-size:16px;font-family:Verdana;}
+#table-4 th{color:rgb(255,255,255);background:#a5a5a5;}
+#table-4 td{text-align:center;}
+#table-4 tr:nth-child(even){background:#ededed;}
+#table-4 tr:nth-child(odd){background:#dbdbdb;}
+#table-5 thead,#table-5 th,#table-5 td{border:4px solid rgb(255,255,255);}        /*表格样式-5*/
+#table-5 th,#table-5 td{padding:20px 25px;font-size:16px;font-family:Verdana;}
+#table-5 th{color:rgb(255,255,255);background:#ffc000;}
+#table-5 td{text-align:center;}
+#table-5 tr:nth-child(even){background:#fff2cc;}
+#table-5 tr:nth-child(odd){background:#ffe699;}
+#table-6 thead,#table-6 th,#table-6 td{border:4px solid rgb(255,255,255);}        /*表格样式-6*/
+#table-6 th,#table-6 td{padding:20px 25px;font-size:16px;font-family:Verdana;}
+#table-6 th{color:rgb(255,255,255);background:#5b9bd5;}
+#table-6 td{text-align:center;}
+#table-6 tr:nth-child(even){background:#ddebf7;}
+#table-6 tr:nth-child(odd){background:#bdd7ee;}
+#table-7 thead,#table-7 th,#table-7 td{border:4px solid rgb(255,255,255);}        /*表格样式-7*/
+#table-7 th,#table-7 td{padding:20px 25px;font-size:16px;font-family:Verdana;}
+#table-7 th{color:rgb(255,255,255);background:#70ad47;}
+#table-7 td{text-align:center;}
+#table-7 tr:nth-child(even){background:#e2efda;}
+#table-7 tr:nth-child(odd){background:#c6e0b4;}
+
+h1{font-family:"微软雅黑";font-size:50px;padding:90px 0px 20px 40px;}                                             /*网页标题*/
+h2{font-size:30px;font-family:"微软雅黑";color:black;text-align:center;font-weight:bold;margin:70px 0 10px 0;}    /*正文标题*/
+p,dd{font-family:"黑体";line-height:1em;letter-spacing:0em;text-indent:2em;margin-top:1em;}                       /*段落格式*/
+.imgcenter{text-align:center;margin:0 auto;}
+.content ul li{font-size:20px;font-family:"微软雅黑"color:#999999;padding-top:20px;}                              /*列表样式*/  
+dt(color:red;)
+

@@ -1,0 +1,11 @@
+html{cursor:url(../img/feather.ico),auto;}
+
+#background{width:inherit;
+			height:200px;
+			background:url(../img/background_1.jpg) no-repeat;
+			background-size:cover;
+			}
+h1{color:#000;}
+.content{width:1000px;
+        margin:0 auto;}
+ul{list-style-image:url(../img/list.png);}
